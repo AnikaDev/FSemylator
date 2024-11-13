@@ -73,6 +73,9 @@ class ShellGUI:
         # Очищаем поле ввода
         self.entry.delete("1.0", END)
 
+        if (emulator.running == False):
+            exit(0)
+
     def run(self):
         self.root.mainloop()
 
