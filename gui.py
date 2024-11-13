@@ -64,7 +64,7 @@ class ShellGUI:
         result = self.emulator.execute_command(command)
 
         # Выводим команду и результат в поле вывода
-        self.text.insert(END, f"{self.emulator.computer_name}@shell:~$ {command}\n", "command")
+        self.text.insert(END, f"{self.emulator.computer_name}@{self.emulator.current_dir}:~$ {command}\n", "command")
         self.text.insert(END, f"{result}\n\n")
 
         # Прокручиваем текст до конца
