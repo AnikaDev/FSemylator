@@ -2,23 +2,16 @@ import os
 import subprocess
 from datetime import datetime
 from typing import List, Tuple
+import configparser
 
-import yaml
 from graphviz import Digraph
 
 
 def load_config(config_file: str) -> dict:
-    """
-    Load configuration from a YAML file.
-
-    Args:
-        config_file (str): Path to the YAML configuration file.
-
-    Returns:
-        dict: Parsed configuration data as a dictionary.
-    """
-    with open(config_file, "r") as file:
-        return yaml.safe_load(file)
+    config = configparser.ConfigParser()
+    print("Config file:"+config_file)
+    config.read(config_file)
+    return config
 
 
 def get_commits(repo_path: str, since_date: str) -> List[Tuple[str, str]]:
@@ -53,7 +46,8 @@ def get_commits(repo_path: str, since_date: str) -> List[Tuple[str, str]]:
     commit_data = [
         (
             c.split()[0],
-            datetime.utcfromtimestamp(int(c.split()[1])).strftime("%Y-%m-%d %H:%M:%S"),
+            datetime.fromtimestamp(int(c.split()[1]),  tz=None )
+               .strftime("%Y-%m-%d %H:%M:%S")
         )
         for c in commits
     ]
@@ -96,16 +90,11 @@ def save_graph(graph: Digraph, output_file: str) -> None:
 
 
 def main(config_file: str) -> None:
-    """
-    Main function to generate the commit dependency graph.
-
-    Args:
-        config_file (str): Path to the YAML configuration file.
-    """
     config = load_config(config_file)
-    repo_path = config["repository_path"]
-    graph_output_path = config["graph_output_path"]
-    since_date = config["since_date"]
+    repo_path = config['Settings']['repository_path']
+    graph_output_path = config['Settings']['graph_output_path']
+    since_date = config['Settings']['since_date']
+    os.environ["PATH"] = config['Settings']['graphviz'] + os.pathsep + os.environ["PATH"]
 
     if not os.path.exists(repo_path):
         print(f"Error: Repository path '{repo_path}' does not exist.")
@@ -122,5 +111,5 @@ def main(config_file: str) -> None:
 
 
 if __name__ == "__main__":
-    config_file = "config.yaml"  # Path to your YAML configuration file
+    config_file = "config.ini"  # Path to your YAML configuration file
     main(config_file)
