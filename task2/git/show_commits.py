@@ -33,11 +33,12 @@ def get_commits(repo_path: str, since_date: str) -> List[Tuple[str, str]]:
         "-C",
         repo_path,
         "log",
-        "--pretty=format:%H %ct",
+        "--pretty=format:%H %ct %an",
         "--since",
         since_date,
     ]
     result = subprocess.run(git_command, stdout=subprocess.PIPE, text=True)
+    print(f"result: {result.stdout}\n")
 
     if result.returncode != 0:
         raise Exception(f"Error running git command: {result.stderr}")
@@ -47,7 +48,8 @@ def get_commits(repo_path: str, since_date: str) -> List[Tuple[str, str]]:
         (
             c.split()[0],
             datetime.fromtimestamp(int(c.split()[1]),  tz=None )
-               .strftime("%Y-%m-%d %H:%M:%S")
+               .strftime("%Y-%m-%d %H:%M:%S"),
+            c.split()[2]
         )
         for c in commits
     ]
@@ -66,8 +68,8 @@ def build_dependency_graph(commits: List[Tuple[str, str]]) -> Digraph:
     """
     dot = Digraph(comment="Git Commit Dependencies")
 
-    for i, (commit, date) in enumerate(commits):
-        dot.node(str(i), f"Commit: {commit}\nDate: {date}")
+    for i, (commit, date, author) in enumerate(commits):
+        dot.node(str(i), f"Commit: {commit}\nAuthor:{author}\nDate: {date}")
         if i > 0:
             dot.edge(str(i - 1), str(i))  # Connect commits in chronological order
 
