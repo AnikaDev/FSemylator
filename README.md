@@ -99,11 +99,22 @@ zip. Эмулятор должен работать в режиме GUI.
   startup_script = test_startup.txt
 
 ## 3. Описание команд для запуска проекта.
+shell:
 python shell_emulator.py
+
+GUI version1:
+python gui1.py
+
+GUI version2 (требует pip install windows-curses)
+python gui2.py
 
 ## 4. Примеры использования в виде скриншотов
 
-![Изображение 1](img/e01.jpg)
+GUI версия 1
+![GUI версия 1](img/e01.jpg)
+
+GUI версия 2 (windows-curses)
+![GUI версия 2](img/e02.png)
 
 ## 5. Результаты прогона тестов.
 python tests.py

@@ -1,5 +1,5 @@
 [Settings]
-computer_name = TestHost
+computer_name = Anika
 virtual_fs_path = disk.zip
 log_path = log.json
 startup_script = start.sh

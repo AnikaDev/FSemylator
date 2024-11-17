@@ -23,7 +23,6 @@ class ShellEmulator:
         self.start_time = time.time()  # Время запуска программы
 
         self.load_virtual_fs()
-        self.run_startup_script()
 
     def load_virtual_fs(self):
         """Загрузка виртуальной файловой системы из ZIP-архива."""
@@ -60,13 +59,18 @@ class ShellEmulator:
             log_file.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
     def run_startup_script(self):
+        result = ""
         """Выполняет команды из стартового скрипта."""
         if os.path.exists(self.startup_script):
             with open(self.startup_script, 'r') as script:
                 commands = script.readlines()
                 for command in commands:
-                    print(f"Запуск команды из скрипта: {command}")
-                    self.execute_command(command.strip())
+                    result += (f"Запуск команды из скрипта: {command}\n")
+                    result += self.execute_command(command.strip())
+                    result += "\n"
+        else:
+            result = f"Стартовый скрипт не найден: {self.startup_script}\n"
+        return result
 
     def get_current_level(self):
         """Возвращает текущую директорию."""
