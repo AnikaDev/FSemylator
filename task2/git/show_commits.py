@@ -38,7 +38,7 @@ def get_commits(repo_path: str, since_date: str) -> List[Tuple[str, str]]:
         since_date,
     ]
     result = subprocess.run(git_command, stdout=subprocess.PIPE, text=True)
-    print(f"result: {result.stdout}\n")
+    # print(f"result: {result.stdout}\n")
 
     if result.returncode != 0:
         raise Exception(f"Error running git command: {result.stderr}")
@@ -73,6 +73,7 @@ def build_dependency_graph(commits: List[Tuple[str, str]]) -> Digraph:
         if i > 0:
             dot.edge(str(i - 1), str(i))  # Connect commits in chronological order
 
+    print (f"dot format: ${dot}")
     return dot
 
 
