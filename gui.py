@@ -4,13 +4,25 @@ from tkinter.scrolledtext import ScrolledText
 from shell_emulator import ShellEmulator
 
 class ShellGUI:
+    """
+    @brief Графический интерфейс для Unix Shell Emulator.
+    @details Класс предоставляет удобный GUI для работы с эмулятором shell.
+    """
+
     def __init__(self, emulator):
+        """
+        @brief Конструктор класса.
+        @param emulator Экземпляр класса ShellEmulator.
+        """
         self.emulator = emulator
         self.root = Tk()
         self.root.title("Unix Shell Emulator")
         self.setup_gui()
 
     def setup_gui(self):
+        """
+        @brief Настраивает элементы интерфейса.
+        """
         # Создаем основной фрейм
         self.frame = Frame(self.root, bg="black")
         self.frame.pack(fill="both", expand=True)
@@ -58,6 +70,10 @@ class ShellGUI:
         self.text.insert(END, f"{result}")
 
     def execute_command(self, event=None):
+        """
+        @brief Выполняет команду, введённую в поле ввода.
+        @param event Событие (используется для обработки нажатия клавиши Enter).
+        """
         # Получаем введенную команду
         command = self.entry.get("1.0", END).strip()
         if not command:
@@ -76,10 +92,13 @@ class ShellGUI:
         # Очищаем поле ввода
         self.entry.delete("1.0", END)
 
-        if (self.emulator.running == False):
+        if not self.emulator.running:
             exit(0)
 
     def run(self):
+        """
+        @brief Запускает цикл обработки событий GUI.
+        """
         self.root.mainloop()
 
 

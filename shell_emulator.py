@@ -7,9 +7,19 @@ from datetime import datetime
 
 
 class ShellEmulator:
+    """
+    @brief Класс эмулятора Unix shell.
+    @details Этот класс предоставляет интерфейс для работы с виртуальной файловой системой (VFS),
+             выполнения команд shell, логирования действий и работы со стартовым скриптом.
+    """
+
     def __init__(self, config_path):
+        """
+        @brief Конструктор класса.
+        @param config_path Путь к файлу конфигурации.
+        """
         self.config = configparser.ConfigParser()
-        print("Config file:"+config_path)
+        print("Config file:" + config_path)
         self.config.read(config_path)
 
         self.computer_name = self.config['Settings']['computer_name']
@@ -25,7 +35,9 @@ class ShellEmulator:
         self.load_virtual_fs()
 
     def load_virtual_fs(self):
-        """Загрузка виртуальной файловой системы из ZIP-архива."""
+        """
+        @brief Загрузка виртуальной файловой системы из ZIP-архива.
+        """
         try:
             with zipfile.ZipFile(self.vfs_path, 'r') as zip_ref:
                 self.vfs = {"": []}  # Корневая директория
@@ -49,7 +61,11 @@ class ShellEmulator:
             self.running = False
 
     def log_action(self, action, result):
-        """Логирует действие и результат выполнения."""
+        """
+        @brief Логирует действие и результат выполнения.
+        @param action Действие или команда.
+        @param result Результат выполнения действия.
+        """
         entry = {
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "command": action,
@@ -59,13 +75,16 @@ class ShellEmulator:
             log_file.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
     def run_startup_script(self):
+        """
+        @brief Выполняет команды из стартового скрипта.
+        @return Лог выполнения команд скрипта.
+        """
         result = ""
-        """Выполняет команды из стартового скрипта."""
         if os.path.exists(self.startup_script):
             with open(self.startup_script, 'r') as script:
                 commands = script.readlines()
                 for command in commands:
-                    result += (f"Запуск команды из скрипта: {command}\n")
+                    result += f"Запуск команды из скрипта: {command}\n"
                     result += self.execute_command(command.strip())
                     result += "\n"
         else:
@@ -73,7 +92,10 @@ class ShellEmulator:
         return result
 
     def get_current_level(self):
-        """Возвращает текущую директорию."""
+        """
+        @brief Возвращает текущую директорию.
+        @return Текущая директория в формате словаря.
+        """
         parts = self.current_dir.strip("/").split("/")
         current_level = self.vfs
         for part in parts:
@@ -82,7 +104,11 @@ class ShellEmulator:
         return current_level
 
     def execute_command(self, command):
-        """Обработка команд shell."""
+        """
+        @brief Обрабатывает команды shell.
+        @param command Команда shell.
+        @return Результат выполнения команды.
+        """
         try:
             if command.startswith("ls"):
                 result = self.ls()
@@ -106,7 +132,10 @@ class ShellEmulator:
         return result
 
     def ls(self):
-        """Выводит содержимое текущей директории с уровнями доступа."""
+        """
+        @brief Выводит содержимое текущей директории с уровнями доступа.
+        @return Список содержимого текущей директории.
+        """
         current_level = self.get_current_level()
         result = []
         for directory, content in current_level.items():
@@ -119,7 +148,11 @@ class ShellEmulator:
         return output
 
     def cd(self, path):
-        """Изменяет текущую директорию."""
+        """
+        @brief Изменяет текущую директорию.
+        @param path Новый путь.
+        @return Результат операции.
+        """
         current_level = self.get_current_level()
         if path == "..":
             self.current_dir = "/".join(self.current_dir.rstrip('/').split('/')[:-1]) or "/"
@@ -131,7 +164,10 @@ class ShellEmulator:
             return f"Директория {path} не найдена."
 
     def exit(self):
-        """Завершает работу shell."""
+        """
+        @brief Завершает работу shell.
+        @return Статус завершения работы.
+        """
         self.running = False
         return "Выход из системы."
 
