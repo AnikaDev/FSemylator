@@ -1,0 +1,3 @@
+[settings]
+inputFile = myProgramm.inj
+outputFile = result.json

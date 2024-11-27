@@ -65,7 +65,7 @@ def build_dependency_graph(commits: List[Tuple[str, str, str]]) -> Digraph:
         dot.node(str(i), f"Commit: {commit}\nAuthor: {author}\nDate: {date}")
         if i > 0:
             dot.edge(str(i - 1), str(i))  # Connect commits in chronological order
-
+    print(dot)
     return dot
 
 
