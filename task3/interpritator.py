@@ -10,67 +10,100 @@ class ConfigParser:
 
     def parse(self, text: str) -> Dict[str, Any]:
         text = self.remove_comments(text)
-        self.parse_dicts(text)
-        text = self.remove_dicts_block(text)
-        self.evaluate_expressions(text)
+        text, expression = self.extract_first_block_and_remainder(text)
+        clean_text = re.sub(r'\s+', ' ', text).strip()
+        self.parse_dicts2(clean_text,'')
+        self.evaluate_expressions(expression)
         return self.variables
 
+    def extract_first_block_and_remainder(self, text: str):
+        stack = []
+        start = None
+
+        for i, char in enumerate(text):
+            if char == '{':
+                if not stack:
+                    start = i  # Сохраняем индекс начала первого блока
+                stack.append(char)
+            elif char == '}':
+                if stack:
+                    stack.pop()
+                    if not stack:  # Блок завершён
+                        first_block = text[start:i + 1]
+                        remainder = text[i + 1:].strip()
+                        return first_block, remainder
+
+        # Если не найден корректный блок
+        return None, text.strip()
     def remove_comments(self, text: str) -> str:
-        text = re.sub(r'/\+.*?\+/s', '', text, flags=re.DOTALL)  # Remove multiline comments
+        text = re.sub(r'/\+.*?\+/', '', text, flags=re.DOTALL)  # Remove multiline comments
         return text
 
     def remove_dicts_block(self, text: str) -> str:
         text = re.sub(r"\{(.*?)\}", '', text, flags=re.DOTALL)  # Remove multiline comments
         return text
 
-    def infixToPostfix(self, expression: str) -> str:
-        precedence = {'+': 1, '-': 1, '*': 2, '/': 2, 'abs': 3, 'mod': 3}
-        output = []
+    def evaluate_postfix(self, expression):
+        # Определяем операции
+        operations = {
+            '+': lambda x, y: x + y,
+            '-': lambda x, y: x - y,
+            '*': lambda x, y: x * y,
+            '/': lambda x, y: x / y,
+            'abs': lambda x: abs(x),
+            'mod': lambda x, y: x % y
+        }
+
         stack = []
-        tokens = expression.split(' ')
+        tokens = expression.split()
 
         for token in tokens:
-            if (token.isdigit() or (token.startswith('-') and token[1:].isdigit())) or token in ['abs', 'mod']:  # Если это операнд (число или функция)
-                output.append(token)
-            elif token.isalnum():  # Если это переменная
-                output.append(token)
-            elif token in precedence:  # Если это оператор
-                while (stack and stack[-1] != '(' and
-                       precedence.get(token, 0) <= precedence.get(stack[-1], 0)):
-                    output.append(stack.pop())
-                stack.append(token)
-            elif token == '(':
-                stack.append(token)
-            elif token == ')':
-                while stack and stack[-1] != '(':
-                    output.append(stack.pop())
-                stack.pop()  # Убираем открывающую скобку
+            if token.lstrip('-').isdigit():  # Если токен — число
+                stack.append(int(token))
+            elif token in operations:  # Если токен — операция
+                if token == 'abs':  # Унарная операция
+                    if len(stack) < 1:
+                        raise ValueError("Недостаточно операндов для 'abs'")
+                    x = stack.pop()
+                    stack.append(operations[token](x))
+                else:  # Бинарная операция
+                    if len(stack) < 2:
+                        raise ValueError(f"Недостаточно операндов для '{token}'")
+                    y = stack.pop()
+                    x = stack.pop()
+                    stack.append(operations[token](x, y))
+            else:
+                raise ValueError(f"Неизвестный токен: {token}")
 
-        res = output[0]
-        pos = 1
-        while stack:
-            res += stack.pop() + output[pos]
-            pos = pos + 1
-            #output.append(stack.pop())
+        if len(stack) != 1:
+            raise ValueError("Неверное выражение: стек содержит лишние элементы")
 
-        #return ' '.join(output)
-        return res
+        return stack[0]
 
-    def parse_dicts(self, text: str):
-        dict_pattern = r"\{(.*?)\}"  # Matches dictionary blocks
-        dict_matches = re.findall(dict_pattern, text, re.DOTALL)
+    def parse_dicts2(self, block: str, prefix_var: str):
+        """
+        Рекурсивно парсит строку с выражением в виде вложенных ключей и значений.
+        """
+        result = {}
+        key_value_pattern = re.compile(r'(\w+)\s*=\s*(\{.*?\}|[^;]+)')
+        nested_block_pattern = re.compile(r'^\{(.*)\}$')
 
-        for block in dict_matches:
-            entries = re.findall(r"([a-z0-9]+) = (.*?);", block)
-            for key, value in entries:
-                if (value.isdigit() or (value.startswith('-') and value[1:].isdigit())):
-                    self.variables[key] = int(value)
-                elif re.match(r"^'.*?'$", value, flags=re.DOTALL):
-                    self.variables[key] = value.strip("'")
-                elif value in self.constants:
-                    self.variables[key] = self.constants[value]
+        while block:
+            match = key_value_pattern.search(block)
+            if match:
+                key, value = match.groups()
+                block = block[match.end():].lstrip(";")
+
+                # Если значение - вложенный блок, разбираем его рекурсивно
+                if nested_block_pattern.match(value):
+                    inner_block = nested_block_pattern.match(value).group(1)
+                    value = self.parse_dicts2(inner_block, key+".")
                 else:
-                    raise ValueError(f"Invalid value for key {key}: {value}")
+                    result[prefix_var + key] = value
+                    self.variables[prefix_var + key] = value
+            else:
+                break
+        return result
 
     def evaluate_expressions(self, text: str):
         expr_pattern = r"([a-z0-9]+) = (.+?);"
@@ -78,15 +111,19 @@ class ConfigParser:
         for var_name, expression in matches:
             try:
                 # Replace variables in the expression with their current values
-                for key, value in self.variables.items():
+                # Simple 'for' does not work, need to sort...
+                # for key, value in self.variables.items():
+                for key, value in sorted(self.variables.items(), key=lambda item: item[0], reverse=False):
                     expression = expression.replace(key, str(value))
 
-                # print(f"var:{var_name} = {expression}")
-                # postfix to infix
-                # expression = self.infixToPostfix(expression)
+                # Expression, need to calculate :(
+                if (len(expression) > 1 and expression[0] == '$' and expression[-1] == '$'):
+                    expression_in = expression[1:-1]
+                    expression = self.evaluate_postfix(expression_in)
+                    print(f"calculate expression: '{expression_in}'={expression}")
 
                 # Evaluate the expression safely
-                self.variables[var_name] = eval(expression)
+                self.variables[var_name] = expression
             except Exception as e:
                 raise ValueError(f"Error evaluating expression for {var_name}: {expression} ({e})")
 

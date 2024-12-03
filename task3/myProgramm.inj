@@ -4,12 +4,17 @@
 +/
 
 {
- test = 1;
- x1 = -2;
- x2 = 0;
- name = 'Anna';
- str = 'Hello';
-}
+  x = -2;
+  z = 1;
+  name = 'Anna';
+  str = 'Hello';
+  map = {
+    x = -5;
+    y = 6;
+    z = 5;
+  };
+  y = 10;
+};
 
-test = 1 + x1;
-x2 = 3 + abs(test);
+def const = 10;
+def test = $1 x z map.x abs + + +$;
