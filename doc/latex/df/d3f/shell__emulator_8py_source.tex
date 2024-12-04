@@ -1,0 +1,225 @@
+\doxysection{C\+:/prj/python/\+FSemylator/shell\+\_\+emulator.py}
+\label{shell__emulator_8py_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{00002\ \textcolor{keyword}{import}\ zipfile}
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ configparser}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ time}
+\DoxyCodeLine{00006\ \textcolor{keyword}{from}\ datetime\ \textcolor{keyword}{import}\ datetime}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }ShellEmulator:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00011\ \textcolor{stringliteral}{\ \ \ \ @brief\ Класс\ эмулятора\ Unix\ shell.}}
+\DoxyCodeLine{00012\ \textcolor{stringliteral}{\ \ \ \ @details\ Этот\ класс\ предоставляет\ интерфейс\ для\ работы\ с\ виртуальной\ файловой\ системой\ (VFS),}}
+\DoxyCodeLine{00013\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ выполнения\ команд\ shell,\ логирования\ действий\ и\ работы\ со\ стартовым\ скриптом.}}
+\DoxyCodeLine{00014\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{def\ }\_\_init\_\_(self,\ config\_path):}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00018\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Конструктор\ класса.}}
+\DoxyCodeLine{00019\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ config\_path\ Путь\ к\ файлу\ конфигурации.}}
+\DoxyCodeLine{00020\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ self.config\ =\ configparser.ConfigParser()}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Config\ file:"{}}\ +\ config\_path)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ self.config.read(config\_path)}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ self.computer\_name\ =\ self.config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'computer\_name'}]}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ self.vfs\_path\ =\ self.config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'virtual\_fs\_path'}]}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ self.log\_path\ =\ self.config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'log\_path'}]}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ self.startup\_script\ =\ self.config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'startup\_script'}]}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ self.vfs\ =\ \{\}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ self.current\_dir\ =\ \textcolor{stringliteral}{"{}/"{}}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ self.running\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ self.start\_time\ =\ time.time()\ \ \textcolor{comment}{\#\ Время\ запуска\ программы}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ self.load\_virtual\_fs()}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{def\ }load\_virtual\_fs(self):}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00039\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Загрузка\ виртуальной\ файловой\ системы\ из\ ZIP-\/архива.}}
+\DoxyCodeLine{00040\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ zipfile.ZipFile(self.vfs\_path,\ \textcolor{stringliteral}{'r'})\ \textcolor{keyword}{as}\ zip\_ref:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.vfs\ =\ \{\textcolor{stringliteral}{"{}"{}}:\ []\}\ \ \textcolor{comment}{\#\ Корневая\ директория}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ name\ \textcolor{keywordflow}{in}\ zip\_ref.namelist():}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parts\ =\ name.strip(\textcolor{stringliteral}{"{}/"{}}).split(\textcolor{stringliteral}{"{}/"{}})}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_level\ =\ self.vfs}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ part\ \textcolor{keywordflow}{in}\ parts[:-\/1]:}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ part\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ current\_level:}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_level[part]\ =\ \{\textcolor{stringliteral}{"{}"{}}:\ [],\ \textcolor{stringliteral}{"{}permissions"{}}:\ \textcolor{stringliteral}{"{}755"{}}\}\ \ \textcolor{comment}{\#\ Подкаталог}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_level\ =\ current\_level[part]}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Добавляем\ файл\ или\ подкаталог}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ name.endswith(\textcolor{stringliteral}{"{}/"{}}):}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_level[parts[-\/1]]\ =\ \{\textcolor{stringliteral}{"{}"{}}:\ [],\ \textcolor{stringliteral}{"{}permissions"{}}:\ \textcolor{stringliteral}{"{}755"{}}\}\ \ \textcolor{comment}{\#\ Пустой\ каталог}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_level[\textcolor{stringliteral}{"{}"{}}].append(\{\textcolor{stringliteral}{"{}name"{}}:\ parts[-\/1],\ \textcolor{stringliteral}{"{}permissions"{}}:\ \textcolor{stringliteral}{"{}644"{}}\})\ \ \textcolor{comment}{\#\ Файл}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ FileNotFoundError:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}Ошибка:\ архив\ \{self.vfs\_path\}\ не\ найден."{}})}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ self.running\ =\ \textcolor{keyword}{False}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{def\ }log\_action(self,\ action,\ result):}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00065\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Логирует\ действие\ и\ результат\ выполнения.}}
+\DoxyCodeLine{00066\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ action\ Действие\ или\ команда.}}
+\DoxyCodeLine{00067\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ result\ Результат\ выполнения\ действия.}}
+\DoxyCodeLine{00068\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ entry\ =\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}timestamp"{}}:\ datetime.now().strftime(\textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%H:\%M:\%S"{}}),}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}command"{}}:\ action,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}result"{}}:\ result}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(self.log\_path,\ \textcolor{stringliteral}{"{}a"{}},\ encoding=\textcolor{stringliteral}{"{}utf-\/8"{}})\ \textcolor{keyword}{as}\ log\_file:}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ log\_file.write(json.dumps(entry,\ ensure\_ascii=\textcolor{keyword}{False})\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}})}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{def\ }run\_startup\_script(self):}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00079\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Выполняет\ команды\ из\ стартового\ скрипта.}}
+\DoxyCodeLine{00080\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @return\ Лог\ выполнения\ команд\ скрипта.}}
+\DoxyCodeLine{00081\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{stringliteral}{"{}"{}}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ os.path.exists(self.startup\_script):}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(self.startup\_script,\ \textcolor{stringliteral}{'r'})\ \textcolor{keyword}{as}\ script:}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ commands\ =\ script.readlines()}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ command\ \textcolor{keywordflow}{in}\ commands:}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ +=\ f\textcolor{stringliteral}{"{}Запуск\ команды\ из\ скрипта:\ \{command\}\(\backslash\)n"{}}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ +=\ self.execute\_command(command.strip())}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ f\textcolor{stringliteral}{"{}Стартовый\ скрипт\ не\ найден:\ \{self.startup\_script\}\(\backslash\)n"{}}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{def\ }get\_current\_level(self):}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00096\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Возвращает\ текущую\ директорию.}}
+\DoxyCodeLine{00097\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @return\ Текущая\ директория\ в\ формате\ словаря.}}
+\DoxyCodeLine{00098\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ parts\ =\ self.current\_dir.strip(\textcolor{stringliteral}{"{}/"{}}).split(\textcolor{stringliteral}{"{}/"{}})}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ current\_level\ =\ self.vfs}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ part\ \textcolor{keywordflow}{in}\ parts:}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ part:}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_level\ =\ current\_level[part]}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\_level}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{def\ }execute\_command(self,\ command):}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00108\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Обрабатывает\ команды\ shell.}}
+\DoxyCodeLine{00109\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ command\ Команда\ shell.}}
+\DoxyCodeLine{00110\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @return\ Результат\ выполнения\ команды.}}
+\DoxyCodeLine{00111\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ command.startswith(\textcolor{stringliteral}{"{}ls"{}}):}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ self.ls()}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ command.startswith(\textcolor{stringliteral}{"{}cd"{}}):}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ self.cd(command.split(\textcolor{stringliteral}{"{}\ "{}},\ 1)[1])}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ command.startswith(\textcolor{stringliteral}{"{}exit"{}}):}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ self.exit()}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ command.startswith(\textcolor{stringliteral}{"{}chmod"{}}):}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ self.chmod(command.split(\textcolor{stringliteral}{"{}\ "{}},\ 2))}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ command.startswith(\textcolor{stringliteral}{"{}uptime"{}}):}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ self.uptime()}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ command.startswith(\textcolor{stringliteral}{"{}rm"{}}):}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ self.rm(command.split(\textcolor{stringliteral}{"{}\ "{}},\ 1)[1])}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ f\textcolor{stringliteral}{"{}Неизвестная\ команда:\ \{command\}"{}}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ self.log\_action(command,\ result)}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Exception\ \textcolor{keyword}{as}\ e:}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ f\textcolor{stringliteral}{"{}Ошибка\ выполнения\ команды\ '\{command\}':\ \{e\}"{}}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ print(result)}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ self.log\_action(command,\ result)}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{def\ }ls(self):}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00136\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Выводит\ содержимое\ текущей\ директории\ с\ уровнями\ доступа.}}
+\DoxyCodeLine{00137\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @return\ Список\ содержимого\ текущей\ директории.}}
+\DoxyCodeLine{00138\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ current\_level\ =\ self.get\_current\_level()}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ result\ =\ []}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ directory,\ content\ \textcolor{keywordflow}{in}\ current\_level.items():}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ directory\ \textcolor{keywordflow}{and}\ directory\ !=\ \textcolor{stringliteral}{"{}permissions"{}}:\ \ \textcolor{comment}{\#\ Это\ подкаталог}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.append(f\textcolor{stringliteral}{"{}[DIR]\ \{directory\}\ (permissions:\ \{content['permissions']\})"{}})}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ file\ \textcolor{keywordflow}{in}\ current\_level[\textcolor{stringliteral}{"{}"{}}]:\ \ \textcolor{comment}{\#\ Файлы}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ result.append(f\textcolor{stringliteral}{"{}\{file['name']\}\ (permissions:\ \{file['permissions']\})"{}})}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ output\ =\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}.join(result)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ print(output)}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{def\ }cd(self,\ path):}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00152\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Изменяет\ текущую\ директорию.}}
+\DoxyCodeLine{00153\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ path\ Новый\ путь.}}
+\DoxyCodeLine{00154\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @return\ Результат\ операции.}}
+\DoxyCodeLine{00155\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ current\_level\ =\ self.get\_current\_level()}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ path\ ==\ \textcolor{stringliteral}{"{}.."{}}:}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ self.current\_dir\ =\ \textcolor{stringliteral}{"{}/"{}}.join(self.current\_dir.rstrip(\textcolor{stringliteral}{'/'}).split(\textcolor{stringliteral}{'/'})[:-\/1])\ \textcolor{keywordflow}{or}\ \textcolor{stringliteral}{"{}/"{}}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\textcolor{stringliteral}{"{}Перешли\ в\ директорию\ \{self.current\_dir\}"{}}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ path\ \textcolor{keywordflow}{in}\ current\_level\ \textcolor{keywordflow}{and}\ path:\ \ \textcolor{comment}{\#\ Переход\ в\ подкаталог}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ self.current\_dir\ =\ f\textcolor{stringliteral}{"{}\{self.current\_dir.rstrip('/')\}/\{path\}/"{}}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\textcolor{stringliteral}{"{}Перешли\ в\ директорию\ \{self.current\_dir\}"{}}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\textcolor{stringliteral}{"{}Директория\ \{path\}\ не\ найдена."{}}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{def\ }exit(self):}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00168\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Завершает\ работу\ shell.}}
+\DoxyCodeLine{00169\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @return\ Статус\ завершения\ работы.}}
+\DoxyCodeLine{00170\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ self.running\ =\ \textcolor{keyword}{False}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Выход\ из\ системы."{}}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{def\ }chmod(self,\ args):}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Изменяет\ права\ доступа\ файла\ или\ каталога."{}"{}"{}}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ len(args)\ <\ 3:}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Неправильный\ формат\ команды\ chmod.\ Используйте:\ chmod\ <права>\ <файл/каталог>"{}}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ permissions,\ target\ =\ args[1],\ args[2]}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ current\_level\ =\ self.get\_current\_level()}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ target\ \textcolor{keywordflow}{in}\ current\_level:\ \ \textcolor{comment}{\#\ Если\ это\ подкаталог}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ current\_level[target][\textcolor{stringliteral}{"{}permissions"{}}]\ =\ permissions}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\textcolor{stringliteral}{"{}Установлены\ права\ '\{permissions\}'\ для\ каталога\ \{target\}."{}}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:\ \ \textcolor{comment}{\#\ Если\ это\ файл}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ file\ \textcolor{keywordflow}{in}\ current\_level[\textcolor{stringliteral}{"{}"{}}]:}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ file[\textcolor{stringliteral}{"{}name"{}}]\ ==\ target:}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file[\textcolor{stringliteral}{"{}permissions"{}}]\ =\ permissions}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\textcolor{stringliteral}{"{}Установлены\ права\ '\{permissions\}'\ для\ файла\ \{target\}."{}}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\textcolor{stringliteral}{"{}Файл\ или\ каталог\ \{target\}\ не\ найден\ в\ текущей\ директории."{}}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keyword}{def\ }uptime(self):}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Выводит\ время\ работы\ shell\ с\ момента\ запуска."{}"{}"{}}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ uptime\_seconds\ =\ time.time()\ -\/\ self.start\_time}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ uptime\_str\ =\ f\textcolor{stringliteral}{"{}Система\ работает\ \{uptime\_seconds:.2f\}\ секунд."{}}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ print(uptime\_str)}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ uptime\_str}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keyword}{def\ }rm(self,\ filename):}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Удаляет\ файл."{}"{}"{}}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ current\_level\ =\ self.get\_current\_level()}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ file\ \textcolor{keywordflow}{in}\ current\_level[\textcolor{stringliteral}{"{}"{}}]:}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ file[\textcolor{stringliteral}{"{}name"{}}]\ ==\ filename:}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_level[\textcolor{stringliteral}{"{}"{}}].remove(file)}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\textcolor{stringliteral}{"{}Файл\ \{filename\}\ удалён."{}}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\textcolor{stringliteral}{"{}Файл\ \{filename\}\ не\ найден\ в\ текущей\ директории."{}}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keyword}{def\ }start(self):}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Запуск\ shell."{}"{}"{}}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ self.running:}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ command\ =\ input(f\textcolor{stringliteral}{"{}\{self.computer\_name\}:\{self.current\_dir\}\$\ "{}})}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ self.execute\_command(command)}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{00215\ \ \ \ \ config\_path\ =\ \textcolor{stringliteral}{"{}config.txt"{}}}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ os.path.exists(config\_path):}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}Конфигурационный\ файл\ \{config\_path\}\ не\ найден."{}})}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ emulator\ =\ ShellEmulator(config\_path)}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ emulator.start()}
+
+\end{DoxyCode}

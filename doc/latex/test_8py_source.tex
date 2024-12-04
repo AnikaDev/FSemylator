@@ -1,0 +1,52 @@
+\doxysection{test.\+py}
+\label{test_8py_source}\index{C:/prj/python/FSemylator/task2/git/test.py@{C:/prj/python/FSemylator/task2/git/test.py}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ unittest}
+\DoxyCodeLine{00002\ \textcolor{keyword}{from}\ unittest.mock\ \textcolor{keyword}{import}\ patch,\ MagicMock,\ mock\_open}
+\DoxyCodeLine{00003\ \textcolor{keyword}{from}\ graphviz\ \textcolor{keyword}{import}\ Digraph}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ show\_commits}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }TestScript(unittest.TestCase):}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{preprocessor}{@patch("{}builtins.open"{},\ new\_callable=mock\_open,\ read\_data="{}[Settings]\(\backslash\)nrepository\_path=repo\(\backslash\)nsince\_date=2023-\/01-\/01\(\backslash\)ngraph\_output\_path=graph\(\backslash\)n"{})}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{def\ }test\_load\_config(self,\ mock\_file):}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ config\ =\ show\_commits.load\_config(\textcolor{stringliteral}{"{}config.ini"{}})}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ self.assertEqual(config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'repository\_path'}],\ \textcolor{stringliteral}{"{}repo"{}})}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ self.assertEqual(config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'since\_date'}],\ \textcolor{stringliteral}{"{}2023-\/01-\/01"{}})}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{preprocessor}{@patch("{}subprocess.run"{})}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{def\ }test\_get\_commits(self,\ mock\_subprocess):}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ mock\_subprocess.return\_value\ =\ MagicMock(}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ returncode=0,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ stdout=\textcolor{stringliteral}{"{}abc123\ 1672531200\ Anika\(\backslash\)nxyz789\ 1672617600\ Anna\(\backslash\)n"{}}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ repo\_path\ =\ \textcolor{stringliteral}{"{}repo"{}}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ since\_date\ =\ \textcolor{stringliteral}{"{}2023-\/01-\/01"{}}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ expected\ =\ [}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}xyz789"{}},\ \textcolor{stringliteral}{"{}2023-\/01-\/02\ 03:00:00"{}},\ \textcolor{stringliteral}{"{}Anna"{}}),}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}abc123"{}},\ \textcolor{stringliteral}{"{}2023-\/01-\/01\ 03:00:00"{}},\ \textcolor{stringliteral}{"{}Anika"{}})}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ commits\ =\ show\_commits.get\_commits(repo\_path,\ since\_date)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ self.assertEqual(commits,\ expected)}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{def\ }test\_build\_dependency\_graph(self):}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ commits\ =\ [}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}abc123"{}},\ \textcolor{stringliteral}{"{}2023-\/01-\/01\ 00:00:00"{}},\ \textcolor{stringliteral}{"{}Anika"{}}),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}xyz789"{}},\ \textcolor{stringliteral}{"{}2023-\/01-\/02\ 00:00:00"{}},\ \textcolor{stringliteral}{"{}Anna"{}})}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ graph\ =\ show\_commits.build\_dependency\_graph(commits)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ self.assertIn(\textcolor{stringliteral}{'abc123'},\ graph.source)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ self.assertIn(\textcolor{stringliteral}{'xyz789'},\ graph.source)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ self.assertIn(\textcolor{stringliteral}{"{}-\/>"{}},\ graph.source)\ \ \textcolor{comment}{\#\ Ensure\ edges\ are\ present}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{preprocessor}{@patch("{}graphviz.Digraph.render"{})}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{def\ }test\_save\_graph(self,\ mock\_render):}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ graph\ =\ Digraph()}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ show\_commits.save\_graph(graph,\ \textcolor{stringliteral}{"{}output"{}})}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ mock\_render.assert\_called\_once\_with(\textcolor{stringliteral}{"{}output"{}},\ format=\textcolor{stringliteral}{"{}png"{}})}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{00046\ \ \ \ \ unittest.main()}
+
+\end{DoxyCode}

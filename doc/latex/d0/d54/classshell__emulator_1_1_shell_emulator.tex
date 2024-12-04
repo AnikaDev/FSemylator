@@ -1,0 +1,105 @@
+\doxysection{Класс shell\+\_\+emulator.\+Shell\+Emulator}
+\label{classshell__emulator_1_1_shell_emulator}\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \+\_\+\+\_\+init\+\_\+\+\_\+} (self, config\+\_\+path)
+\item 
+\textbf{ load\+\_\+virtual\+\_\+fs} (self)
+\item 
+\textbf{ log\+\_\+action} (self, action, result)
+\item 
+\textbf{ run\+\_\+startup\+\_\+script} (self)
+\item 
+\textbf{ get\+\_\+current\+\_\+level} (self)
+\item 
+\textbf{ execute\+\_\+command} (self, command)
+\item 
+\textbf{ ls} (self)
+\item 
+\textbf{ cd} (self, path)
+\item 
+\textbf{ exit} (self)
+\item 
+\textbf{ chmod} (self, args)
+\item 
+\textbf{ uptime} (self)
+\item 
+\textbf{ rm} (self, filename)
+\item 
+\textbf{ start} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ config} = configparser.\+Config\+Parser()
+\item 
+\textbf{ computer\+\_\+name} = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}computer\+\_\+name\textquotesingle{}]
+\item 
+\textbf{ vfs\+\_\+path} = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}virtual\+\_\+fs\+\_\+path\textquotesingle{}]
+\item 
+\textbf{ log\+\_\+path} = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}log\+\_\+path\textquotesingle{}]
+\item 
+\textbf{ startup\+\_\+script} = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}startup\+\_\+script\textquotesingle{}]
+\item 
+dict \textbf{ vfs} = \{\}
+\item 
+str \textbf{ current\+\_\+dir} = "{}/"{}
+\item 
+bool \textbf{ running} = True
+\item 
+\textbf{ start\+\_\+time} = time.\+time()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+\begin{DoxyVerb}@brief Класс эмулятора Unix shell.
+@details Этот класс предоставляет интерфейс для работы с виртуальной файловой системой (VFS),
+         выполнения команд shell, логирования действий и работы со стартовым скриптом.
+\end{DoxyVerb}
+ 
+
+См. определение в файле \textbf{ shell\+\_\+emulator.\+py} строка \textbf{ 9}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{\_\_init\_\_()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a3d77fd463ff1ec5cf7663b437989e446} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{config\+\_\+path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Конструктор класса.
+@param config_path Путь к файлу конфигурации.
+\end{DoxyVerb}
+ 
+
+См. определение в файле \textbf{ shell\+\_\+emulator.\+py} строка \textbf{ 16}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{def\ }\_\_init\_\_(self,\ config\_path): }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{} }}
+\DoxyCodeLine{00018\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Конструктор\ класса. }}
+\DoxyCodeLine{00019\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ config\_path\ Путь\ к\ файлу\ конфигурации. }}
+\DoxyCodeLine{00020\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}} }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ self.config\ =\ configparser.ConfigParser() }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Config\ file:"{}}\ +\ config\_path) }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ self.config.read(config\_path) }
+\DoxyCodeLine{00024\  }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ self.computer\_name\ =\ self.config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'computer\_name'}] }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ self.vfs\_path\ =\ self.config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'virtual\_fs\_path'}] }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ self.log\_path\ =\ self.config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'log\_path'}] }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ self.startup\_script\ =\ self.config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'startup\_script'}] }
+\DoxyCodeLine{00029\  }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ self.vfs\ =\ \{\} }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ self.current\_dir\ =\ \textcolor{stringliteral}{"{}/"{}} }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ self.running\ =\ \textcolor{keyword}{True} }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ self.start\_time\ =\ time.time()\ \ \textcolor{comment}{\#\ Время\ запуска\ программы }}
+\DoxyCodeLine{00034\  }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ self.load\_virtual\_fs() }
+\DoxyCodeLine{00036\  }
+
+\end{DoxyCode}
+Граф вызовов\+:

@@ -1,0 +1,117 @@
+\doxysection{C\+:/prj/python/\+FSemylator/gui.py}
+\label{gui_8py_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{00002\ \textcolor{keyword}{from}\ tkinter\ \textcolor{keyword}{import}\ Tk,\ Text,\ END,\ Frame,\ Label}
+\DoxyCodeLine{00003\ \textcolor{keyword}{from}\ tkinter.scrolledtext\ \textcolor{keyword}{import}\ ScrolledText}
+\DoxyCodeLine{00004\ \textcolor{keyword}{from}\ shell\_emulator\ \textcolor{keyword}{import}\ ShellEmulator}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }ShellGUI:}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00008\ \textcolor{stringliteral}{\ \ \ \ @brief\ Графический\ интерфейс\ для\ Unix\ Shell\ Emulator.}}
+\DoxyCodeLine{00009\ \textcolor{stringliteral}{\ \ \ \ @details\ Класс\ предоставляет\ удобный\ GUI\ для\ работы\ с\ эмулятором\ shell.}}
+\DoxyCodeLine{00010\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{def\ }\_\_init\_\_(self,\ emulator):}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00014\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Конструктор\ класса.}}
+\DoxyCodeLine{00015\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ emulator\ Экземпляр\ класса\ ShellEmulator.}}
+\DoxyCodeLine{00016\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ self.emulator\ =\ emulator}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ self.root\ =\ Tk()}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ self.root.title(\textcolor{stringliteral}{"{}Unix\ Shell\ Emulator"{}})}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ self.setup\_gui()}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{def\ }setup\_gui(self):}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00024\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Настраивает\ элементы\ интерфейса.}}
+\DoxyCodeLine{00025\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Создаем\ основной\ фрейм}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ self.frame\ =\ Frame(self.root,\ bg=\textcolor{stringliteral}{"{}black"{}})}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ self.frame.pack(fill=\textcolor{stringliteral}{"{}both"{}},\ expand=\textcolor{keyword}{True})}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Метка\ с\ текущим\ состоянием\ консоли}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ self.label\ =\ Label(}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ self.frame,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ text=f\textcolor{stringliteral}{"{}\{self.emulator.computer\_name\}@shell:\string~\$"{}},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12,\ \textcolor{stringliteral}{"{}bold"{}})}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ self.label.pack(anchor=\textcolor{stringliteral}{"{}w"{}},\ padx=5,\ pady=5)}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Поле\ вывода\ (история\ выполнения\ команд)}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ self.text\ =\ ScrolledText(}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ self.frame,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ height=20,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ width=80,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}},}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ insertbackground=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12),}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ state=\textcolor{stringliteral}{"{}normal"{}}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ self.text.pack(padx=5,\ pady=5,\ fill=\textcolor{stringliteral}{"{}both"{}},\ expand=\textcolor{keyword}{True})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ self.text.tag\_configure(\textcolor{stringliteral}{"{}command"{}},\ foreground=\textcolor{stringliteral}{"{}green"{}},\ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12,\ \textcolor{stringliteral}{"{}bold"{}}))}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Поле\ ввода\ (однострочное)}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ self.entry\ =\ Text(}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ self.frame,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ height=1,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ width=80,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}},}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ insertbackground=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ self.entry.pack(padx=5,\ pady=5)}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Привязка\ клавиши\ Enter\ для\ выполнения\ команды}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ self.entry.bind(\textcolor{stringliteral}{"{}<Return>"{}},\ self.execute\_commandexecute\_command)}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ result\ =\ self.emulator.run\_startup\_script()}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ self.text.insert(END,\ f\textcolor{stringliteral}{"{}\{result\}"{}})}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{def\ }execute\_command(self,\ event=None):}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00074\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Выполняет\ команду,\ введённую\ в\ поле\ ввода.}}
+\DoxyCodeLine{00075\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ event\ Событие\ (используется\ для\ обработки\ нажатия\ клавиши\ Enter).}}
+\DoxyCodeLine{00076\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Получаем\ введенную\ команду}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ command\ =\ self.entry.get(\textcolor{stringliteral}{"{}1.0"{}},\ END).strip()}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ command:}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Выполняем\ команду\ через\ эмулятор}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ result\ =\ self.emulator.execute\_command(command)}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Выводим\ команду\ и\ результат\ в\ поле\ вывода}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ self.text.insert(END,\ f\textcolor{stringliteral}{"{}\{self.emulator.computer\_name\}@\{self.emulator.current\_dir\}:\string~\$\ \{command\}\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}command"{}})}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ self.text.insert(END,\ f\textcolor{stringliteral}{"{}\{result\}\(\backslash\)n\(\backslash\)n"{}})}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Прокручиваем\ текст\ до\ конца}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ self.text.see(END)}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Очищаем\ поле\ ввода}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ self.entry.delete(\textcolor{stringliteral}{"{}1.0"{}},\ END)}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ self.emulator.running:}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ exit(0)}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{def\ }run(self):}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00100\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Запускает\ цикл\ обработки\ событий\ GUI.}}
+\DoxyCodeLine{00101\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ self.root.mainloop()}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{00106\ \ \ \ \ config\_path\ =\ \textcolor{stringliteral}{"{}config.txt"{}}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ os.path.exists(config\_path):}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}Конфигурационный\ файл\ \{config\_path\}\ не\ найден."{}})}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ emulator\ =\ ShellEmulator(config\_path)}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ gui\ =\ ShellGUI(emulator)}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ gui.run()}
+
+\end{DoxyCode}

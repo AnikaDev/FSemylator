@@ -1,0 +1,126 @@
+\doxysection{Класс test.\+Test\+Script}
+\label{classtest_1_1_test_script}\index{test.TestScript@{test.TestScript}}
+
+
+Граф наследования\+:test.\+Test\+Script\+:
+% FIG 0
+
+
+Граф связей класса test.\+Test\+Script\+:
+% FIG 1
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ test\+\_\+load\+\_\+config} (self, mock\+\_\+file)
+\item 
+\textbf{ test\+\_\+get\+\_\+commits} (self, mock\+\_\+subprocess)
+\item 
+\textbf{ test\+\_\+build\+\_\+dependency\+\_\+graph} (self)
+\item 
+\textbf{ test\+\_\+save\+\_\+graph} (self, mock\+\_\+render)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+См. определение в файле \textbf{ test.\+py} строка \textbf{ 6}
+
+
+
+\doxysubsection{Методы}
+\index{test.TestScript@{test.TestScript}!test\_build\_dependency\_graph@{test\_build\_dependency\_graph}}
+\index{test\_build\_dependency\_graph@{test\_build\_dependency\_graph}!test.TestScript@{test.TestScript}}
+\doxysubsubsection{test\_build\_dependency\_graph()}
+{\footnotesize\ttfamily \label{classtest_1_1_test_script_a5f8d4075506694fa6ebdb9f3a8195699} 
+test.\+Test\+Script.\+test\+\_\+build\+\_\+dependency\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \textbf{ test.\+py} строка \textbf{ 29}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{def\ }test\_build\_dependency\_graph(self): }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ commits\ =\ [ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}abc123"{}},\ \textcolor{stringliteral}{"{}2023-\/01-\/01\ 00:00:00"{}},\ \textcolor{stringliteral}{"{}Anika"{}}), }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}xyz789"{}},\ \textcolor{stringliteral}{"{}2023-\/01-\/02\ 00:00:00"{}},\ \textcolor{stringliteral}{"{}Anna"{}}) }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ ] }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ graph\ =\ show\_commits.build\_dependency\_graph(commits) }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ self.assertIn(\textcolor{stringliteral}{'abc123'},\ graph.source) }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ self.assertIn(\textcolor{stringliteral}{'xyz789'},\ graph.source) }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ self.assertIn(\textcolor{stringliteral}{"{}-\/>"{}},\ graph.source)\ \ \textcolor{comment}{\#\ Ensure\ edges\ are\ present }}
+\DoxyCodeLine{00038\  }
+
+\end{DoxyCode}
+\index{test.TestScript@{test.TestScript}!test\_get\_commits@{test\_get\_commits}}
+\index{test\_get\_commits@{test\_get\_commits}!test.TestScript@{test.TestScript}}
+\doxysubsubsection{test\_get\_commits()}
+{\footnotesize\ttfamily \label{classtest_1_1_test_script_ae50703cb2de308386d391f0d4c25a57e} 
+test.\+Test\+Script.\+test\+\_\+get\+\_\+commits (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{mock\+\_\+subprocess}{}\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \textbf{ test.\+py} строка \textbf{ 15}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{def\ }test\_get\_commits(self,\ mock\_subprocess): }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ mock\_subprocess.return\_value\ =\ MagicMock( }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ returncode=0, }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ stdout=\textcolor{stringliteral}{"{}abc123\ 1672531200\ Anika\(\backslash\)nxyz789\ 1672617600\ Anna\(\backslash\)n"{}} }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ ) }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ repo\_path\ =\ \textcolor{stringliteral}{"{}repo"{}} }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ since\_date\ =\ \textcolor{stringliteral}{"{}2023-\/01-\/01"{}} }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ expected\ =\ [ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}xyz789"{}},\ \textcolor{stringliteral}{"{}2023-\/01-\/02\ 03:00:00"{}},\ \textcolor{stringliteral}{"{}Anna"{}}), }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}abc123"{}},\ \textcolor{stringliteral}{"{}2023-\/01-\/01\ 03:00:00"{}},\ \textcolor{stringliteral}{"{}Anika"{}}) }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ ] }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ commits\ =\ show\_commits.get\_commits(repo\_path,\ since\_date) }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ self.assertEqual(commits,\ expected) }
+\DoxyCodeLine{00028\  }
+
+\end{DoxyCode}
+\index{test.TestScript@{test.TestScript}!test\_load\_config@{test\_load\_config}}
+\index{test\_load\_config@{test\_load\_config}!test.TestScript@{test.TestScript}}
+\doxysubsubsection{test\_load\_config()}
+{\footnotesize\ttfamily \label{classtest_1_1_test_script_a647816930b62b52e09f456de103cd78b} 
+test.\+Test\+Script.\+test\+\_\+load\+\_\+config (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{mock\+\_\+file}{}\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \textbf{ test.\+py} строка \textbf{ 9}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{def\ }test\_load\_config(self,\ mock\_file): }
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ config\ =\ show\_commits.load\_config(\textcolor{stringliteral}{"{}config.ini"{}}) }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ self.assertEqual(config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'repository\_path'}],\ \textcolor{stringliteral}{"{}repo"{}}) }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ self.assertEqual(config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'since\_date'}],\ \textcolor{stringliteral}{"{}2023-\/01-\/01"{}}) }
+\DoxyCodeLine{00013\  }
+
+\end{DoxyCode}
+\index{test.TestScript@{test.TestScript}!test\_save\_graph@{test\_save\_graph}}
+\index{test\_save\_graph@{test\_save\_graph}!test.TestScript@{test.TestScript}}
+\doxysubsubsection{test\_save\_graph()}
+{\footnotesize\ttfamily \label{classtest_1_1_test_script_aa1768a0e89ee4648f62e8fe5bf75e236} 
+test.\+Test\+Script.\+test\+\_\+save\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{mock\+\_\+render}{}\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \textbf{ test.\+py} строка \textbf{ 40}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{def\ }test\_save\_graph(self,\ mock\_render): }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ graph\ =\ Digraph() }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ show\_commits.save\_graph(graph,\ \textcolor{stringliteral}{"{}output"{}}) }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ mock\_render.assert\_called\_once\_with(\textcolor{stringliteral}{"{}output"{}},\ format=\textcolor{stringliteral}{"{}png"{}}) }
+\DoxyCodeLine{00044\  }
+
+\end{DoxyCode}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/prj/python/\+FSemylator/task2/git/test.\+py\end{DoxyCompactItemize}

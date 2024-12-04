@@ -1,0 +1,24 @@
+# Doxyfile 1.9.1
+
+PROJECT_NAME           = "Shell Emulator Project"
+PROJECT_NUMBER         = "1.0"
+
+INPUT                  = ./
+FILE_PATTERNS          = *.py
+RECURSIVE              = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_PROTECTED      = YES
+EXTRACT_STATIC         = YES
+BRIEF_MEMBER_DESC      = YES
+OUTPUT_LANGUAGE        = Russian
+EXTENSION_MAPPING      = py=Python
+GENERATE_HTML          = YES
+GENERATE_LATEX         = YES
+HTML_OUTPUT            = html
+LATEX_OUTPUT           = latex
+HAVE_DOT               = YES
+DOT_PATH               = /usr/bin
+DOT_GRAPH_MAX_NODES    = 50
+INLINE_SOURCES         = YES
+SOURCE_BROWSER         = YES
+REFERENCES_RELATION    = YES

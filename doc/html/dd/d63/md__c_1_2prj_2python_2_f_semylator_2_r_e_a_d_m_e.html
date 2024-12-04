@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FSemylator: FSemylator</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FSemylator<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dd/d63/md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">FSemylator</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<p><a href="https://github.com/AnikaDev/FSemylator">https://github.com/AnikaDev/FSemylator</a></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+1. Общее описание</h1>
+<p>Разработать эмулятор для языка оболочки ОС. Необходимо сделать работу эмулятора как можно более похожей на сеанс shell в UNIX-подобной ОС. Эмулятор должен запускаться из реальной командной строки, а файл с виртуальной файловой системой не нужно распаковывать у пользователя. Эмулятор принимает образ виртуальной файловой системы в виде файла формата zip. Эмулятор должен работать в режиме GUI. Конфигурационный файл имеет формат ini и содержит: • Имя компьютера для показа в приглашении к вводу. • Путь к архиву виртуальной файловой системы. • Путь к лог-файлу. • Путь к стартовому скрипту. Лог-файл имеет формат json и содержит все действия во время последнего сеанса работы с эмулятором. Стартовый скрипт служит для начального выполнения заданного списка команд из файла. Необходимо поддержать в эмуляторе команды ls, cd и exit, а также следующие команды:</p><ol type="1">
+<li>chmod.</li>
+<li>uptime.</li>
+<li>rm. Все функции эмулятора должны быть покрыты тестами, а для каждой из поддерживаемых команд необходимо написать 2 теста.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md2"></a>
+2. Описание всех функций и настроек.</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Функции эмулятора</h2>
+<h3><a class="anchor" id="autotoc_md4"></a>
+<code>__init__(config_path: str)</code></h3>
+<ul>
+<li><b>Описание</b>: Инициализирует эмулятор, загружает конфигурацию, виртуальную файловую систему (VFS) и выполняет скрипт запуска.</li>
+<li><b>Параметры</b>:<ul>
+<li><code>config_path</code>: Путь к конфигурационному файлу.</li>
+</ul>
+</li>
+<li><b>Работа</b>:<ul>
+<li>Загружает конфигурации (например, имя компьютера, путь к VFS, путь к лог-файлу).</li>
+<li>Инициализирует логирование и текущую директорию.</li>
+<li>Выполняет команды из стартового скрипта.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md5"></a>
+<code>load_virtual_fs(vfs_path: str)</code></h3>
+<ul>
+<li><b>Описание</b>: Загружает виртуальную файловую систему из ZIP-архива.</li>
+<li><b>Параметры</b>:<ul>
+<li><code>vfs_path</code>: Путь к ZIP-архиву с файловой системой.</li>
+</ul>
+</li>
+<li><b>Работа</b>: Декодирует содержимое файлов и добавляет атрибуты (права доступа, тип).</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md6"></a>
+<code>ls()</code></h3>
+<ul>
+<li><b>Описание</b>: Список файлов и папок в текущей директории.</li>
+<li><b>Вывод</b>:<ul>
+<li>Названия файлов/папок, их тип (файл/директория) и права доступа.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md7"></a>
+<code>cd(path: str)</code></h3>
+<ul>
+<li><b>Описание</b>: Переходит в указанную директорию.</li>
+<li><b>Параметры</b>:<ul>
+<li><code>path</code>: Путь к директории.</li>
+</ul>
+</li>
+<li><b>Ошибки</b>:<ul>
+<li>Директория не найдена или это файл.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md8"></a>
+<code>chmod(args: List[str])</code></h3>
+<ul>
+<li><b>Описание</b>: Меняет права доступа к файлу.</li>
+<li><b>Параметры</b>:<ul>
+<li><code>args[1]</code>: Новые права доступа (например, <code>644</code>).</li>
+<li><code>args[2]</code>: Имя файла.</li>
+</ul>
+</li>
+<li><b>Ошибки</b>:<ul>
+<li>Файл не найден.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md9"></a>
+<code>rm(file_name: str)</code></h3>
+<ul>
+<li><b>Описание</b>: Удаляет файл из текущей директории.</li>
+<li><b>Параметры</b>:<ul>
+<li><code>file_name</code>: Имя файла.</li>
+</ul>
+</li>
+<li><b>Ошибки</b>:<ul>
+<li>Файл не найден или это папка.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md10"></a>
+<code>uptime()</code></h3>
+<ul>
+<li><b>Описание</b>: Показывает время работы системы в секундах.</li>
+<li><b>Вывод</b>: Строка в формате: <code>"Система работает X.XX секунд."</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md11"></a>
+<code>exit()</code></h3>
+<ul>
+<li><b>Описание</b>: Завершает работу эмулятора.</li>
+<li><b>Вывод</b>: <code>"Выход из системы."</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md12"></a>
+<code>log_command(command: str, output: str)</code></h3>
+<ul>
+<li><b>Описание</b>: Логирует команды пользователя и их результаты.</li>
+<li><b>Параметры</b>:<ul>
+<li><code>command</code>: Имя команды.</li>
+<li><code>output</code>: Результат выполнения команды.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Настройки программы</h2>
+<h3><a class="anchor" id="autotoc_md14"></a>
+Конфигурационный файл (<code>config.txt</code>)</h3>
+<ul>
+<li><b>Формат</b>: INI.</li>
+<li><b>Содержимое</b>: ```ini [Settings] computer_name = TestMachine virtual_fs_path = test_fs.zip log_path = test_log.json startup_script = test_startup.txt</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md15"></a>
+3. Описание команд для запуска проекта.</h1>
+<p>shell: python <a class="el" href="../../df/d3f/shell__emulator_8py_source.html">shell_emulator.py</a></p>
+<p>GUI version1: python gui1.py</p>
+<p>GUI version2 (требует pip install windows-curses) python gui2.py</p>
+<h1><a class="anchor" id="autotoc_md16"></a>
+4. Примеры использования в виде скриншотов</h1>
+<p>GUI версия 1 <img src="../../img/e01.jpg" alt="GUI версия 1" class="inline"/></p>
+<p>GUI версия 2 (windows-curses) <img src="../../img/e02.png" alt="GUI версия 2" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md17"></a>
+5. Результаты прогона тестов.</h1>
+<p>python <a class="el" href="../../d8/d94/tests_8py_source.html">tests.py</a> Testing started at 23:32 ... Launching unittests with arguments python -m unittest <a class="el" href="../../d6/d41/classtests_1_1_test_shell_emulator.html">tests.TestShellEmulator</a> in C:\prj\python\FSemylator</p>
+<p>Config <a href="file:test_config.txt">file:test_config.txt</a> Запуск команды из скрипта: ls</p>
+<p>[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config <a href="file:test_config.txt">file:test_config.txt</a> Запуск команды из скрипта: ls</p>
+<p>[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config <a href="file:test_config.txt">file:test_config.txt</a> Запуск команды из скрипта: ls</p>
+<p>[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config <a href="file:test_config.txt">file:test_config.txt</a> Запуск команды из скрипта: ls</p>
+<p>[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) [DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Система работает 0.00 секунд. Config <a href="file:test_config.txt">file:test_config.txt</a> Запуск команды из скрипта: ls</p>
+<p>[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) [DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config <a href="file:test_config.txt">file:test_config.txt</a> Запуск команды из скрипта: ls</p>
+<p>[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config <a href="file:test_config.txt">file:test_config.txt</a> Запуск команды из скрипта: ls</p>
+<p>[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config <a href="file:test_config.txt">file:test_config.txt</a> Запуск команды из скрипта: ls</p>
+<p>[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Система работает 0.00 секунд.</p>
+<p>Ran 8 tests in 0.095s</p>
+<p>OK </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

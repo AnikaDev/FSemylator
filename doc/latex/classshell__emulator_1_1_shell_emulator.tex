@@ -1,0 +1,366 @@
+\doxysection{shell\+\_\+emulator.\+Shell\+Emulator Class Reference}
+\label{classshell__emulator_1_1_shell_emulator}\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \+\_\+\+\_\+init\+\_\+\+\_\+} (self, config\+\_\+path)
+\item 
+\textbf{ load\+\_\+virtual\+\_\+fs} (self)
+\item 
+\textbf{ log\+\_\+action} (self, action, result)
+\item 
+\textbf{ run\+\_\+startup\+\_\+script} (self)
+\item 
+\textbf{ get\+\_\+current\+\_\+level} (self)
+\item 
+\textbf{ execute\+\_\+command} (self, command)
+\item 
+\textbf{ ls} (self)
+\item 
+\textbf{ cd} (self, path)
+\item 
+\textbf{ exit} (self)
+\item 
+\textbf{ chmod} (self, args)
+\item 
+\textbf{ uptime} (self)
+\item 
+\textbf{ rm} (self, filename)
+\item 
+\textbf{ start} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ config} = configparser.\+Config\+Parser()
+\item 
+\textbf{ computer\+\_\+name} = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}computer\+\_\+name\textquotesingle{}]
+\item 
+\textbf{ vfs\+\_\+path} = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}virtual\+\_\+fs\+\_\+path\textquotesingle{}]
+\item 
+\textbf{ log\+\_\+path} = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}log\+\_\+path\textquotesingle{}]
+\item 
+\textbf{ startup\+\_\+script} = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}startup\+\_\+script\textquotesingle{}]
+\item 
+dict \textbf{ vfs} = \{\}
+\item 
+str \textbf{ current\+\_\+dir} = "{}/"{}
+\item 
+bool \textbf{ running} = True
+\item 
+\textbf{ start\+\_\+time} = time.\+time()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@brief Класс эмулятора Unix shell.
+@details Этот класс предоставляет интерфейс для работы с виртуальной файловой системой (VFS),
+         выполнения команд shell, логирования действий и работы со стартовым скриптом.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 9} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{\_\_init\_\_()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a3d77fd463ff1ec5cf7663b437989e446} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{config\+\_\+path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Конструктор класса.
+@param config_path Путь к файлу конфигурации.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 16} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+\doxysubsection{Member Function Documentation}
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!cd@{cd}}
+\index{cd@{cd}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{cd()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_ad197b23f25593714fffd7da933ca4e23} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+cd (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Изменяет текущую директорию.
+@param path Новый путь.
+@return Результат операции.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 150} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!chmod@{chmod}}
+\index{chmod@{chmod}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{chmod()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a7d2dccc274916bd0085aedf5aec02d7b} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+chmod (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{args}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Изменяет права доступа файла или каталога.\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 174} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!execute\_command@{execute\_command}}
+\index{execute\_command@{execute\_command}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{execute\_command()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a70a22165877cc7374591ac5b43ad396b} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+execute\+\_\+command (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{command}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Обрабатывает команды shell.
+@param command Команда shell.
+@return Результат выполнения команды.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 106} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!exit@{exit}}
+\index{exit@{exit}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{exit()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a2c60272a6098039defcef040b5b7e79f} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+exit (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Завершает работу shell.
+@return Статус завершения работы.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 166} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!get\_current\_level@{get\_current\_level}}
+\index{get\_current\_level@{get\_current\_level}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{get\_current\_level()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a011c735af80ca4023f91485345ea001a} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+get\+\_\+current\+\_\+level (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Возвращает текущую директорию.
+@return Текущая директория в формате словаря.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 94} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!load\_virtual\_fs@{load\_virtual\_fs}}
+\index{load\_virtual\_fs@{load\_virtual\_fs}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{load\_virtual\_fs()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_ae0d293fec6623a82a3e91fcda223fcf1} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+load\+\_\+virtual\+\_\+fs (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Загрузка виртуальной файловой системы из ZIP-архива.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 37} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!log\_action@{log\_action}}
+\index{log\_action@{log\_action}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{log\_action()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a0edb4884ac68d58248d3306271048ce0} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+log\+\_\+action (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{action}{, }\item[{}]{result}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Логирует действие и результат выполнения.
+@param action Действие или команда.
+@param result Результат выполнения действия.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 63} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the caller graph for this function\+:
+% FIG 10
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!ls@{ls}}
+\index{ls@{ls}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{ls()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a41cb94a5aae8b29f579c60123d425601} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+ls (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Выводит содержимое текущей директории с уровнями доступа.
+@return Список содержимого текущей директории.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 134} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!rm@{rm}}
+\index{rm@{rm}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{rm()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a48f84d43b771106260cd4bc7a0fabc12} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+rm (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{filename}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Удаляет файл.\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 198} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!run\_startup\_script@{run\_startup\_script}}
+\index{run\_startup\_script@{run\_startup\_script}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{run\_startup\_script()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a9932c4ab10184127c0176c6083e1abc5} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+run\+\_\+startup\+\_\+script (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Выполняет команды из стартового скрипта.
+@return Лог выполнения команд скрипта.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 77} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the call graph for this function\+:
+% FIG 15
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!start@{start}}
+\index{start@{start}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{start()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_aabd5663b6f142b6413bcd90aab8de5db} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+start (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Запуск shell.\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 207} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the call graph for this function\+:
+% FIG 16
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!uptime@{uptime}}
+\index{uptime@{uptime}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{uptime()}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a95c760e36a4c6d59fd24b055aa3628e7} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+uptime (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Выводит время работы shell с момента запуска.\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 191} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+Here is the caller graph for this function\+:
+% FIG 17
+
+
+\doxysubsection{Member Data Documentation}
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!computer\_name@{computer\_name}}
+\index{computer\_name@{computer\_name}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{computer\_name}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_aa3f6ed780c7fbde1187a625bc3aad4b1} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+computer\+\_\+name = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}computer\+\_\+name\textquotesingle{}]}
+
+
+
+Definition at line \textbf{ 25} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!config@{config}}
+\index{config@{config}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{config}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_af5c13c8846236c2a215ab06cef2097f5} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+config = configparser.\+Config\+Parser()}
+
+
+
+Definition at line \textbf{ 21} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!current\_dir@{current\_dir}}
+\index{current\_dir@{current\_dir}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{current\_dir}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_af1325673ea049c11718986451cedf87c} 
+str shell\+\_\+emulator.\+Shell\+Emulator.\+current\+\_\+dir = "{}/"{}}
+
+
+
+Definition at line \textbf{ 31} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!log\_path@{log\_path}}
+\index{log\_path@{log\_path}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{log\_path}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_ae21d21820eb8a56eccdcfd6b597270c4} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+log\+\_\+path = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}log\+\_\+path\textquotesingle{}]}
+
+
+
+Definition at line \textbf{ 27} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!running@{running}}
+\index{running@{running}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{running}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a21265590b9a17aa6f0d8dcf5b4e0b528} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+running = True}
+
+
+
+Definition at line \textbf{ 32} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!start\_time@{start\_time}}
+\index{start\_time@{start\_time}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{start\_time}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a2eae187188192a47c40e727a37e34081} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+start\+\_\+time = time.\+time()}
+
+
+
+Definition at line \textbf{ 33} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!startup\_script@{startup\_script}}
+\index{startup\_script@{startup\_script}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{startup\_script}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_ad9abb568692bd7767d3596c92066ac6e} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+startup\+\_\+script = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}startup\+\_\+script\textquotesingle{}]}
+
+
+
+Definition at line \textbf{ 28} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!vfs@{vfs}}
+\index{vfs@{vfs}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{vfs}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_aa6726491c22b51f608c4623af4a7df4b} 
+dict shell\+\_\+emulator.\+Shell\+Emulator.\+vfs = \{\}}
+
+
+
+Definition at line \textbf{ 30} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+\index{shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}!vfs\_path@{vfs\_path}}
+\index{vfs\_path@{vfs\_path}!shell\_emulator.ShellEmulator@{shell\_emulator.ShellEmulator}}
+\doxysubsubsection{vfs\_path}
+{\footnotesize\ttfamily \label{classshell__emulator_1_1_shell_emulator_a34ed1a3a170febdf10b8a1de68ca1064} 
+shell\+\_\+emulator.\+Shell\+Emulator.\+vfs\+\_\+path = self.\+config[\textquotesingle{}Settings\textquotesingle{}][\textquotesingle{}virtual\+\_\+fs\+\_\+path\textquotesingle{}]}
+
+
+
+Definition at line \textbf{ 26} of file \textbf{ shell\+\_\+emulator.\+py}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/prj/python/\+FSemylator/shell\+\_\+emulator.\+py\end{DoxyCompactItemize}

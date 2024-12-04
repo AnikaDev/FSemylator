@@ -1,0 +1,2937 @@
+{\rtf1\ansi\ansicpg1251\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset204\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset204\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset204\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;\red0\green128\blue0;\red96\green64\blue32;\rede0\green128\blue0;\red128\green0\blue0;\red128\green96\blue32;\red0\green32\blue128;\red0\green128\blue128;\red255\green0\blue255;\red0\green0\blue0;\red112\green0\blue112;\red255\green0\blue0;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\paperw11900\paperh16840\margl1800\margr1800\margt1440\margb1440\gutter0\ltrsect}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs16\cgrid \sbasedon0 \snext0 heading 5;}{\*\cs10 \additive Default Paragraph Font;}
+{\s6\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs12\cgrid \sbasedon0 \snext0 heading 6;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext50 Code Example 9;}
+{\s50\li3600\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext51 Code Example 10;}
+{\s51\li3960\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext52 Code Example 11;}
+{\s52\li4320\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 12;}
+{\s53\li4680\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 13;}
+{\s60\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext61 List Continue 0;}
+{\s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext62 List Continue 1;}
+{\s62\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext63 List Continue 2;}
+{\s63\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext64 List Continue 3;}
+{\s64\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext65 List Continue 4;}
+{\s65\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext66 List Continue 5;}
+{\s66\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext67 List Continue 6;}
+{\s67\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext68 List Continue 7;}
+{\s68\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext69 List Continue 8;}
+{\s69\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext70 List Continue 9;}
+{\s70\li3600\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext71 List Continue 10;}
+{\s71\li3960\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext72 List Continue 11;}
+{\s72\li4320\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 12;}
+{\s73\li4680\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 13;}
+{\s80\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext81 DescContinue 0;}
+{\s81\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext82 DescContinue 1;}
+{\s82\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext83 DescContinue 2;}
+{\s83\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext84 DescContinue 3;}
+{\s84\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext85 DescContinue 4;}
+{\s85\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext86 DescContinue 5;}
+{\s86\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext87 DescContinue 6;}
+{\s87\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext88 DescContinue 7;}
+{\s88\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext89 DescContinue 8;}
+{\s89\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext90 DescContinue 9;}
+{\s90\li3600\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext91 DescContinue 10;}
+{\s91\li3960\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext92 DescContinue 11;}
+{\s92\li4320\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 12;}
+{\s93\li4680\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 13;}
+{\s100\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext101 LatexTOC 0;}
+{\s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext102 LatexTOC 1;}
+{\s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext103 LatexTOC 2;}
+{\s103\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext104 LatexTOC 3;}
+{\s104\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext105 LatexTOC 4;}
+{\s105\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext106 LatexTOC 5;}
+{\s106\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext107 LatexTOC 6;}
+{\s107\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext108 LatexTOC 7;}
+{\s108\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext109 LatexTOC 8;}
+{\s109\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext110 LatexTOC 9;}
+{\s110\li3600\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext111 LatexTOC 10;}
+{\s111\li3960\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext112 LatexTOC 11;}
+{\s112\li4320\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 12;}
+{\s113\li4680\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 13;}
+{\s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext121 \sautoupd List Bullet 0;}
+{\s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext122 \sautoupd List Bullet 1;}
+{\s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext123 \sautoupd List Bullet 2;}
+{\s123\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext124 \sautoupd List Bullet 3;}
+{\s124\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext125 \sautoupd List Bullet 4;}
+{\s125\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext126 \sautoupd List Bullet 5;}
+{\s126\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext127 \sautoupd List Bullet 6;}
+{\s127\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext128 \sautoupd List Bullet 7;}
+{\s128\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext129 \sautoupd List Bullet 8;}
+{\s129\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext130 \sautoupd List Bullet 9;}
+{\s130\fi-360\li3960\widctlpar\jclisttab\tx3960{\*\pn \pnlvlbody\ilvl0\ls11\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext131 \sautoupd List Bullet 10;}
+{\s131\fi-360\li4320\widctlpar\jclisttab\tx4320{\*\pn \pnlvlbody\ilvl0\ls12\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext132 \sautoupd List Bullet 11;}
+{\s132\fi-360\li4680\widctlpar\jclisttab\tx4680{\*\pn \pnlvlbody\ilvl0\ls13\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 12;}
+{\s133\fi-360\li5040\widctlpar\jclisttab\tx5040{\*\pn \pnlvlbody\ilvl0\ls14\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 13;}
+{\s140\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext141 \sautoupd List Enum 0;}
+{\s141\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext142 \sautoupd List Enum 1;}
+{\s142\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext143 \sautoupd List Enum 2;}
+{\s143\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext144 \sautoupd List Enum 3;}
+{\s144\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext145 \sautoupd List Enum 4;}
+{\s145\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext146 \sautoupd List Enum 5;}
+{\s146\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext147 \sautoupd List Enum 6;}
+{\s147\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext148 \sautoupd List Enum 7;}
+{\s148\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext149 \sautoupd List Enum 8;}
+{\s149\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext150 \sautoupd List Enum 9;}
+{\s150\fi-360\li3960\widctlpar\fs20\cgrid \sbasedon0 \snext151 \sautoupd List Enum 10;}
+{\s151\fi-360\li4320\widctlpar\fs20\cgrid \sbasedon0 \snext152 \sautoupd List Enum 11;}
+{\s152\fi-360\li4680\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 12;}
+{\s153\fi-360\li5040\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 13;}
+}
+{\*\listtable
+{\list\listtemplateid1
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u8226 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li360 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9702 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li720 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9642 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1080 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u8226 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1440 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9702 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1800 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9642 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2160 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u8662 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2520 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9702 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2880 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9642 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li3600 }
+\listid1}
+{\list\listtemplateid2
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li360 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li720 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1080 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1440 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1800 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2160 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2520 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2880 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9744 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li3600 }
+\listid2}
+{\list\listtemplateid3
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li360 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li720 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1080 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1440 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li1800 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2160 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2520 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li2880 }
+{ \listlevel\levelnfc23\leveljc0\levelstartat1\levelfollow0{\leveltext \'01\u9746 ?;}{\levelnumbers;}\f8\dbch\af3\fi-360\li3600 }
+\listid3}
+}
+{\listoverridetable
+{\listoverride\listid1\listoverridecount0\ls1}
+{\listoverride\listid2\listoverridecount0\ls2}
+{\listoverride\listid3\listoverridecount0\ls3}
+}
+{\info 
+{\title {\comment FSemylator  {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+1.0 \par
+}}FSemylator}
+{\comment \'D1\'EE\'E7\'E4\'E0\'ED\'EE \'F1\'E8\'F1\'F2\'E5\'EC\'EE\'E9 doxygen 1.12.0.}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt FSemylator}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+\'C2\'E5\'F0\'F1\'E8\'FF 1.0\par\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \'CE\'E3\'EB\'E0\'E2\'EB\'E5\'ED\'E8\'E5\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\par \pard\plain 
+\par \pard\plain 
+\pard\plain \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+FSemylator\par \pard\plain 
+{\tc\tcl1 \v FSemylator}
+{\xe \v FSemylator}
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+\par
+{\f2 https://github.com/AnikaDev/FSemylator}\par
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+1. \'CE\'E1\'F9\'E5\'E5 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'E5
+\par}
+{\tc\tcl2 \v 1. \'CE\'E1\'F9\'E5\'E5 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'E5}
+\'D0\'E0\'E7\'F0\'E0\'E1\'EE\'F2\'E0\'F2\'FC \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0 \'E4\'EB\'FF \'FF\'E7\'FB\'EA\'E0 \'EE\'E1\'EE\'EB\'EE\'F7\'EA\'E8 \'CE\'D1. \'CD\'E5\'EE\'E1\'F5\'EE\'E4\'E8\'EC\'EE \'F1\'E4\'E5\'EB\'E0\'F2\'FC \'F0\'E0\'E1\'EE\'F2\'F3 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'E0 \'EA\'E0\'EA \'EC\'EE\'E6\'ED\'EE \'E1\'EE\'EB\'E5\'E5 \'EF\'EE\'F5\'EE\'E6\'E5\'E9 \'ED\'E0 \'F1\'E5\'E0\'ED\'F1 shell \'E2 UNIX-\'EF\'EE\'E4\'EE\'E1\'ED\'EE\'E9 \'CE\'D1. \'DD\'EC\'F3\'EB\'FF\'F2\'EE\'F0 \'E4\'EE\'EB\'E6\'E5\'ED \'E7\'E0\'EF\'F3\'F1\'EA\'E0\'F2\'FC\'F1\'FF \'E8\'E7 \'F0\'E5\'E0\'EB\'FC\'ED\'EE\'E9 \'EA\'EE\'EC\'E0\'ED\'E4\'ED\'EE\'E9 \'F1\'F2\'F0\'EE\'EA\'E8, \'E0 \'F4\'E0\'E9\'EB \'F1 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'EE\'E9 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'EE\'E9 \'ED\'E5 \'ED\'F3\'E6\'ED\'EE \'F0\'E0\'F1\'EF\'E0\'EA\'EE\'E2\'FB\'E2\'E0\'F2\'FC \'F3 \'EF\'EE\'EB\'FC\'E7\'EE\'E2\'E0\'F2\'E5\'EB\'FF. \'DD\'EC\'F3\'EB\'FF\'F2\'EE\'F0 \'EF\'F0\'E8\'ED\'E8\'EC\'E0\'E5\'F2 \'EE\'E1\'F0\'E0\'E7 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'EE\'E9 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'FB \'E2 \'E2\'E8\'E4\'E5 \'F4\'E0\'E9\'EB\'E0 \'F4\'EE\'F0\'EC\'E0\'F2\'E0 zip. \'DD\'EC\'F3\'EB\'FF\'F2\'EE\'F0 \'E4\'EE\'EB\'E6\'E5\'ED \'F0\'E0\'E1\'EE\'F2\'E0\'F2\'FC \'E2 \'F0\'E5\'E6\'E8\'EC\'E5 GUI. \'CA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'EE\'ED\'ED\'FB\'E9 \'F4\'E0\'E9\'EB \'E8\'EC\'E5\'E5\'F2 \'F4\'EE\'F0\'EC\'E0\'F2 ini \'E8 \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'F2: \'95 \'C8\'EC\'FF \'EA\'EE\'EC\'EF\'FC\'FE\'F2\'E5\'F0\'E0 \'E4\'EB\'FF \'EF\'EE\'EA\'E0\'E7\'E0 \'E2 \'EF\'F0\'E8\'E3\'EB\'E0\'F8\'E5\'ED\'E8\'E8 \'EA \'E2\'E2\'EE\'E4\'F3. \'95 \'CF\'F3\'F2\'FC \'EA \'E0\'F0\'F5\'E8\'E2\'F3 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'EE\'E9 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'FB. \'95 \'CF\'F3\'F2\'FC \'EA \'EB\'EE\'E3-\'F4\'E0\'E9\'EB\'F3. \'95 \'CF\'F3\'F2\'FC \'EA \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'EE\'EC\'F3 \'F1\'EA\'F0\'E8\'EF\'F2\'F3. \'CB\'EE\'E3-\'F4\'E0\'E9\'EB \'E8\'EC\'E5\'E5\'F2 \'F4\'EE\'F0\'EC\'E0\'F2 json \'E8 \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'F2 \'E2\'F1\'E5 \'E4\'E5\'E9\'F1\'F2\'E2\'E8\'FF \'E2\'EE \'E2\'F0\'E5\'EC\'FF \'EF\'EE\'F1\'EB\'E5\'E4\'ED\'E5\'E3\'EE \'F1\'E5\'E0\'ED\'F1\'E0 \'F0\'E0\'E1\'EE\'F2\'FB \'F1 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'EE\'EC. \'D1\'F2\'E0\'F0\'F2\'EE\'E2\'FB\'E9 \'F1\'EA\'F0\'E8\'EF\'F2 \'F1\'EB\'F3\'E6\'E8\'F2 \'E4\'EB\'FF \'ED\'E0\'F7\'E0\'EB\'FC\'ED\'EE\'E3\'EE \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'E7\'E0\'E4\'E0\'ED\'ED\'EE\'E3\'EE \'F1\'EF\'E8\'F1\'EA\'E0 \'EA\'EE\'EC\'E0\'ED\'E4 \'E8\'E7 \'F4\'E0\'E9\'EB\'E0. \'CD\'E5\'EE\'E1\'F5\'EE\'E4\'E8\'EC\'EE \'EF\'EE\'E4\'E4\'E5\'F0\'E6\'E0\'F2\'FC \'E2 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'E5 \'EA\'EE\'EC\'E0\'ED\'E4\'FB ls, cd \'E8 exit, \'E0 \'F2\'E0\'EA\'E6\'E5 \'F1\'EB\'E5\'E4\'F3\'FE\'F9\'E8\'E5 \'EA\'EE\'EC\'E0\'ED\'E4\'FB:{
+\par
+\pard\plain \s140\fi-360\li360\widctlpar\fs20\cgrid 
+1.\tab chmod.\par
+\pard\plain \s140\fi-360\li360\widctlpar\fs20\cgrid 
+2.\tab uptime.\par
+\pard\plain \s140\fi-360\li360\widctlpar\fs20\cgrid 
+3.\tab rm. \'C2\'F1\'E5 \'F4\'F3\'ED\'EA\'F6\'E8\'E8 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'E0 \'E4\'EE\'EB\'E6\'ED\'FB \'E1\'FB\'F2\'FC \'EF\'EE\'EA\'F0\'FB\'F2\'FB \'F2\'E5\'F1\'F2\'E0\'EC\'E8, \'E0 \'E4\'EB\'FF \'EA\'E0\'E6\'E4\'EE\'E9 \'E8\'E7 \'EF\'EE\'E4\'E4\'E5\'F0\'E6\'E8\'E2\'E0\'E5\'EC\'FB\'F5 \'EA\'EE\'EC\'E0\'ED\'E4 \'ED\'E5\'EE\'E1\'F5\'EE\'E4\'E8\'EC\'EE \'ED\'E0\'EF\'E8\'F1\'E0\'F2\'FC 2 \'F2\'E5\'F1\'F2\'E0.\par}
+\par
+\par}
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+2. \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5 \'E2\'F1\'E5\'F5 \'F4\'F3\'ED\'EA\'F6\'E8\'E9 \'E8 \'ED\'E0\'F1\'F2\'F0\'EE\'E5\'EA.
+\par}
+{\tc\tcl2 \v 2. \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5 \'E2\'F1\'E5\'F5 \'F4\'F3\'ED\'EA\'F6\'E8\'E9 \'E8 \'ED\'E0\'F1\'F2\'F0\'EE\'E5\'EA.}
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{{\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'D4\'F3\'ED\'EA\'F6\'E8\'E8 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'E0
+\par}
+{\tc\tcl3 \v \'D4\'F3\'ED\'EA\'F6\'E8\'E8 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'E0}
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+{\f2 __init__(config_path: str)} 
+\par}
+{\tc\tcl4 \v {\f2 __init__(config_path: str)} }
+{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5} : \'C8\'ED\'E8\'F6\'E8\'E0\'EB\'E8\'E7\'E8\'F0\'F3\'E5\'F2 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0, \'E7\'E0\'E3\'F0\'F3\'E6\'E0\'E5\'F2 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'FE, \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'F3\'FE \'F4\'E0\'E9\'EB\'EE\'E2\'F3\'FE \'F1\'E8\'F1\'F2\'E5\'EC\'F3 (VFS) \'E8 \'E2\'FB\'EF\'EE\'EB\'ED\'FF\'E5\'F2 \'F1\'EA\'F0\'E8\'EF\'F2 \'E7\'E0\'EF\'F3\'F1\'EA\'E0.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CF\'E0\'F0\'E0\'EC\'E5\'F2\'F0\'FB} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\f2 config_path} : \'CF\'F3\'F2\'FC \'EA \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'EE\'ED\'ED\'EE\'EC\'F3 \'F4\'E0\'E9\'EB\'F3.\par}
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'D0\'E0\'E1\'EE\'F2\'E0} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+\'C7\'E0\'E3\'F0\'F3\'E6\'E0\'E5\'F2 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8 (\'ED\'E0\'EF\'F0\'E8\'EC\'E5\'F0, \'E8\'EC\'FF \'EA\'EE\'EC\'EF\'FC\'FE\'F2\'E5\'F0\'E0, \'EF\'F3\'F2\'FC \'EA VFS, \'EF\'F3\'F2\'FC \'EA \'EB\'EE\'E3-\'F4\'E0\'E9\'EB\'F3).\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+\'C8\'ED\'E8\'F6\'E8\'E0\'EB\'E8\'E7\'E8\'F0\'F3\'E5\'F2 \'EB\'EE\'E3\'E8\'F0\'EE\'E2\'E0\'ED\'E8\'E5 \'E8 \'F2\'E5\'EA\'F3\'F9\'F3\'FE \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+\'C2\'FB\'EF\'EE\'EB\'ED\'FF\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'EE\'E3\'EE \'F1\'EA\'F0\'E8\'EF\'F2\'E0.\par}
+}
+\par
+\par}
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+{\f2 load_virtual_fs(vfs_path: str)} 
+\par}
+{\tc\tcl4 \v {\f2 load_virtual_fs(vfs_path: str)} }
+{
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5} : \'C7\'E0\'E3\'F0\'F3\'E6\'E0\'E5\'F2 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'F3\'FE \'F4\'E0\'E9\'EB\'EE\'E2\'F3\'FE \'F1\'E8\'F1\'F2\'E5\'EC\'F3 \'E8\'E7 ZIP-\'E0\'F0\'F5\'E8\'E2\'E0.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CF\'E0\'F0\'E0\'EC\'E5\'F2\'F0\'FB} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\f2 vfs_path} : \'CF\'F3\'F2\'FC \'EA ZIP-\'E0\'F0\'F5\'E8\'E2\'F3 \'F1 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'EE\'E9.\par}
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'D0\'E0\'E1\'EE\'F2\'E0} : \'C4\'E5\'EA\'EE\'E4\'E8\'F0\'F3\'E5\'F2 \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'EC\'EE\'E5 \'F4\'E0\'E9\'EB\'EE\'E2 \'E8 \'E4\'EE\'E1\'E0\'E2\'EB\'FF\'E5\'F2 \'E0\'F2\'F0\'E8\'E1\'F3\'F2\'FB (\'EF\'F0\'E0\'E2\'E0 \'E4\'EE\'F1\'F2\'F3\'EF\'E0, \'F2\'E8\'EF).\par}
+\par
+\par}
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+{\f2 ls()} 
+\par}
+{\tc\tcl4 \v {\f2 ls()} }
+{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5} : \'D1\'EF\'E8\'F1\'EE\'EA \'F4\'E0\'E9\'EB\'EE\'E2 \'E8 \'EF\'E0\'EF\'EE\'EA \'E2 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'C2\'FB\'E2\'EE\'E4} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+\'CD\'E0\'E7\'E2\'E0\'ED\'E8\'FF \'F4\'E0\'E9\'EB\'EE\'E2/\'EF\'E0\'EF\'EE\'EA, \'E8\'F5 \'F2\'E8\'EF (\'F4\'E0\'E9\'EB/\'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FF) \'E8 \'EF\'F0\'E0\'E2\'E0 \'E4\'EE\'F1\'F2\'F3\'EF\'E0.\par}
+}
+\par
+\par}
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+{\f2 cd(path: str)} 
+\par}
+{\tc\tcl4 \v {\f2 cd(path: str)} }
+{
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5} : \'CF\'E5\'F0\'E5\'F5\'EE\'E4\'E8\'F2 \'E2 \'F3\'EA\'E0\'E7\'E0\'ED\'ED\'F3\'FE \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CF\'E0\'F0\'E0\'EC\'E5\'F2\'F0\'FB} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\f2 path} : \'CF\'F3\'F2\'FC \'EA \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8.\par}
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'F8\'E8\'E1\'EA\'E8} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+\'C4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FF \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED\'E0 \'E8\'EB\'E8 \'FD\'F2\'EE \'F4\'E0\'E9\'EB.\par}
+}
+\par
+\par}
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+{\f2 chmod(args: List[str])} 
+\par}
+{\tc\tcl4 \v {\f2 chmod(args: List[str])} }
+{
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5} : \'CC\'E5\'ED\'FF\'E5\'F2 \'EF\'F0\'E0\'E2\'E0 \'E4\'EE\'F1\'F2\'F3\'EF\'E0 \'EA \'F4\'E0\'E9\'EB\'F3.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CF\'E0\'F0\'E0\'EC\'E5\'F2\'F0\'FB} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\f2 args[1]} : \'CD\'EE\'E2\'FB\'E5 \'EF\'F0\'E0\'E2\'E0 \'E4\'EE\'F1\'F2\'F3\'EF\'E0 (\'ED\'E0\'EF\'F0\'E8\'EC\'E5\'F0, {\f2 644} ).\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\f2 args[2]} : \'C8\'EC\'FF \'F4\'E0\'E9\'EB\'E0.\par}
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'F8\'E8\'E1\'EA\'E8} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+\'D4\'E0\'E9\'EB \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED.\par}
+}
+\par
+\par}
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+{\f2 rm(file_name: str)} 
+\par}
+{\tc\tcl4 \v {\f2 rm(file_name: str)} }
+{
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5} : \'D3\'E4\'E0\'EB\'FF\'E5\'F2 \'F4\'E0\'E9\'EB \'E8\'E7 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CF\'E0\'F0\'E0\'EC\'E5\'F2\'F0\'FB} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\f2 file_name} : \'C8\'EC\'FF \'F4\'E0\'E9\'EB\'E0.\par}
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'F8\'E8\'E1\'EA\'E8} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+\'D4\'E0\'E9\'EB \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED \'E8\'EB\'E8 \'FD\'F2\'EE \'EF\'E0\'EF\'EA\'E0.\par}
+}
+\par
+\par}
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+{\f2 uptime()} 
+\par}
+{\tc\tcl4 \v {\f2 uptime()} }
+{
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5} : \'CF\'EE\'EA\'E0\'E7\'FB\'E2\'E0\'E5\'F2 \'E2\'F0\'E5\'EC\'FF \'F0\'E0\'E1\'EE\'F2\'FB \'F1\'E8\'F1\'F2\'E5\'EC\'FB \'E2 \'F1\'E5\'EA\'F3\'ED\'E4\'E0\'F5.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'C2\'FB\'E2\'EE\'E4} : \'D1\'F2\'F0\'EE\'EA\'E0 \'E2 \'F4\'EE\'F0\'EC\'E0\'F2\'E5: {\f2 "\'D1\'E8\'F1\'F2\'E5\'EC\'E0 \'F0\'E0\'E1\'EE\'F2\'E0\'E5\'F2 X.XX \'F1\'E5\'EA\'F3\'ED\'E4."} \par}
+\par
+\par}
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+{\f2 exit()} 
+\par}
+{\tc\tcl4 \v {\f2 exit()} }
+{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5} : \'C7\'E0\'E2\'E5\'F0\'F8\'E0\'E5\'F2 \'F0\'E0\'E1\'EE\'F2\'F3 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'E0.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'C2\'FB\'E2\'EE\'E4} : {\f2 "\'C2\'FB\'F5\'EE\'E4 \'E8\'E7 \'F1\'E8\'F1\'F2\'E5\'EC\'FB."} \par}
+\par
+\par}
+{\bkmkstart AAAAAAAAAS}
+{\bkmkend AAAAAAAAAS}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+{\f2 log_command(command: str, output: str)} 
+\par}
+{\tc\tcl4 \v {\f2 log_command(command: str, output: str)} }
+{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5} : \'CB\'EE\'E3\'E8\'F0\'F3\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'EF\'EE\'EB\'FC\'E7\'EE\'E2\'E0\'F2\'E5\'EB\'FF \'E8 \'E8\'F5 \'F0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2\'FB.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'CF\'E0\'F0\'E0\'EC\'E5\'F2\'F0\'FB} :{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\f2 command} : \'C8\'EC\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'FB.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\f2 output} : \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'FB.\par}
+}
+\par
+\par}
+\par}
+{\bkmkstart AAAAAAAAAT}
+{\bkmkend AAAAAAAAAT}
+{{\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CD\'E0\'F1\'F2\'F0\'EE\'E9\'EA\'E8 \'EF\'F0\'EE\'E3\'F0\'E0\'EC\'EC\'FB
+\par}
+{\tc\tcl3 \v \'CD\'E0\'F1\'F2\'F0\'EE\'E9\'EA\'E8 \'EF\'F0\'EE\'E3\'F0\'E0\'EC\'EC\'FB}
+{\bkmkstart AAAAAAAAAU}
+{\bkmkend AAAAAAAAAU}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+\'CA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'EE\'ED\'ED\'FB\'E9 \'F4\'E0\'E9\'EB ({\f2 config.txt} )
+\par}
+{\tc\tcl4 \v \'CA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'EE\'ED\'ED\'FB\'E9 \'F4\'E0\'E9\'EB ({\f2 config.txt} )}
+{
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'D4\'EE\'F0\'EC\'E0\'F2} : INI.\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+{\b \'D1\'EE\'E4\'E5\'F0\'E6\'E8\'EC\'EE\'E5} : ```ini [Settings] computer_name = TestMachine virtual_fs_path = test_fs.zip log_path = test_log.json startup_script = test_startup.txt\par}
+\par
+\par}
+\par}
+\par}
+{\bkmkstart AAAAAAAAAV}
+{\bkmkend AAAAAAAAAV}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+3. \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5 \'EA\'EE\'EC\'E0\'ED\'E4 \'E4\'EB\'FF \'E7\'E0\'EF\'F3\'F1\'EA\'E0 \'EF\'F0\'EE\'E5\'EA\'F2\'E0.
+\par}
+{\tc\tcl2 \v 3. \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5 \'EA\'EE\'EC\'E0\'ED\'E4 \'E4\'EB\'FF \'E7\'E0\'EF\'F3\'F1\'EA\'E0 \'EF\'F0\'EE\'E5\'EA\'F2\'E0.}
+shell: python {\b shell_emulator.py}\par
+GUI version1: python gui1.py\par
+GUI version2 (\'F2\'F0\'E5\'E1\'F3\'E5\'F2 pip install windows-curses) python gui2.py\par}
+{\bkmkstart AAAAAAAAAW}
+{\bkmkend AAAAAAAAAW}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+4. \'CF\'F0\'E8\'EC\'E5\'F0\'FB \'E8\'F1\'EF\'EE\'EB\'FC\'E7\'EE\'E2\'E0\'ED\'E8\'FF \'E2 \'E2\'E8\'E4\'E5 \'F1\'EA\'F0\'E8\'ED\'F8\'EE\'F2\'EE\'E2
+\par}
+{\tc\tcl2 \v 4. \'CF\'F0\'E8\'EC\'E5\'F0\'FB \'E8\'F1\'EF\'EE\'EB\'FC\'E7\'EE\'E2\'E0\'ED\'E8\'FF \'E2 \'E2\'E8\'E4\'E5 \'F1\'EA\'F0\'E8\'ED\'F8\'EE\'F2\'EE\'E2}
+GUI \'E2\'E5\'F0\'F1\'E8\'FF 1 \par
+GUI \'E2\'E5\'F0\'F1\'E8\'FF 2 (windows-curses) \par}
+{\bkmkstart AAAAAAAAAX}
+{\bkmkend AAAAAAAAAX}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+5. \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2\'FB \'EF\'F0\'EE\'E3\'EE\'ED\'E0 \'F2\'E5\'F1\'F2\'EE\'E2.
+\par}
+{\tc\tcl2 \v 5. \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2\'FB \'EF\'F0\'EE\'E3\'EE\'ED\'E0 \'F2\'E5\'F1\'F2\'EE\'E2.}
+python {\b tests.py} Testing started at 23:32 ... Launching unittests with arguments python -m unittest {\b tests.TestShellEmulator} in C:\\prj\\python\\FSemylator\par
+Config {\f2 file:test_config.txt} \'C7\'E0\'EF\'F3\'F1\'EA \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'EA\'F0\'E8\'EF\'F2\'E0: ls\par
+[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config {\f2 file:test_config.txt} \'C7\'E0\'EF\'F3\'F1\'EA \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'EA\'F0\'E8\'EF\'F2\'E0: ls\par
+[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config {\f2 file:test_config.txt} \'C7\'E0\'EF\'F3\'F1\'EA \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'EA\'F0\'E8\'EF\'F2\'E0: ls\par
+[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config {\f2 file:test_config.txt} \'C7\'E0\'EF\'F3\'F1\'EA \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'EA\'F0\'E8\'EF\'F2\'E0: ls\par
+[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) [DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) \'D1\'E8\'F1\'F2\'E5\'EC\'E0 \'F0\'E0\'E1\'EE\'F2\'E0\'E5\'F2 0.00 \'F1\'E5\'EA\'F3\'ED\'E4. Config {\f2 file:test_config.txt} \'C7\'E0\'EF\'F3\'F1\'EA \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'EA\'F0\'E8\'EF\'F2\'E0: ls\par
+[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) [DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config {\f2 file:test_config.txt} \'C7\'E0\'EF\'F3\'F1\'EA \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'EA\'F0\'E8\'EF\'F2\'E0: ls\par
+[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config {\f2 file:test_config.txt} \'C7\'E0\'EF\'F3\'F1\'EA \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'EA\'F0\'E8\'EF\'F2\'E0: ls\par
+[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) Config {\f2 file:test_config.txt} \'C7\'E0\'EF\'F3\'F1\'EA \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'EA\'F0\'E8\'EF\'F2\'E0: ls\par
+[DIR] dir1 (permissions: 755) test_file.txt (permissions: 644) \'D1\'E8\'F1\'F2\'E5\'EC\'E0 \'F0\'E0\'E1\'EE\'F2\'E0\'E5\'F2 0.00 \'F1\'E5\'EA\'F3\'ED\'E4.\par
+Ran 8 tests in 0.095s\par
+OK \par}
+}}
+\par \pard\plain 
+\pard\plain \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+readme\par \pard\plain 
+{\tc\tcl1 \v readme}
+{\xe \v readme}
+{\bkmkstart AAAAAAAAAY}
+{\bkmkend AAAAAAAAAY}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s140\fi-360\li360\widctlpar\fs20\cgrid 
+1.\tab \'CE\'E1\'F9\'E5\'E5 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'E5. \'D0\'E0\'E7\'F0\'E0\'E1\'EE\'F2\'E0\'F2\'FC \'E8\'ED\'F1\'F2\'F0\'F3\'EC\'E5\'ED\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'ED\'EE\'E9 \'F1\'F2\'F0\'EE\'EA\'E8 \'E4\'EB\'FF \'E2\'E8\'E7\'F3\'E0\'EB\'E8\'E7\'E0\'F6\'E8\'E8 \'E3\'F0\'E0\'F4\'E0 \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9, \'E2\'EA\'EB\'FE\'F7\'E0\'FF \'F2\'F0\'E0\'ED\'E7\'E8\'F2\'E8\'E2\'ED\'FB\'E5 \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E8. \'D1\'F2\'EE\'F0\'EE\'ED\'ED\'E8\'E5 \'F1\'F0\'E5\'E4\'F1\'F2\'E2\'E0 \'E4\'EB\'FF \'EF\'EE\'EB\'F3\'F7\'E5\'ED\'E8\'FF \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9 \'E8\'F1\'EF\'EE\'EB\'FC\'E7\'EE\'E2\'E0\'F2\'FC \'ED\'E5\'EB\'FC\'E7\'FF. 80 \'C7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E8 \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'FF\'FE\'F2\'F1\'FF \'E4\'EB\'FF git-\'F0\'E5\'EF\'EE\'E7\'E8\'F2\'EE\'F0\'E8\'FF. \'C4\'EB\'FF \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'FF \'E3\'F0\'E0\'F4\'E0 \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9 \'E8\'F1\'EF\'EE\'EB\'FC\'E7\'F3\'E5\'F2\'F1\'FF \'EF\'F0\'E5\'E4\'F1\'F2\'E0\'E2\'EB\'E5\'ED\'E8\'E5 Graphviz. \'C2\'E8\'E7\'F3\'E0\'EB\'E8\'E7\'E0\'F2\'EE\'F0 \'E4\'EE\'EB\'E6\'E5\'ED \'E2\'FB\'E2\'EE\'E4\'E8\'F2\'FC \'F0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'ED\'E0 \'FD\'EA\'F0\'E0\'ED \'E2 \'E2\'E8\'E4\'E5 \'EA\'EE\'E4\'E0. \'CF\'EE\'F1\'F2\'F0\'EE\'E8\'F2\'FC \'E3\'F0\'E0\'F4 \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9 \'E4\'EB\'FF \'EA\'EE\'EC\'EC\'E8\'F2\'EE\'E2, \'E2 \'F3\'E7\'EB\'E0\'F5 \'EA\'EE\'F2\'EE\'F0\'EE\'E3\'EE \'F1\'EE\'E4\'E5\'F0\'E6\'E0\'F2\'F1\'FF \'E4\'E0\'F2\'E0, \'E2\'F0\'E5\'EC\'FF \'E8 \'E0\'E2\'F2\'EE\'F0 \'EA\'EE\'EC\'EC\'E8\'F2\'E0. \'CA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'EE\'ED\'ED\'FB\'E9 \'F4\'E0\'E9\'EB \'E8\'EC\'E5\'E5\'F2 \'F4\'EE\'F0\'EC\'E0\'F2 toml \'E8 \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'F2: \'95 \'CF\'F3\'F2\'FC \'EA \'EF\'F0\'EE\'E3\'F0\'E0\'EC\'EC\'E5 \'E4\'EB\'FF \'E2\'E8\'E7\'F3\'E0\'EB\'E8\'E7\'E0\'F6\'E8\'E8 \'E3\'F0\'E0\'F4\'EE\'E2. \'95 \'CF\'F3\'F2\'FC \'EA \'E0\'ED\'E0\'EB\'E8\'E7\'E8\'F0\'F3\'E5\'EC\'EE\'EC\'F3 \'F0\'E5\'EF\'EE\'E7\'E8\'F2\'EE\'F0\'E8\'FE. \'95 \'CF\'F3\'F2\'FC \'EA \'F4\'E0\'E9\'EB\'F3-\'F0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2\'F3 \'E2 \'E2\'E8\'E4\'E5 \'EA\'EE\'E4\'E0. \'C2\'F1\'E5 \'F4\'F3\'ED\'EA\'F6\'E8\'E8 \'E2\'E8\'E7\'F3\'E0\'EB\'E8\'E7\'E0\'F2\'EE\'F0\'E0 \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9 \'E4\'EE\'EB\'E6\'ED\'FB \'E1\'FB\'F2\'FC \'EF\'EE\'EA\'F0\'FB\'F2\'FB \'F2\'E5\'F1\'F2\'E0\'EC\'E8.\par
+\pard\plain \s140\fi-360\li360\widctlpar\fs20\cgrid 
+2.\tab \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5 \'E2\'F1\'E5\'F5 \'F4\'F3\'ED\'EA\'F6\'E8\'E9 \'E8 \'ED\'E0\'F1\'F2\'F0\'EE\'E5\'EA. \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5 \'F4\'F3\'ED\'EA\'F6\'E8\'E9 load_config(config_file: str) -> dict\par}
+\par
+\'C7\'E0\'E3\'F0\'F3\'E6\'E0\'E5\'F2 \'ED\'E0\'F1\'F2\'F0\'EE\'E9\'EA\'E8 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8 \'E8\'E7 \'F3\'EA\'E0\'E7\'E0\'ED\'ED\'EE\'E3\'EE INI-\'F4\'E0\'E9\'EB\'E0. \'C0\'F0\'E3\'F3\'EC\'E5\'ED\'F2\'FB: config_file: \'CF\'F3\'F2\'FC \'EA INI-\'F4\'E0\'E9\'EB\'F3 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8. \'C2\'EE\'E7\'E2\'F0\'E0\'F9\'E0\'E5\'F2: \'D1\'EB\'EE\'E2\'E0\'F0\'FC, \'F1\'EE\'E4\'E5\'F0\'E6\'E0\'F9\'E8\'E9 \'ED\'E0\'F1\'F2\'F0\'EE\'E9\'EA\'E8 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8. \'CF\'EE\'E2\'E5\'E4\'E5\'ED\'E8\'E5: \'D7\'E8\'F2\'E0\'E5\'F2 INI-\'F4\'E0\'E9\'EB \'E8 \'EF\'E0\'F0\'F1\'E8\'F2 \'E5\'E3\'EE \'F1\'E5\'EA\'F6\'E8\'E8 \'E8 \'EF\'E0\'F0\'E0\'EC\'E5\'F2\'F0\'FB. get_commits(repo_path: str, since_date: str) -> List[Tuple[str, str]]\par
+\'C8\'E7\'E2\'EB\'E5\'EA\'E0\'E5\'F2 \'F1\'EF\'E8\'F1\'EE\'EA \'EA\'EE\'EC\'EC\'E8\'F2\'EE\'E2 \'E8\'E7 \'F3\'EA\'E0\'E7\'E0\'ED\'ED\'EE\'E3\'EE Git-\'F0\'E5\'EF\'EE\'E7\'E8\'F2\'EE\'F0\'E8\'FF \'F1 \'E7\'E0\'E4\'E0\'ED\'ED\'EE\'E9 \'E4\'E0\'F2\'FB. \'C0\'F0\'E3\'F3\'EC\'E5\'ED\'F2\'FB: repo_path: \'CF\'F3\'F2\'FC \'EA Git-\'F0\'E5\'EF\'EE\'E7\'E8\'F2\'EE\'F0\'E8\'FE. since_date: \'D1\'F2\'F0\'EE\'EA\'E0 \'E4\'E0\'F2\'FB (\'ED\'E0\'EF\'F0\'E8\'EC\'E5\'F0, "2023-01-01"), \'ED\'E0\'F7\'E8\'ED\'E0\'FF \'F1 \'EA\'EE\'F2\'EE\'F0\'EE\'E9 \'ED\'F3\'E6\'ED\'EE \'EF\'EE\'EB\'F3\'F7\'E8\'F2\'FC \'E8\'F1\'F2\'EE\'F0\'E8\'FE \'EA\'EE\'EC\'EC\'E8\'F2\'EE\'E2. \'C2\'EE\'E7\'E2\'F0\'E0\'F9\'E0\'E5\'F2: \'D1\'EF\'E8\'F1\'EE\'EA \'EA\'EE\'F0\'F2\'E5\'E6\'E5\'E9. \'CA\'E0\'E6\'E4\'FB\'E9 \'EA\'EE\'F0\'F2\'E5\'E6 \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'F2: \'D5\'FD\'F8 \'EA\'EE\'EC\'EC\'E8\'F2\'E0. \'C4\'E0\'F2\'F3 \'EA\'EE\'EC\'EC\'E8\'F2\'E0 \'E2 \'F4\'EE\'F0\'EC\'E0\'F2\'E5 "YYYY-MM-DD HH:MM
+". \'C0\'E2\'F2\'EE\'F0\'E0 \'EA\'EE\'EC\'EC\'E8\'F2\'E0. \'C8\'F1\'EA\'EB\'FE\'F7\'E5\'ED\'E8\'FF: \'C2\'FB\'E7\'FB\'E2\'E0\'E5\'F2 \'E8\'F1\'EA\'EB\'FE\'F7\'E5\'ED\'E8\'E5, \'E5\'F1\'EB\'E8 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'E5 \'EA\'EE\'EC\'E0\'ED\'E4\'FB Git \'E7\'E0\'E2\'E5\'F0\'F8\'E0\'E5\'F2\'F1\'FF \'F1 \'EE\'F8\'E8\'E1\'EA\'EE\'E9. build_dependency_graph(commits: List[Tuple[str, str]]) -> Digraph\par
+\'D1\'EE\'E7\'E4\'E0\'E5\'F2 \'E3\'F0\'E0\'F4 \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9 \'EA\'EE\'EC\'EC\'E8\'F2\'EE\'E2 \'F1 \'E8\'F1\'EF\'EE\'EB\'FC\'E7\'EE\'E2\'E0\'ED\'E8\'E5\'EC Graphviz. \'C0\'F0\'E3\'F3\'EC\'E5\'ED\'F2\'FB: commits: \'D1\'EF\'E8\'F1\'EE\'EA \'E4\'E0\'ED\'ED\'FB\'F5 \'EE \'EA\'EE\'EC\'EC\'E8\'F2\'E0\'F5 \'E2 \'F5\'F0\'EE\'ED\'EE\'EB\'EE\'E3\'E8\'F7\'E5\'F1\'EA\'EE\'EC \'EF\'EE\'F0\'FF\'E4\'EA\'E5 (\'F5\'FD\'F8 \'EA\'EE\'EC\'EC\'E8\'F2\'E0, \'E4\'E0\'F2\'E0, \'E0\'E2\'F2\'EE\'F0). \'C2\'EE\'E7\'E2\'F0\'E0\'F9\'E0\'E5\'F2: \'CE\'E1\'FA\'E5\'EA\'F2 Digraph, \'EF\'F0\'E5\'E4\'F1\'F2\'E0\'E2\'EB\'FF\'FE\'F9\'E8\'E9 \'E3\'F0\'E0\'F4 \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9. \'CF\'EE\'E2\'E5\'E4\'E5\'ED\'E8\'E5: \'D1\'EE\'E7\'E4\'E0\'E5\'F2 \'F3\'E7\'E5\'EB \'E4\'EB\'FF \'EA\'E0\'E6\'E4\'EE\'E3\'EE \'EA\'EE\'EC\'EC\'E8\'F2\'E0 \'E8 \'F1\'EE\'E5\'E4\'E8\'ED\'FF\'E5\'F2 \'E8\'F5 \'E2 \'F5\'F0\'EE\'ED\'EE\'EB\'EE\'E3\'E8\'F7\'E5\'F1\'EA\'EE\'EC \'EF\'EE\'F0\'FF\'E4\'EA\'E5. save_graph(graph: Digraph, output_file: str) -> None\par
+\'D1\'EE\'F5\'F0\'E0\'ED\'FF\'E5\'F2 \'F1\'E3\'E5\'ED\'E5\'F0\'E8\'F0\'EE\'E2\'E0\'ED\'ED\'FB\'E9 \'E3\'F0\'E0\'F4 \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9 \'E2 \'F4\'E0\'E9\'EB \'F4\'EE\'F0\'EC\'E0\'F2\'E0 PNG. \'C0\'F0\'E3\'F3\'EC\'E5\'ED\'F2\'FB: graph: \'CE\'E1\'FA\'E5\'EA\'F2 Digraph, \'EA\'EE\'F2\'EE\'F0\'FB\'E9 \'ED\'F3\'E6\'ED\'EE \'F1\'EE\'F5\'F0\'E0\'ED\'E8\'F2\'FC. output_file: \'CF\'F3\'F2\'FC \'EA \'F4\'E0\'E9\'EB\'F3 \'E4\'EB\'FF \'F1\'EE\'F5\'F0\'E0\'ED\'E5\'ED\'E8\'FF (\'E1\'E5\'E7 \'F0\'E0\'F1\'F8\'E8\'F0\'E5\'ED\'E8\'FF). \'CF\'EE\'E2\'E5\'E4\'E5\'ED\'E8\'E5: \'D1\'EE\'F5\'F0\'E0\'ED\'FF\'E5\'F2 \'E3\'F0\'E0\'F4 \'E2 \'F4\'EE\'F0\'EC\'E0\'F2\'E5 PNG \'EF\'EE \'F3\'EA\'E0\'E7\'E0\'ED\'ED\'EE\'EC\'F3 \'EF\'F3\'F2\'E8. main(config_file: str) -> None\par
+\'C3\'EB\'E0\'E2\'ED\'E0\'FF \'F4\'F3\'ED\'EA\'F6\'E8\'FF, \'EA\'EE\'F2\'EE\'F0\'E0\'FF \'EE\'F0\'E3\'E0\'ED\'E8\'E7\'F3\'E5\'F2 \'E7\'E0\'E3\'F0\'F3\'E7\'EA\'F3 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8, \'E8\'E7\'E2\'EB\'E5\'F7\'E5\'ED\'E8\'E5 \'EA\'EE\'EC\'EC\'E8\'F2\'EE\'E2, \'F1\'EE\'E7\'E4\'E0\'ED\'E8\'E5 \'E3\'F0\'E0\'F4\'E0 \'E8 \'E5\'E3\'EE \'F1\'EE\'F5\'F0\'E0\'ED\'E5\'ED\'E8\'E5. \'C0\'F0\'E3\'F3\'EC\'E5\'ED\'F2\'FB: config_file: \'CF\'F3\'F2\'FC \'EA INI-\'F4\'E0\'E9\'EB\'F3 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8. \'CF\'EE\'E2\'E5\'E4\'E5\'ED\'E8\'E5: \'C7\'E0\'E3\'F0\'F3\'E6\'E0\'E5\'F2 \'ED\'E0\'F1\'F2\'F0\'EE\'E9\'EA\'E8, \'EF\'EE\'EB\'F3\'F7\'E0\'E5\'F2 \'E4\'E0\'ED\'ED\'FB\'E5 \'EE \'EA\'EE\'EC\'EC\'E8\'F2\'E0\'F5, \'F1\'F2\'F0\'EE\'E8\'F2 \'E3\'F0\'E0\'F4 \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9 \'E8 \'F1\'EE\'F5\'F0\'E0\'ED\'FF\'E5\'F2 \'E5\'E3\'EE. \'CD\'E0\'F1\'F2\'F0\'EE\'E9\'EA\'E8 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'EE\'ED\'ED\'EE\'E3\'EE \'F4\'E0\'E9\'EB\'E0 \'CA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'EE\'ED\'ED\'FB\'E9 \'F4\'E0\'E9\'EB (config.ini) \'E4\'EE\'EB\'E6\'E5\'ED \'F1\'EE\'E4\'E5\'F0\'E6\'E0\'F2\'FC \'F1\'EB\'E5\'E4\'F3\'FE\'F9\'E8\'E5 \'F1\'E5\'EA\'F6\'E8\'E8 \'E8 \'EA\'EB\'FE\'F7\'E8:\par
+[Settings] repository_path=C:/prj/python/FSemylator/.git graph_output_path=C:/prj/python/FSemylator/task2/git/out since_date=2024-11-01 graphviz=C:\\Program Files\\Graphviz\\bin\par
+{
+\par
+\pard\plain \s140\fi-360\li360\widctlpar\fs20\cgrid 
+1.\tab \'CE\'EF\'E8\'F1\'E0\'ED\'E8\'E5 \'EA\'EE\'EC\'E0\'ED\'E4 \'E4\'EB\'FF \'F1\'E1\'EE\'F0\'EA\'E8 \'EF\'F0\'EE\'E5\'EA\'F2\'E0. python show_commits pip install graphviz \'E8 \'F3\'F1\'F2\'E0\'ED\'EE\'E2\'E8\'F2\'FC \'F1\'E0\'EC\'F3 \'EF\'F0\'EE\'E3\'F0\'E0\'EC\'EC\'F3 Graphviz\par
+\pard\plain \s140\fi-360\li360\widctlpar\fs20\cgrid 
+2.\tab \'CF\'F0\'E8\'EC\'E5\'F0\'FB \'E8\'F1\'EF\'EE\'EB\'FC\'E7\'EE\'E2\'E0\'ED\'E8\'FF \'E2 \'E2\'E8\'E4\'E5 \'F1\'EA\'F0\'E8\'ED\'F8\'EE\'F2\'EE\'E2, \'E6\'E5\'EB\'E0\'F2\'E5\'EB\'FC\'ED\'EE \'E2 \'E0\'ED\'E8\'EC\'E8\'F0\'EE\'E2\'E0\'ED\'ED\'EE\'EC/\'E2\'E8\'E4\'E5\'EE \'F4\'EE\'F0\'EC\'E0\'F2\'E5, \'E4\'EE\'F1\'F2\'F3\'EF\'ED\'EE\'EC \'E4\'EB\'FF web-\'EF\'F0\'EE\'F1\'EC\'EE\'F2\'F0\'E0. \par
+\pard\plain \s140\fi-360\li360\widctlpar\fs20\cgrid 
+3.\tab \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2\'FB \'EF\'F0\'EE\'E3\'EE\'ED\'E0 \'F2\'E5\'F1\'F2\'EE\'E2. Testing started at 19:15 ... Launching unittests with arguments python -m unittest C:\\prj\\python\\FSemylator\\task2\\git\\test.py in C:\\prj\\python\\FSemylator\\task2\\git\par}
+\par
+result: abc123 1672531200 Anika xyz789 1672617600 Anna\par
+Ran 4 tests in 0.010s \par
+}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\'C8\'E5\'F0\'E0\'F0\'F5\'E8\'F7\'E5\'F1\'EA\'E8\'E9 \'F1\'EF\'E8\'F1\'EE\'EA \'EA\'EB\'E0\'F1\'F1\'EE\'E2\par \pard\plain 
+{\tc \v \'C8\'E5\'F0\'E0\'F0\'F5\'E8\'F7\'E5\'F1\'EA\'E8\'E9 \'F1\'EF\'E8\'F1\'EE\'EA \'EA\'EB\'E0\'F1\'F1\'EE\'E2}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\'C8\'E5\'F0\'E0\'F0\'F5\'E8\'FF \'EA\'EB\'E0\'F1\'F1\'EE\'E2\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid \'C8\'E5\'F0\'E0\'F0\'F5\'E8\'FF \'EA\'EB\'E0\'F1\'F1\'EE\'E2.}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+shell_emulator.ShellEmulator\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABL \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+gui.ShellGUI\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAZ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+unittest.TestCase
+{
+\par
+\pard\plain \s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+test.TestScript\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAACI \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+tests.TestShellEmulator\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAACN \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+}\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\'C0\'EB\'F4\'E0\'E2\'E8\'F2\'ED\'FB\'E9 \'F3\'EA\'E0\'E7\'E0\'F2\'E5\'EB\'FC \'EA\'EB\'E0\'F1\'F1\'EE\'E2\par \pard\plain 
+{\tc \v \'C0\'EB\'F4\'E0\'E2\'E8\'F2\'ED\'FB\'E9 \'F3\'EA\'E0\'E7\'E0\'F2\'E5\'EB\'FC \'EA\'EB\'E0\'F1\'F1\'EE\'E2}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\'CA\'EB\'E0\'F1\'F1\'FB\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid \'CA\'EB\'E0\'F1\'F1\'FB \'F1 \'E8\'F5 \'EA\'F0\'E0\'F2\'EA\'E8\'EC \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'E5\'EC.}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b shell_emulator.ShellEmulator} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABL \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b gui.ShellGUI} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAZ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b test.TestScript} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAACI \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b tests.TestShellEmulator} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAACN \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\'D1\'EF\'E8\'F1\'EE\'EA \'F4\'E0\'E9\'EB\'EE\'E2\par \pard\plain 
+{\tc \v \'D1\'EF\'E8\'F1\'EE\'EA \'F4\'E0\'E9\'EB\'EE\'E2}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\'D4\'E0\'E9\'EB\'FB\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid \'CF\'EE\'EB\'ED\'FB\'E9 \'F1\'EF\'E8\'F1\'EE\'EA \'E4\'EE\'EA\'F3\'EC\'E5\'ED\'F2\'E8\'F0\'EE\'E2\'E0\'ED\'ED\'FB\'F5 \'F4\'E0\'E9\'EB\'EE\'E2.}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b C:/prj/python/FSemylator/{\b gui.py} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAA \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b C:/prj/python/FSemylator/{\b shell_emulator.py} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b C:/prj/python/FSemylator/{\b tests.py} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAE \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b C:/prj/python/FSemylator/task2/git/{\b show_commits.py} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAC \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b C:/prj/python/FSemylator/task2/git/{\b test.py} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAD \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\'CA\'EB\'E0\'F1\'F1\'FB{\tc \v \'CA\'EB\'E0\'F1\'F1\'FB}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\'CA\'EB\'E0\'F1\'F1 shell_emulator.ShellEmulator\par \pard\plain 
+{\tc\tcl2 \v shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator}
+{\bkmkstart AAAAAAAABL}
+{\bkmkend AAAAAAAABL}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CE\'F2\'EA\'F0\'FB\'F2\'FB\'E5 \'F7\'EB\'E5\'ED\'FB\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __init__} (self, config_path)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b load_virtual_fs} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b log_action} (self, action, result)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b run_startup_script} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b get_current_level} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b execute_command} (self, command)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ls} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b cd} (self, path)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b exit} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b chmod} (self, args)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b uptime} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b rm} (self, filename)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b start} (self)\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CE\'F2\'EA\'F0\'FB\'F2\'FB\'E5 \'E0\'F2\'F0\'E8\'E1\'F3\'F2\'FB\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b config} = configparser.ConfigParser()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b computer_name} = self.config['Settings']['computer_name']\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b vfs_path} = self.config['Settings']['virtual_fs_path']\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b log_path} = self.config['Settings']['log_path']\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b startup_script} = self.config['Settings']['startup_script']\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+dict {\b vfs} = \{\}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+str {\b current_dir} = "/"\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b running} = True\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b start_time} = time.time()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CF\'EE\'E4\'F0\'EE\'E1\'ED\'EE\'E5 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'E5\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'CA\'EB\'E0\'F1\'F1 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'E0 Unix shell.\par
+@details \'DD\'F2\'EE\'F2 \'EA\'EB\'E0\'F1\'F1 \'EF\'F0\'E5\'E4\'EE\'F1\'F2\'E0\'E2\'EB\'FF\'E5\'F2 \'E8\'ED\'F2\'E5\'F0\'F4\'E5\'E9\'F1 \'E4\'EB\'FF \'F0\'E0\'E1\'EE\'F2\'FB \'F1 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'EE\'E9 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'EE\'E9 (VFS),\par
+         \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4 shell, \'EB\'EE\'E3\'E8\'F0\'EE\'E2\'E0\'ED\'E8\'FF \'E4\'E5\'E9\'F1\'F2\'E2\'E8\'E9 \'E8 \'F0\'E0\'E1\'EE\'F2\'FB \'F1\'EE \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'FB\'EC \'F1\'EA\'F0\'E8\'EF\'F2\'EE\'EC.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 9}}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CA\'EE\'ED\'F1\'F2\'F0\'F3\'EA\'F2\'EE\'F0(\'FB)\par
+\pard\plain 
+{\xe \v __init__\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.__init__ ( self,  config_path)}}
+\par
+{\bkmkstart AAAAAAAABM}
+{\bkmkend AAAAAAAABM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'CA\'EE\'ED\'F1\'F2\'F0\'F3\'EA\'F2\'EE\'F0 \'EA\'EB\'E0\'F1\'F1\'E0.\par
+@param config_path \'CF\'F3\'F2\'FC \'EA \'F4\'E0\'E9\'EB\'F3 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 16}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00016     {\cf17 def }__init__(self, config_path):\par
+00017         {\cf22 """}\par
+00018 {\cf22         @brief \'CA\'EE\'ED\'F1\'F2\'F0\'F3\'EA\'F2\'EE\'F0 \'EA\'EB\'E0\'F1\'F1\'E0.}\par
+00019 {\cf22         @param config_path \'CF\'F3\'F2\'FC \'EA \'F4\'E0\'E9\'EB\'F3 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8.}\par
+00020 {\cf22         """}\par
+00021         self.config = configparser.ConfigParser()\par
+00022         print({\cf22 "Config file:"} + config_path)\par
+00023         self.config.read(config_path)\par
+00024 \par
+00025         self.computer_name = self.config[{\cf22 'Settings'}][{\cf22 'computer_name'}]\par
+00026         self.vfs_path = self.config[{\cf22 'Settings'}][{\cf22 'virtual_fs_path'}]\par
+00027         self.log_path = self.config[{\cf22 'Settings'}][{\cf22 'log_path'}]\par
+00028         self.startup_script = self.config[{\cf22 'Settings'}][{\cf22 'startup_script'}]\par
+00029 \par
+00030         self.vfs = \{\}\par
+00031         self.current_dir = {\cf22 "/"}\par
+00032         self.running = {\cf17 True}\par
+00033         self.start_time = time.time()  {\cf20 # \'C2\'F0\'E5\'EC\'FF \'E7\'E0\'EF\'F3\'F1\'EA\'E0 \'EF\'F0\'EE\'E3\'F0\'E0\'EC\'EC\'FB}\par
+00034 \par
+00035         self.load_virtual_fs()\par
+00036 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'EE\'E2:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a3d77fd463ff1ec5cf7663b437989e446_cgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CC\'E5\'F2\'EE\'E4\'FB\par
+\pard\plain 
+{\xe \v cd\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:cd}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.cd ( self,  path)}}
+\par
+{\bkmkstart AAAAAAAABN}
+{\bkmkend AAAAAAAABN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'C8\'E7\'EC\'E5\'ED\'FF\'E5\'F2 \'F2\'E5\'EA\'F3\'F9\'F3\'FE \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE.\par
+@param path \'CD\'EE\'E2\'FB\'E9 \'EF\'F3\'F2\'FC.\par
+@return \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'EE\'EF\'E5\'F0\'E0\'F6\'E8\'E8.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 150}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00150     {\cf17 def }cd(self, path):\par
+00151         {\cf22 """}\par
+00152 {\cf22         @brief \'C8\'E7\'EC\'E5\'ED\'FF\'E5\'F2 \'F2\'E5\'EA\'F3\'F9\'F3\'FE \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE.}\par
+00153 {\cf22         @param path \'CD\'EE\'E2\'FB\'E9 \'EF\'F3\'F2\'FC.}\par
+00154 {\cf22         @return \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'EE\'EF\'E5\'F0\'E0\'F6\'E8\'E8.}\par
+00155 {\cf22         """}\par
+00156         current_level = self.get_current_level()\par
+00157         {\cf19 if} path == {\cf22 ".."}:\par
+00158             self.current_dir = {\cf22 "/"}.join(self.current_dir.rstrip({\cf22 '/'}).split({\cf22 '/'})[:-1]) {\cf19 or} {\cf22 "/"}\par
+00159             {\cf19 return} f{\cf22 "\'CF\'E5\'F0\'E5\'F8\'EB\'E8 \'E2 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE \{self.current_dir\}"}\par
+00160         {\cf19 elif} path {\cf19 in} current_level {\cf19 and} path:  {\cf20 # \'CF\'E5\'F0\'E5\'F5\'EE\'E4 \'E2 \'EF\'EE\'E4\'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00161             self.current_dir = f{\cf22 "\{self.current_dir.rstrip('/')\}/\{path\}/"}\par
+00162             {\cf19 return} f{\cf22 "\'CF\'E5\'F0\'E5\'F8\'EB\'E8 \'E2 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE \{self.current_dir\}"}\par
+00163         {\cf19 else}:\par
+00164             {\cf19 return} f{\cf22 "\'C4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FF \{path\} \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED\'E0."}\par
+00165 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'EE\'E2:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_ad197b23f25593714fffd7da933ca4e23_cgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_ad197b23f25593714fffd7da933ca4e23_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v chmod\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:chmod}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.chmod ( self,  args)}}
+\par
+{\bkmkstart AAAAAAAABO}
+{\bkmkend AAAAAAAABO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \'C8\'E7\'EC\'E5\'ED\'FF\'E5\'F2 \'EF\'F0\'E0\'E2\'E0 \'E4\'EE\'F1\'F2\'F3\'EF\'E0 \'F4\'E0\'E9\'EB\'E0 \'E8\'EB\'E8 \'EA\'E0\'F2\'E0\'EB\'EE\'E3\'E0.}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 174}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00174     {\cf17 def }chmod(self, args):\par
+00175         {\cf22 """\'C8\'E7\'EC\'E5\'ED\'FF\'E5\'F2 \'EF\'F0\'E0\'E2\'E0 \'E4\'EE\'F1\'F2\'F3\'EF\'E0 \'F4\'E0\'E9\'EB\'E0 \'E8\'EB\'E8 \'EA\'E0\'F2\'E0\'EB\'EE\'E3\'E0."""}\par
+00176         {\cf19 if} len(args) < 3:\par
+00177             {\cf19 return} {\cf22 "\'CD\'E5\'EF\'F0\'E0\'E2\'E8\'EB\'FC\'ED\'FB\'E9 \'F4\'EE\'F0\'EC\'E0\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB chmod. \'C8\'F1\'EF\'EE\'EB\'FC\'E7\'F3\'E9\'F2\'E5: chmod <\'EF\'F0\'E0\'E2\'E0> <\'F4\'E0\'E9\'EB/\'EA\'E0\'F2\'E0\'EB\'EE\'E3>"}\par
+00178         permissions, target = args[1], args[2]\par
+00179         current_level = self.get_current_level()\par
+00180 \par
+00181         {\cf19 if} target {\cf19 in} current_level:  {\cf20 # \'C5\'F1\'EB\'E8 \'FD\'F2\'EE \'EF\'EE\'E4\'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00182             current_level[target][{\cf22 "permissions"}] = permissions\par
+00183             {\cf19 return} f{\cf22 "\'D3\'F1\'F2\'E0\'ED\'EE\'E2\'EB\'E5\'ED\'FB \'EF\'F0\'E0\'E2\'E0 '\{permissions\}' \'E4\'EB\'FF \'EA\'E0\'F2\'E0\'EB\'EE\'E3\'E0 \{target\}."}\par
+00184         {\cf19 else}:  {\cf20 # \'C5\'F1\'EB\'E8 \'FD\'F2\'EE \'F4\'E0\'E9\'EB}\par
+00185             {\cf19 for} file {\cf19 in} current_level[{\cf22 ""}]:\par
+00186                 {\cf19 if} file[{\cf22 "name"}] == target:\par
+00187                     file[{\cf22 "permissions"}] = permissions\par
+00188                     {\cf19 return} f{\cf22 "\'D3\'F1\'F2\'E0\'ED\'EE\'E2\'EB\'E5\'ED\'FB \'EF\'F0\'E0\'E2\'E0 '\{permissions\}' \'E4\'EB\'FF \'F4\'E0\'E9\'EB\'E0 \{target\}."}\par
+00189         {\cf19 return} f{\cf22 "\'D4\'E0\'E9\'EB \'E8\'EB\'E8 \'EA\'E0\'F2\'E0\'EB\'EE\'E3 \{target\} \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED \'E2 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8."}\par
+00190 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'EE\'E2:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a7d2dccc274916bd0085aedf5aec02d7b_cgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a7d2dccc274916bd0085aedf5aec02d7b_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v execute_command\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:execute_command}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.execute_command ( self,  command)}}
+\par
+{\bkmkstart AAAAAAAABP}
+{\bkmkend AAAAAAAABP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'CE\'E1\'F0\'E0\'E1\'E0\'F2\'FB\'E2\'E0\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB shell.\par
+@param command \'CA\'EE\'EC\'E0\'ED\'E4\'E0 shell.\par
+@return \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'FB.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 106}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00106     {\cf17 def }execute_command(self, command):\par
+00107         {\cf22 """}\par
+00108 {\cf22         @brief \'CE\'E1\'F0\'E0\'E1\'E0\'F2\'FB\'E2\'E0\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB shell.}\par
+00109 {\cf22         @param command \'CA\'EE\'EC\'E0\'ED\'E4\'E0 shell.}\par
+00110 {\cf22         @return \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'FB.}\par
+00111 {\cf22         """}\par
+00112         {\cf19 try}:\par
+00113             {\cf19 if} command.startswith({\cf22 "ls"}):\par
+00114                 result = self.ls()\par
+00115             {\cf19 elif} command.startswith({\cf22 "cd"}):\par
+00116                 result = self.cd(command.split({\cf22 " "}, 1)[1])\par
+00117             {\cf19 elif} command.startswith({\cf22 "exit"}):\par
+00118                 result = self.exit()\par
+00119             {\cf19 elif} command.startswith({\cf22 "chmod"}):\par
+00120                 result = self.chmod(command.split({\cf22 " "}, 2))\par
+00121             {\cf19 elif} command.startswith({\cf22 "uptime"}):\par
+00122                 result = self.uptime()\par
+00123             {\cf19 elif} command.startswith({\cf22 "rm"}):\par
+00124                 result = self.rm(command.split({\cf22 " "}, 1)[1])\par
+00125             {\cf19 else}:\par
+00126                 result = f{\cf22 "\'CD\'E5\'E8\'E7\'E2\'E5\'F1\'F2\'ED\'E0\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'E0: \{command\}"}\par
+00127             self.log_action(command, result)\par
+00128         {\cf19 except} Exception {\cf17 as} e:\par
+00129             result = f{\cf22 "\'CE\'F8\'E8\'E1\'EA\'E0 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'FB '\{command\}': \{e\}"}\par
+00130             print(result)\par
+00131             self.log_action(command, result)\par
+00132         {\cf19 return} result\par
+00133 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'EE\'E2:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a70a22165877cc7374591ac5b43ad396b_cgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a70a22165877cc7374591ac5b43ad396b_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v exit\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:exit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.exit ( self)}}
+\par
+{\bkmkstart AAAAAAAABQ}
+{\bkmkend AAAAAAAABQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'C7\'E0\'E2\'E5\'F0\'F8\'E0\'E5\'F2 \'F0\'E0\'E1\'EE\'F2\'F3 shell.\par
+@return \'D1\'F2\'E0\'F2\'F3\'F1 \'E7\'E0\'E2\'E5\'F0\'F8\'E5\'ED\'E8\'FF \'F0\'E0\'E1\'EE\'F2\'FB.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 166}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00166     {\cf17 def }exit(self):\par
+00167         {\cf22 """}\par
+00168 {\cf22         @brief \'C7\'E0\'E2\'E5\'F0\'F8\'E0\'E5\'F2 \'F0\'E0\'E1\'EE\'F2\'F3 shell.}\par
+00169 {\cf22         @return \'D1\'F2\'E0\'F2\'F3\'F1 \'E7\'E0\'E2\'E5\'F0\'F8\'E5\'ED\'E8\'FF \'F0\'E0\'E1\'EE\'F2\'FB.}\par
+00170 {\cf22         """}\par
+00171         self.running = {\cf17 False}\par
+00172         {\cf19 return} {\cf22 "\'C2\'FB\'F5\'EE\'E4 \'E8\'E7 \'F1\'E8\'F1\'F2\'E5\'EC\'FB."}\par
+00173 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a2c60272a6098039defcef040b5b7e79f_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v get_current_level\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:get_current_level}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.get_current_level ( self)}}
+\par
+{\bkmkstart AAAAAAAABR}
+{\bkmkend AAAAAAAABR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'C2\'EE\'E7\'E2\'F0\'E0\'F9\'E0\'E5\'F2 \'F2\'E5\'EA\'F3\'F9\'F3\'FE \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE.\par
+@return \'D2\'E5\'EA\'F3\'F9\'E0\'FF \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FF \'E2 \'F4\'EE\'F0\'EC\'E0\'F2\'E5 \'F1\'EB\'EE\'E2\'E0\'F0\'FF.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 94}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00094     {\cf17 def }get_current_level(self):\par
+00095         {\cf22 """}\par
+00096 {\cf22         @brief \'C2\'EE\'E7\'E2\'F0\'E0\'F9\'E0\'E5\'F2 \'F2\'E5\'EA\'F3\'F9\'F3\'FE \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE.}\par
+00097 {\cf22         @return \'D2\'E5\'EA\'F3\'F9\'E0\'FF \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FF \'E2 \'F4\'EE\'F0\'EC\'E0\'F2\'E5 \'F1\'EB\'EE\'E2\'E0\'F0\'FF.}\par
+00098 {\cf22         """}\par
+00099         parts = self.current_dir.strip({\cf22 "/"}).split({\cf22 "/"})\par
+00100         current_level = self.vfs\par
+00101         {\cf19 for} part {\cf19 in} parts:\par
+00102             {\cf19 if} part:\par
+00103                 current_level = current_level[part]\par
+00104         {\cf19 return} current_level\par
+00105 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a011c735af80ca4023f91485345ea001a_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v load_virtual_fs\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:load_virtual_fs}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.load_virtual_fs ( self)}}
+\par
+{\bkmkstart AAAAAAAABS}
+{\bkmkend AAAAAAAABS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'C7\'E0\'E3\'F0\'F3\'E7\'EA\'E0 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'EE\'E9 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'FB \'E8\'E7 ZIP-\'E0\'F0\'F5\'E8\'E2\'E0.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 37}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00037     {\cf17 def }load_virtual_fs(self):\par
+00038         {\cf22 """}\par
+00039 {\cf22         @brief \'C7\'E0\'E3\'F0\'F3\'E7\'EA\'E0 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'EE\'E9 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'FB \'E8\'E7 ZIP-\'E0\'F0\'F5\'E8\'E2\'E0.}\par
+00040 {\cf22         """}\par
+00041         {\cf19 try}:\par
+00042             {\cf17 with} zipfile.ZipFile(self.vfs_path, {\cf22 'r'}) {\cf17 as} zip_ref:\par
+00043                 self.vfs = \{{\cf22 ""}: []\}  {\cf20 # \'CA\'EE\'F0\'ED\'E5\'E2\'E0\'FF \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FF}\par
+00044                 {\cf19 for} name {\cf19 in} zip_ref.namelist():\par
+00045                     parts = name.strip({\cf22 "/"}).split({\cf22 "/"})\par
+00046                     current_level = self.vfs\par
+00047 \par
+00048                     {\cf19 for} part {\cf19 in} parts[:-1]:\par
+00049                         {\cf19 if} part {\cf19 not} {\cf19 in} current_level:\par
+00050                             current_level[part] = \{{\cf22 ""}: [], {\cf22 "permissions"}: {\cf22 "755"}\}  {\cf20 # \'CF\'EE\'E4\'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00051                         current_level = current_level[part]\par
+00052 \par
+00053                     {\cf20 # \'C4\'EE\'E1\'E0\'E2\'EB\'FF\'E5\'EC \'F4\'E0\'E9\'EB \'E8\'EB\'E8 \'EF\'EE\'E4\'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00054                     {\cf19 if} name.endswith({\cf22 "/"}):\par
+00055                         current_level[parts[-1]] = \{{\cf22 ""}: [], {\cf22 "permissions"}: {\cf22 "755"}\}  {\cf20 # \'CF\'F3\'F1\'F2\'EE\'E9 \'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00056                     {\cf19 else}:\par
+00057                         current_level[{\cf22 ""}].append(\{{\cf22 "name"}: parts[-1], {\cf22 "permissions"}: {\cf22 "644"}\})  {\cf20 # \'D4\'E0\'E9\'EB}\par
+00058 \par
+00059         {\cf19 except} FileNotFoundError:\par
+00060             print(f{\cf22 "\'CE\'F8\'E8\'E1\'EA\'E0: \'E0\'F0\'F5\'E8\'E2 \{self.vfs_path\} \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED."})\par
+00061             self.running = {\cf17 False}\par
+00062 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_ae0d293fec6623a82a3e91fcda223fcf1_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v log_action\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:log_action}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.log_action ( self,  action,  result)}}
+\par
+{\bkmkstart AAAAAAAABT}
+{\bkmkend AAAAAAAABT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'CB\'EE\'E3\'E8\'F0\'F3\'E5\'F2 \'E4\'E5\'E9\'F1\'F2\'E2\'E8\'E5 \'E8 \'F0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF.\par
+@param action \'C4\'E5\'E9\'F1\'F2\'E2\'E8\'E5 \'E8\'EB\'E8 \'EA\'EE\'EC\'E0\'ED\'E4\'E0.\par
+@param result \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'E4\'E5\'E9\'F1\'F2\'E2\'E8\'FF.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 63}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00063     {\cf17 def }log_action(self, action, result):\par
+00064         {\cf22 """}\par
+00065 {\cf22         @brief \'CB\'EE\'E3\'E8\'F0\'F3\'E5\'F2 \'E4\'E5\'E9\'F1\'F2\'E2\'E8\'E5 \'E8 \'F0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF.}\par
+00066 {\cf22         @param action \'C4\'E5\'E9\'F1\'F2\'E2\'E8\'E5 \'E8\'EB\'E8 \'EA\'EE\'EC\'E0\'ED\'E4\'E0.}\par
+00067 {\cf22         @param result \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'E4\'E5\'E9\'F1\'F2\'E2\'E8\'FF.}\par
+00068 {\cf22         """}\par
+00069         entry = \{\par
+00070             {\cf22 "timestamp"}: datetime.now().strftime({\cf22 "%Y-%m-%d %H:%M:%S"}),\par
+00071             {\cf22 "command"}: action,\par
+00072             {\cf22 "result"}: result\par
+00073         \}\par
+00074         {\cf17 with} open(self.log_path, {\cf22 "a"}, encoding={\cf22 "utf-8"}) {\cf17 as} log_file:\par
+00075             log_file.write(json.dumps(entry, ensure_ascii={\cf17 False}) + {\cf22 "\\n"})\par
+00076 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a0edb4884ac68d58248d3306271048ce0_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v ls\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:ls}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.ls ( self)}}
+\par
+{\bkmkstart AAAAAAAABU}
+{\bkmkend AAAAAAAABU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'C2\'FB\'E2\'EE\'E4\'E8\'F2 \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'EC\'EE\'E5 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8 \'F1 \'F3\'F0\'EE\'E2\'ED\'FF\'EC\'E8 \'E4\'EE\'F1\'F2\'F3\'EF\'E0.\par
+@return \'D1\'EF\'E8\'F1\'EE\'EA \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'EC\'EE\'E3\'EE \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 134}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00134     {\cf17 def }ls(self):\par
+00135         {\cf22 """}\par
+00136 {\cf22         @brief \'C2\'FB\'E2\'EE\'E4\'E8\'F2 \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'EC\'EE\'E5 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8 \'F1 \'F3\'F0\'EE\'E2\'ED\'FF\'EC\'E8 \'E4\'EE\'F1\'F2\'F3\'EF\'E0.}\par
+00137 {\cf22         @return \'D1\'EF\'E8\'F1\'EE\'EA \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'EC\'EE\'E3\'EE \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8.}\par
+00138 {\cf22         """}\par
+00139         current_level = self.get_current_level()\par
+00140         result = []\par
+00141         {\cf19 for} directory, content {\cf19 in} current_level.items():\par
+00142             {\cf19 if} directory {\cf19 and} directory != {\cf22 "permissions"}:  {\cf20 # \'DD\'F2\'EE \'EF\'EE\'E4\'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00143                 result.append(f{\cf22 "[DIR] \{directory\} (permissions: \{content['permissions']\})"})\par
+00144         {\cf19 for} file {\cf19 in} current_level[{\cf22 ""}]:  {\cf20 # \'D4\'E0\'E9\'EB\'FB}\par
+00145             result.append(f{\cf22 "\{file['name']\} (permissions: \{file['permissions']\})"})\par
+00146         output = {\cf22 "\\n"}.join(result)\par
+00147         print(output)\par
+00148         {\cf19 return} output\par
+00149 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'EE\'E2:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a41cb94a5aae8b29f579c60123d425601_cgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a41cb94a5aae8b29f579c60123d425601_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v rm\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:rm}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.rm ( self,  filename)}}
+\par
+{\bkmkstart AAAAAAAABV}
+{\bkmkend AAAAAAAABV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \'D3\'E4\'E0\'EB\'FF\'E5\'F2 \'F4\'E0\'E9\'EB.}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 198}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00198     {\cf17 def }rm(self, filename):\par
+00199         {\cf22 """\'D3\'E4\'E0\'EB\'FF\'E5\'F2 \'F4\'E0\'E9\'EB."""}\par
+00200         current_level = self.get_current_level()\par
+00201         {\cf19 for} file {\cf19 in} current_level[{\cf22 ""}]:\par
+00202             {\cf19 if} file[{\cf22 "name"}] == filename:\par
+00203                 current_level[{\cf22 ""}].remove(file)\par
+00204                 {\cf19 return} f{\cf22 "\'D4\'E0\'E9\'EB \{filename\} \'F3\'E4\'E0\'EB\'B8\'ED."}\par
+00205         {\cf19 return} f{\cf22 "\'D4\'E0\'E9\'EB \{filename\} \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED \'E2 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8."}\par
+00206 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'EE\'E2:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a48f84d43b771106260cd4bc7a0fabc12_cgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a48f84d43b771106260cd4bc7a0fabc12_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v run_startup_script\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:run_startup_script}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.run_startup_script ( self)}}
+\par
+{\bkmkstart AAAAAAAABW}
+{\bkmkend AAAAAAAABW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'C2\'FB\'EF\'EE\'EB\'ED\'FF\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'EE\'E3\'EE \'F1\'EA\'F0\'E8\'EF\'F2\'E0.\par
+@return \'CB\'EE\'E3 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4 \'F1\'EA\'F0\'E8\'EF\'F2\'E0.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 77}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00077     {\cf17 def }run_startup_script(self):\par
+00078         {\cf22 """}\par
+00079 {\cf22         @brief \'C2\'FB\'EF\'EE\'EB\'ED\'FF\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'EE\'E3\'EE \'F1\'EA\'F0\'E8\'EF\'F2\'E0.}\par
+00080 {\cf22         @return \'CB\'EE\'E3 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4 \'F1\'EA\'F0\'E8\'EF\'F2\'E0.}\par
+00081 {\cf22         """}\par
+00082         result = {\cf22 ""}\par
+00083         {\cf19 if} os.path.exists(self.startup_script):\par
+00084             {\cf17 with} open(self.startup_script, {\cf22 'r'}) {\cf17 as} script:\par
+00085                 commands = script.readlines()\par
+00086                 {\cf19 for} command {\cf19 in} commands:\par
+00087                     result += f{\cf22 "\'C7\'E0\'EF\'F3\'F1\'EA \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'EA\'F0\'E8\'EF\'F2\'E0: \{command\}\\n"}\par
+00088                     result += self.execute_command(command.strip())\par
+00089                     result += {\cf22 "\\n"}\par
+00090         {\cf19 else}:\par
+00091             result = f{\cf22 "\'D1\'F2\'E0\'F0\'F2\'EE\'E2\'FB\'E9 \'F1\'EA\'F0\'E8\'EF\'F2 \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED: \{self.startup_script\}\\n"}\par
+00092         {\cf19 return} result\par
+00093 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'EE\'E2:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a9932c4ab10184127c0176c6083e1abc5_cgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v start\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:start}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.start ( self)}}
+\par
+{\bkmkstart AAAAAAAABX}
+{\bkmkend AAAAAAAABX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \'C7\'E0\'EF\'F3\'F1\'EA shell.}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 207}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00207     {\cf17 def }start(self):\par
+00208         {\cf22 """\'C7\'E0\'EF\'F3\'F1\'EA shell."""}\par
+00209         {\cf19 while} self.running:\par
+00210             command = input(f{\cf22 "\{self.computer_name\}:\{self.current_dir\}$ "})\par
+00211             self.execute_command(command)\par
+00212 \par
+00213 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'EE\'E2:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_aabd5663b6f142b6413bcd90aab8de5db_cgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v uptime\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:uptime}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.uptime ( self)}}
+\par
+{\bkmkstart AAAAAAAABY}
+{\bkmkend AAAAAAAABY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \'C2\'FB\'E2\'EE\'E4\'E8\'F2 \'E2\'F0\'E5\'EC\'FF \'F0\'E0\'E1\'EE\'F2\'FB shell \'F1 \'EC\'EE\'EC\'E5\'ED\'F2\'E0 \'E7\'E0\'EF\'F3\'F1\'EA\'E0.}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 191}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00191     {\cf17 def }uptime(self):\par
+00192         {\cf22 """\'C2\'FB\'E2\'EE\'E4\'E8\'F2 \'E2\'F0\'E5\'EC\'FF \'F0\'E0\'E1\'EE\'F2\'FB shell \'F1 \'EC\'EE\'EC\'E5\'ED\'F2\'E0 \'E7\'E0\'EF\'F3\'F1\'EA\'E0."""}\par
+00193         uptime_seconds = time.time() - self.start_time\par
+00194         uptime_str = f{\cf22 "\'D1\'E8\'F1\'F2\'E5\'EC\'E0 \'F0\'E0\'E1\'EE\'F2\'E0\'E5\'F2 \{uptime_seconds:.2f\} \'F1\'E5\'EA\'F3\'ED\'E4."}\par
+00195         print(uptime_str)\par
+00196         {\cf19 return} uptime_str\par
+00197 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/d54/classshell__emulator_1_1_shell_emulator_a95c760e36a4c6d59fd24b055aa3628e7_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'C4\'E0\'ED\'ED\'FB\'E5 \'EA\'EB\'E0\'F1\'F1\'E0\par
+\pard\plain 
+{\xe \v computer_name\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:computer_name}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.computer_name = self.config['Settings']['computer_name']}}
+\par
+{\bkmkstart AAAAAAAABZ}
+{\bkmkend AAAAAAAABZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 25}}\par
+}
+{\xe \v config\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:config}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.config = configparser.ConfigParser()}}
+\par
+{\bkmkstart AAAAAAAACA}
+{\bkmkend AAAAAAAACA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 21}}\par
+}
+{\xe \v current_dir\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:current_dir}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+str shell_emulator.ShellEmulator.current_dir = "/"}}
+\par
+{\bkmkstart AAAAAAAACB}
+{\bkmkend AAAAAAAACB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 31}}\par
+}
+{\xe \v log_path\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:log_path}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.log_path = self.config['Settings']['log_path']}}
+\par
+{\bkmkstart AAAAAAAACC}
+{\bkmkend AAAAAAAACC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 27}}\par
+}
+{\xe \v running\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:running}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.running = True}}
+\par
+{\bkmkstart AAAAAAAACD}
+{\bkmkend AAAAAAAACD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 32}}\par
+}
+{\xe \v start_time\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:start_time}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.start_time = time.time()}}
+\par
+{\bkmkstart AAAAAAAACE}
+{\bkmkend AAAAAAAACE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 33}}\par
+}
+{\xe \v startup_script\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:startup_script}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.startup_script = self.config['Settings']['startup_script']}}
+\par
+{\bkmkstart AAAAAAAACF}
+{\bkmkend AAAAAAAACF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 28}}\par
+}
+{\xe \v vfs\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:vfs}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+dict shell_emulator.ShellEmulator.vfs = \{\}}}
+\par
+{\bkmkstart AAAAAAAACG}
+{\bkmkend AAAAAAAACG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 30}}\par
+}
+{\xe \v vfs_path\:shell_emulator.ShellEmulator}
+{\xe \v shell_emulator.ShellEmulator\:vfs_path}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+shell_emulator.ShellEmulator.vfs_path = self.config['Settings']['virtual_fs_path']}}
+\par
+{\bkmkstart AAAAAAAACH}
+{\bkmkend AAAAAAAACH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b shell_emulator.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 26}}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\'CE\'E1\'FA\'FF\'E2\'EB\'E5\'ED\'E8\'FF \'E8 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'FF \'F7\'EB\'E5\'ED\'EE\'E2 \'EA\'EB\'E0\'F1\'F1\'E0 \'ED\'E0\'F5\'EE\'E4\'FF\'F2\'F1\'FF \'E2 \'F4\'E0\'E9\'EB\'E5:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+C:/prj/python/FSemylator/shell_emulator.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\'CA\'EB\'E0\'F1\'F1 gui.ShellGUI\par \pard\plain 
+{\tc\tcl2 \v gui.ShellGUI}
+{\xe \v gui.ShellGUI}
+{\bkmkstart AAAAAAAAAZ}
+{\bkmkend AAAAAAAAAZ}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CE\'F2\'EA\'F0\'FB\'F2\'FB\'E5 \'F7\'EB\'E5\'ED\'FB\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __init__} (self, emulator)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b setup_gui} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b execute_command} (self, event=None)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b run} (self)\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CE\'F2\'EA\'F0\'FB\'F2\'FB\'E5 \'E0\'F2\'F0\'E8\'E1\'F3\'F2\'FB\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b emulator} = emulator\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b root} = Tk()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b frame} = Frame(self.root, bg="black")\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b label}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b text}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b entry}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b execute_command}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CF\'EE\'E4\'F0\'EE\'E1\'ED\'EE\'E5 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'E5\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'C3\'F0\'E0\'F4\'E8\'F7\'E5\'F1\'EA\'E8\'E9 \'E8\'ED\'F2\'E5\'F0\'F4\'E5\'E9\'F1 \'E4\'EB\'FF Unix Shell Emulator.\par
+@details \'CA\'EB\'E0\'F1\'F1 \'EF\'F0\'E5\'E4\'EE\'F1\'F2\'E0\'E2\'EB\'FF\'E5\'F2 \'F3\'E4\'EE\'E1\'ED\'FB\'E9 GUI \'E4\'EB\'FF \'F0\'E0\'E1\'EE\'F2\'FB \'F1 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'EE\'EC shell.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 6}}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CA\'EE\'ED\'F1\'F2\'F0\'F3\'EA\'F2\'EE\'F0(\'FB)\par
+\pard\plain 
+{\xe \v __init__\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.__init__ ( self,  emulator)}}
+\par
+{\bkmkstart AAAAAAAABA}
+{\bkmkend AAAAAAAABA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'CA\'EE\'ED\'F1\'F2\'F0\'F3\'EA\'F2\'EE\'F0 \'EA\'EB\'E0\'F1\'F1\'E0.\par
+@param emulator \'DD\'EA\'E7\'E5\'EC\'EF\'EB\'FF\'F0 \'EA\'EB\'E0\'F1\'F1\'E0 ShellEmulator.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 12}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00012     {\cf17 def }__init__(self, emulator):\par
+00013         {\cf22 """}\par
+00014 {\cf22         @brief \'CA\'EE\'ED\'F1\'F2\'F0\'F3\'EA\'F2\'EE\'F0 \'EA\'EB\'E0\'F1\'F1\'E0.}\par
+00015 {\cf22         @param emulator \'DD\'EA\'E7\'E5\'EC\'EF\'EB\'FF\'F0 \'EA\'EB\'E0\'F1\'F1\'E0 ShellEmulator.}\par
+00016 {\cf22         """}\par
+00017         self.emulator = emulator\par
+00018         self.root = Tk()\par
+00019         self.root.title({\cf22 "Unix Shell Emulator"})\par
+00020         self.setup_gui()\par
+00021 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'EE\'E2:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/da5/classgui_1_1_shell_g_u_i_a9261d294aca885522a8627128674fa8c_cgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CC\'E5\'F2\'EE\'E4\'FB\par
+\pard\plain 
+{\xe \v execute_command\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:execute_command}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.execute_command ( self,  event = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAABB}
+{\bkmkend AAAAAAAABB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'C2\'FB\'EF\'EE\'EB\'ED\'FF\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'F3, \'E2\'E2\'E5\'E4\'B8\'ED\'ED\'F3\'FE \'E2 \'EF\'EE\'EB\'E5 \'E2\'E2\'EE\'E4\'E0.\par
+@param event \'D1\'EE\'E1\'FB\'F2\'E8\'E5 (\'E8\'F1\'EF\'EE\'EB\'FC\'E7\'F3\'E5\'F2\'F1\'FF \'E4\'EB\'FF \'EE\'E1\'F0\'E0\'E1\'EE\'F2\'EA\'E8 \'ED\'E0\'E6\'E0\'F2\'E8\'FF \'EA\'EB\'E0\'E2\'E8\'F8\'E8 Enter).\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 72}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00072     {\cf17 def }execute_command(self, event=None):\par
+00073         {\cf22 """}\par
+00074 {\cf22         @brief \'C2\'FB\'EF\'EE\'EB\'ED\'FF\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'F3, \'E2\'E2\'E5\'E4\'B8\'ED\'ED\'F3\'FE \'E2 \'EF\'EE\'EB\'E5 \'E2\'E2\'EE\'E4\'E0.}\par
+00075 {\cf22         @param event \'D1\'EE\'E1\'FB\'F2\'E8\'E5 (\'E8\'F1\'EF\'EE\'EB\'FC\'E7\'F3\'E5\'F2\'F1\'FF \'E4\'EB\'FF \'EE\'E1\'F0\'E0\'E1\'EE\'F2\'EA\'E8 \'ED\'E0\'E6\'E0\'F2\'E8\'FF \'EA\'EB\'E0\'E2\'E8\'F8\'E8 Enter).}\par
+00076 {\cf22         """}\par
+00077         {\cf20 # \'CF\'EE\'EB\'F3\'F7\'E0\'E5\'EC \'E2\'E2\'E5\'E4\'E5\'ED\'ED\'F3\'FE \'EA\'EE\'EC\'E0\'ED\'E4\'F3}\par
+00078         command = self.entry.get({\cf22 "1.0"}, END).strip()\par
+00079         {\cf19 if} {\cf19 not} command:\par
+00080             {\cf19 return}\par
+00081 \par
+00082         {\cf20 # \'C2\'FB\'EF\'EE\'EB\'ED\'FF\'E5\'EC \'EA\'EE\'EC\'E0\'ED\'E4\'F3 \'F7\'E5\'F0\'E5\'E7 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0}\par
+00083         result = self.emulator.execute_command(command)\par
+00084 \par
+00085         {\cf20 # \'C2\'FB\'E2\'EE\'E4\'E8\'EC \'EA\'EE\'EC\'E0\'ED\'E4\'F3 \'E8 \'F0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2 \'EF\'EE\'EB\'E5 \'E2\'FB\'E2\'EE\'E4\'E0}\par
+00086         self.text.insert(END, f{\cf22 "\{self.emulator.computer_name\}@\{self.emulator.current_dir\}:~$ \{command\}\\n"}, {\cf22 "command"})\par
+00087         self.text.insert(END, f{\cf22 "\{result\}\\n\\n"})\par
+00088 \par
+00089         {\cf20 # \'CF\'F0\'EE\'EA\'F0\'F3\'F7\'E8\'E2\'E0\'E5\'EC \'F2\'E5\'EA\'F1\'F2 \'E4\'EE \'EA\'EE\'ED\'F6\'E0}\par
+00090         self.text.see(END)\par
+00091 \par
+00092         {\cf20 # \'CE\'F7\'E8\'F9\'E0\'E5\'EC \'EF\'EE\'EB\'E5 \'E2\'E2\'EE\'E4\'E0}\par
+00093         self.entry.delete({\cf22 "1.0"}, END)\par
+00094 \par
+00095         {\cf19 if} {\cf19 not} self.emulator.running:\par
+00096             exit(0)\par
+00097 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/da5/classgui_1_1_shell_g_u_i_aa59e45330b81ac5228c3cd8675fe285d_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\xe \v run\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:run}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.run ( self)}}
+\par
+{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'C7\'E0\'EF\'F3\'F1\'EA\'E0\'E5\'F2 \'F6\'E8\'EA\'EB \'EE\'E1\'F0\'E0\'E1\'EE\'F2\'EA\'E8 \'F1\'EE\'E1\'FB\'F2\'E8\'E9 GUI.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 98}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00098     {\cf17 def }run(self):\par
+00099         {\cf22 """}\par
+00100 {\cf22         @brief \'C7\'E0\'EF\'F3\'F1\'EA\'E0\'E5\'F2 \'F6\'E8\'EA\'EB \'EE\'E1\'F0\'E0\'E1\'EE\'F2\'EA\'E8 \'F1\'EE\'E1\'FB\'F2\'E8\'E9 GUI.}\par
+00101 {\cf22         """}\par
+00102         self.root.mainloop()\par
+00103 \par
+00104 \par
+}
+}
+{\xe \v setup_gui\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:setup_gui}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.setup_gui ( self)}}
+\par
+{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid @brief \'CD\'E0\'F1\'F2\'F0\'E0\'E8\'E2\'E0\'E5\'F2 \'FD\'EB\'E5\'EC\'E5\'ED\'F2\'FB \'E8\'ED\'F2\'E5\'F0\'F4\'E5\'E9\'F1\'E0.\par
+}
+ \par
+}{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 22}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00022     {\cf17 def }setup_gui(self):\par
+00023         {\cf22 """}\par
+00024 {\cf22         @brief \'CD\'E0\'F1\'F2\'F0\'E0\'E8\'E2\'E0\'E5\'F2 \'FD\'EB\'E5\'EC\'E5\'ED\'F2\'FB \'E8\'ED\'F2\'E5\'F0\'F4\'E5\'E9\'F1\'E0.}\par
+00025 {\cf22         """}\par
+00026         {\cf20 # \'D1\'EE\'E7\'E4\'E0\'E5\'EC \'EE\'F1\'ED\'EE\'E2\'ED\'EE\'E9 \'F4\'F0\'E5\'E9\'EC}\par
+00027         self.frame = Frame(self.root, bg={\cf22 "black"})\par
+00028         self.frame.pack(fill={\cf22 "both"}, expand={\cf17 True})\par
+00029 \par
+00030         {\cf20 # \'CC\'E5\'F2\'EA\'E0 \'F1 \'F2\'E5\'EA\'F3\'F9\'E8\'EC \'F1\'EE\'F1\'F2\'EE\'FF\'ED\'E8\'E5\'EC \'EA\'EE\'ED\'F1\'EE\'EB\'E8}\par
+00031         self.label = Label(\par
+00032             self.frame,\par
+00033             text=f{\cf22 "\{self.emulator.computer_name\}@shell:~$"},\par
+00034             fg={\cf22 "green"},\par
+00035             bg={\cf22 "black"},\par
+00036             font=({\cf22 "Courier"}, 12, {\cf22 "bold"})\par
+00037         )\par
+00038         self.label.pack(anchor={\cf22 "w"}, padx=5, pady=5)\par
+00039 \par
+00040         {\cf20 # \'CF\'EE\'EB\'E5 \'E2\'FB\'E2\'EE\'E4\'E0 (\'E8\'F1\'F2\'EE\'F0\'E8\'FF \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4)}\par
+00041         self.text = ScrolledText(\par
+00042             self.frame,\par
+00043             height=20,\par
+00044             width=80,\par
+00045             bg={\cf22 "black"},\par
+00046             fg={\cf22 "green"},\par
+00047             insertbackground={\cf22 "green"},\par
+00048             font=({\cf22 "Courier"}, 12),\par
+00049             state={\cf22 "normal"}\par
+00050         )\par
+00051         self.text.pack(padx=5, pady=5, fill={\cf22 "both"}, expand={\cf17 True})\par
+00052         self.text.tag_configure({\cf22 "command"}, foreground={\cf22 "green"}, font=({\cf22 "Courier"}, 12, {\cf22 "bold"}))\par
+00053 \par
+00054         {\cf20 # \'CF\'EE\'EB\'E5 \'E2\'E2\'EE\'E4\'E0 (\'EE\'E4\'ED\'EE\'F1\'F2\'F0\'EE\'F7\'ED\'EE\'E5)}\par
+00055         self.entry = Text(\par
+00056             self.frame,\par
+00057             height=1,\par
+00058             width=80,\par
+00059             bg={\cf22 "black"},\par
+00060             fg={\cf22 "green"},\par
+00061             insertbackground={\cf22 "green"},\par
+00062             font=({\cf22 "Courier"}, 12)\par
+00063         )\par
+00064         self.entry.pack(padx=5, pady=5)\par
+00065 \par
+00066         {\cf20 # \'CF\'F0\'E8\'E2\'FF\'E7\'EA\'E0 \'EA\'EB\'E0\'E2\'E8\'F8\'E8 Enter \'E4\'EB\'FF \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'FB}\par
+00067         self.entry.bind({\cf22 "<Return>"}, self.execute_command)\par
+00068 \par
+00069         result = self.emulator.run_startup_script()\par
+00070         self.text.insert(END, f{\cf22 "\{result\}"})\par
+00071 \par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'EE\'E2:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/da5/classgui_1_1_shell_g_u_i_ac9eb5ca1b38c99863e2d7dc5a8aca7a1_cgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\'C3\'F0\'E0\'F4 \'E2\'FB\'E7\'EE\'E2\'E0 \'F4\'F3\'ED\'EA\'F6\'E8\'E8:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/da5/classgui_1_1_shell_g_u_i_ac9eb5ca1b38c99863e2d7dc5a8aca7a1_icgraph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'C4\'E0\'ED\'ED\'FB\'E5 \'EA\'EB\'E0\'F1\'F1\'E0\par
+\pard\plain 
+{\xe \v emulator\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:emulator}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.emulator = emulator}}
+\par
+{\bkmkstart AAAAAAAABE}
+{\bkmkend AAAAAAAABE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 17}}\par
+}
+{\xe \v entry\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:entry}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.entry}}
+\par
+{\bkmkstart AAAAAAAABF}
+{\bkmkend AAAAAAAABF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\b \'C8\'ED\'E8\'F6\'E8\'E0\'EB\'E8\'E7\'E0\'F2\'EE\'F0}{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid =  Text(\par
+            self.frame,\par
+            height=1,\par
+            width=80,\par
+            bg={\cf22 "black"},\par
+            fg={\cf22 "green"},\par
+            insertbackground={\cf22 "green"},\par
+            font=({\cf22 "Courier"}, 12)\par
+        )\par
+}
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 55}}\par
+}
+{\xe \v execute_command\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:execute_command}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.execute_command}}
+\par
+{\bkmkstart AAAAAAAABG}
+{\bkmkend AAAAAAAABG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 67}}\par
+}
+{\xe \v frame\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:frame}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.frame = Frame(self.root, bg="black")}}
+\par
+{\bkmkstart AAAAAAAABH}
+{\bkmkend AAAAAAAABH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 27}}\par
+}
+{\xe \v label\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:label}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.label}}
+\par
+{\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\b \'C8\'ED\'E8\'F6\'E8\'E0\'EB\'E8\'E7\'E0\'F2\'EE\'F0}{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid =  Label(\par
+            self.frame,\par
+            text=f{\cf22 "\{self.emulator.computer_name\}@shell:~$"},\par
+            fg={\cf22 "green"},\par
+            bg={\cf22 "black"},\par
+            font=({\cf22 "Courier"}, 12, {\cf22 "bold"})\par
+        )\par
+}
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 31}}\par
+}
+{\xe \v root\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:root}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.root = Tk()}}
+\par
+{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 18}}\par
+}
+{\xe \v text\:gui.ShellGUI}
+{\xe \v gui.ShellGUI\:text}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+gui.ShellGUI.text}}
+\par
+{\bkmkstart AAAAAAAABK}
+{\bkmkend AAAAAAAABK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\b \'C8\'ED\'E8\'F6\'E8\'E0\'EB\'E8\'E7\'E0\'F2\'EE\'F0}{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid =  ScrolledText(\par
+            self.frame,\par
+            height=20,\par
+            width=80,\par
+            bg={\cf22 "black"},\par
+            fg={\cf22 "green"},\par
+            insertbackground={\cf22 "green"},\par
+            font=({\cf22 "Courier"}, 12),\par
+            state={\cf22 "normal"}\par
+        )\par
+}
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b gui.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 41}}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\'CE\'E1\'FA\'FF\'E2\'EB\'E5\'ED\'E8\'FF \'E8 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'FF \'F7\'EB\'E5\'ED\'EE\'E2 \'EA\'EB\'E0\'F1\'F1\'E0 \'ED\'E0\'F5\'EE\'E4\'FF\'F2\'F1\'FF \'E2 \'F4\'E0\'E9\'EB\'E5:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+C:/prj/python/FSemylator/gui.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\'CA\'EB\'E0\'F1\'F1 test.TestScript\par \pard\plain 
+{\tc\tcl2 \v test.TestScript}
+{\xe \v test.TestScript}
+{\bkmkstart AAAAAAAACI}
+{\bkmkend AAAAAAAACI}
+\'C3\'F0\'E0\'F4 \'ED\'E0\'F1\'EB\'E5\'E4\'EE\'E2\'E0\'ED\'E8\'FF:test.TestScript:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d4/ddf/classtest_1_1_test_script__inherit__graph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\par
+\'C3\'F0\'E0\'F4 \'F1\'E2\'FF\'E7\'E5\'E9 \'EA\'EB\'E0\'F1\'F1\'E0 test.TestScript:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d9/dfd/classtest_1_1_test_script__coll__graph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CE\'F2\'EA\'F0\'FB\'F2\'FB\'E5 \'F7\'EB\'E5\'ED\'FB\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_load_config} (self, mock_file)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_get_commits} (self, mock_subprocess)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_build_dependency_graph} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_save_graph} (self, mock_render)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CF\'EE\'E4\'F0\'EE\'E1\'ED\'EE\'E5 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'E5\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b test.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 6}}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CC\'E5\'F2\'EE\'E4\'FB\par
+\pard\plain 
+{\xe \v test_build_dependency_graph\:test.TestScript}
+{\xe \v test.TestScript\:test_build_dependency_graph}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test.TestScript.test_build_dependency_graph ( self)}}
+\par
+{\bkmkstart AAAAAAAACJ}
+{\bkmkend AAAAAAAACJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b test.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 29}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00029     {\cf17 def }test_build_dependency_graph(self):\par
+00030         commits = [\par
+00031             ({\cf22 "abc123"}, {\cf22 "2023-01-01 00:00:00"}, {\cf22 "Anika"}),\par
+00032             ({\cf22 "xyz789"}, {\cf22 "2023-01-02 00:00:00"}, {\cf22 "Anna"})\par
+00033         ]\par
+00034         graph = show_commits.build_dependency_graph(commits)\par
+00035         self.assertIn({\cf22 'abc123'}, graph.source)\par
+00036         self.assertIn({\cf22 'xyz789'}, graph.source)\par
+00037         self.assertIn({\cf22 "->"}, graph.source)  {\cf20 # Ensure edges are present}\par
+00038 \par
+}
+}
+{\xe \v test_get_commits\:test.TestScript}
+{\xe \v test.TestScript\:test_get_commits}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test.TestScript.test_get_commits ( self,  mock_subprocess)}}
+\par
+{\bkmkstart AAAAAAAACK}
+{\bkmkend AAAAAAAACK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b test.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 15}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00015     {\cf17 def }test_get_commits(self, mock_subprocess):\par
+00016         mock_subprocess.return_value = MagicMock(\par
+00017             returncode=0,\par
+00018             stdout={\cf22 "abc123 1672531200 Anika\\nxyz789 1672617600 Anna\\n"}\par
+00019         )\par
+00020         repo_path = {\cf22 "repo"}\par
+00021         since_date = {\cf22 "2023-01-01"}\par
+00022         expected = [\par
+00023             ({\cf22 "xyz789"}, {\cf22 "2023-01-02 03:00:00"}, {\cf22 "Anna"}),\par
+00024             ({\cf22 "abc123"}, {\cf22 "2023-01-01 03:00:00"}, {\cf22 "Anika"})\par
+00025         ]\par
+00026         commits = show_commits.get_commits(repo_path, since_date)\par
+00027         self.assertEqual(commits, expected)\par
+00028 \par
+}
+}
+{\xe \v test_load_config\:test.TestScript}
+{\xe \v test.TestScript\:test_load_config}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test.TestScript.test_load_config ( self,  mock_file)}}
+\par
+{\bkmkstart AAAAAAAACL}
+{\bkmkend AAAAAAAACL}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b test.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 9}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00009     {\cf17 def }test_load_config(self, mock_file):\par
+00010         config = show_commits.load_config({\cf22 "config.ini"})\par
+00011         self.assertEqual(config[{\cf22 'Settings'}][{\cf22 'repository_path'}], {\cf22 "repo"})\par
+00012         self.assertEqual(config[{\cf22 'Settings'}][{\cf22 'since_date'}], {\cf22 "2023-01-01"})\par
+00013 \par
+}
+}
+{\xe \v test_save_graph\:test.TestScript}
+{\xe \v test.TestScript\:test_save_graph}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+test.TestScript.test_save_graph ( self,  mock_render)}}
+\par
+{\bkmkstart AAAAAAAACM}
+{\bkmkend AAAAAAAACM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b test.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 40}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00040     {\cf17 def }test_save_graph(self, mock_render):\par
+00041         graph = Digraph()\par
+00042         show_commits.save_graph(graph, {\cf22 "output"})\par
+00043         mock_render.assert_called_once_with({\cf22 "output"}, format={\cf22 "png"})\par
+00044 \par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\'CE\'E1\'FA\'FF\'E2\'EB\'E5\'ED\'E8\'FF \'E8 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'FF \'F7\'EB\'E5\'ED\'EE\'E2 \'EA\'EB\'E0\'F1\'F1\'E0 \'ED\'E0\'F5\'EE\'E4\'FF\'F2\'F1\'FF \'E2 \'F4\'E0\'E9\'EB\'E5:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+C:/prj/python/FSemylator/task2/git/test.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\'CA\'EB\'E0\'F1\'F1 tests.TestShellEmulator\par \pard\plain 
+{\tc\tcl2 \v tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator}
+{\bkmkstart AAAAAAAACN}
+{\bkmkend AAAAAAAACN}
+\'C3\'F0\'E0\'F4 \'ED\'E0\'F1\'EB\'E5\'E4\'EE\'E2\'E0\'ED\'E8\'FF:tests.TestShellEmulator:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d0/dec/classtests_1_1_test_shell_emulator__inherit__graph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\par
+\'C3\'F0\'E0\'F4 \'F1\'E2\'FF\'E7\'E5\'E9 \'EA\'EB\'E0\'F1\'F1\'E0 tests.TestShellEmulator:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "d8/d70/classtests_1_1_test_shell_emulator__coll__graph.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CE\'F2\'EA\'F0\'FB\'F2\'FB\'E5 \'F7\'EB\'E5\'ED\'FB\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b setUp} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b tearDown} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_ls} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_cd} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_chmod} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_rm} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_uptime} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_exit} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_logging} (self)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b test_startup_script} (self)\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CE\'F2\'EA\'F0\'FB\'F2\'FB\'E5 \'E0\'F2\'F0\'E8\'E1\'F3\'F2\'FB\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+str {\b test_config_path} = "test_config.txt"\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+str {\b test_vfs_path} = "test_fs.zip"\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+str {\b test_startup_script} = "test_startup.txt"\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b emulator} = {\b ShellEmulator}(config_path=self.test_config_path)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CF\'EE\'E4\'F0\'EE\'E1\'ED\'EE\'E5 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'E5\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 8}}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'CC\'E5\'F2\'EE\'E4\'FB\par
+\pard\plain 
+{\xe \v setUp\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:setUp}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.setUp ( self)}}
+\par
+{\bkmkstart AAAAAAAACO}
+{\bkmkend AAAAAAAACO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 9}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00009     {\cf17 def }setUp(self):\par
+00010         {\cf20 # \'D1\'EE\'E7\'E4\'E0\'ED\'E8\'E5 \'F2\'E5\'F1\'F2\'EE\'E2\'EE\'E9 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8}\par
+00011         self.test_config_path = {\cf22 "test_config.txt"}\par
+00012         {\cf17 with} open(self.test_config_path, {\cf22 "w"}) {\cf17 as} f:\par
+00013             f.write({\cf22 "[Settings]\\n"})\par
+00014             f.write({\cf22 "computer_name = TestMachine\\n"})\par
+00015             f.write({\cf22 "virtual_fs_path = test_fs.zip\\n"})\par
+00016             f.write({\cf22 "log_path = test_log.json\\n"})\par
+00017             f.write({\cf22 "startup_script = test_startup.txt\\n"})\par
+00018 \par
+00019         {\cf20 # \'D1\'EE\'E7\'E4\'E0\'ED\'E8\'E5 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'EE\'E9 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'FB}\par
+00020         self.test_vfs_path = {\cf22 "test_fs.zip"}\par
+00021         {\cf17 with} zipfile.ZipFile(self.test_vfs_path, {\cf22 'w'}) {\cf17 as} zip_ref:\par
+00022             zip_ref.writestr({\cf22 "dir1/"}, {\cf22 ""})  {\cf20 # \'CF\'E0\'EF\'EA\'E0}\par
+00023             zip_ref.writestr({\cf22 "test_file.txt"}, {\cf22 "Hello, World!"})  {\cf20 # \'D4\'E0\'E9\'EB}\par
+00024 \par
+00025         {\cf20 # \'D1\'EE\'E7\'E4\'E0\'ED\'E8\'E5 \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'EE\'E3\'EE \'F1\'EA\'F0\'E8\'EF\'F2\'E0}\par
+00026         self.test_startup_script = {\cf22 "test_startup.txt"}\par
+00027         {\cf17 with} open(self.test_startup_script, {\cf22 "w"}) {\cf17 as} f:\par
+00028             f.write({\cf22 "ls\\n"})\par
+00029 \par
+00030         self.emulator = ShellEmulator(config_path=self.test_config_path)\par
+00031 \par
+}
+}
+{\xe \v tearDown\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:tearDown}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.tearDown ( self)}}
+\par
+{\bkmkstart AAAAAAAACP}
+{\bkmkend AAAAAAAACP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 32}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00032     {\cf17 def }tearDown(self):\par
+00033         {\cf20 # \'D3\'E4\'E0\'EB\'E5\'ED\'E8\'E5 \'F2\'E5\'F1\'F2\'EE\'E2\'FB\'F5 \'F4\'E0\'E9\'EB\'EE\'E2}\par
+00034         os.remove(self.test_config_path)\par
+00035         os.remove(self.test_vfs_path)\par
+00036         os.remove(self.test_startup_script)\par
+00037         {\cf19 if} os.path.exists({\cf22 "test_log.json"}):\par
+00038             os.remove({\cf22 "test_log.json"})\par
+00039 \par
+}
+}
+{\xe \v test_cd\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_cd}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_cd ( self)}}
+\par
+{\bkmkstart AAAAAAAACQ}
+{\bkmkend AAAAAAAACQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 46}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00046     {\cf17 def }test_cd(self):\par
+00047         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB cd}\par
+00048         self.emulator.cd({\cf22 "dir1"})\par
+00049         self.assertEqual(self.emulator.current_dir, {\cf22 "/dir1/"})\par
+00050 \par
+}
+}
+{\xe \v test_chmod\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_chmod}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_chmod ( self)}}
+\par
+{\bkmkstart AAAAAAAACR}
+{\bkmkend AAAAAAAACR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 51}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00051     {\cf17 def }test_chmod(self):\par
+00052         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB chmod}\par
+00053         result = self.emulator.execute_command({\cf22 "chmod 600 test_file.txt"})\par
+00054         self.assertEqual(result, {\cf22 "\'D3\'F1\'F2\'E0\'ED\'EE\'E2\'EB\'E5\'ED\'FB \'EF\'F0\'E0\'E2\'E0 '600' \'E4\'EB\'FF \'F4\'E0\'E9\'EB\'E0 test_file.txt."})\par
+00055 \par
+00056         result = self.emulator.execute_command({\cf22 "chmod 600 test_file1.txt"})\par
+00057         self.assertEqual(result, {\cf22 "\'D4\'E0\'E9\'EB \'E8\'EB\'E8 \'EA\'E0\'F2\'E0\'EB\'EE\'E3 test_file1.txt \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED \'E2 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8."})\par
+00058 \par
+}
+}
+{\xe \v test_exit\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_exit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_exit ( self)}}
+\par
+{\bkmkstart AAAAAAAACS}
+{\bkmkend AAAAAAAACS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 70}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00070     {\cf17 def }test_exit(self):\par
+00071         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB exit}\par
+00072         result = self.emulator.exit()\par
+00073         self.assertEqual(result, {\cf22 "\'C2\'FB\'F5\'EE\'E4 \'E8\'E7 \'F1\'E8\'F1\'F2\'E5\'EC\'FB."})\par
+00074         self.assertFalse(self.emulator.running)\par
+00075 \par
+}
+}
+{\xe \v test_logging\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_logging}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_logging ( self)}}
+\par
+{\bkmkstart AAAAAAAACT}
+{\bkmkend AAAAAAAACT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 76}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00076     {\cf17 def }test_logging(self):\par
+00077         {\cf20 # \'D2\'E5\'F1\'F2 \'EB\'EE\'E3\'E8\'F0\'EE\'E2\'E0\'ED\'E8\'FF}\par
+00078         self.emulator.execute_command({\cf22 "ls"})\par
+00079         self.emulator.execute_command({\cf22 "uptime"})\par
+00080         {\cf17 with} open({\cf22 "test_log.json"}, {\cf22 "r"}) {\cf17 as} f:\par
+00081             logs = [json.loads(line) {\cf19 for} line {\cf19 in} f]\par
+00082         self.assertTrue(any({\cf22 "uptime"} {\cf19 in} log[{\cf22 "command"}] {\cf19 for} log {\cf19 in} logs))\par
+00083         self.assertTrue(any({\cf22 "ls"} {\cf19 in} log[{\cf22 "command"}] {\cf19 for} log {\cf19 in} logs))\par
+00084 \par
+}
+}
+{\xe \v test_ls\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_ls}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_ls ( self)}}
+\par
+{\bkmkstart AAAAAAAACU}
+{\bkmkend AAAAAAAACU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 40}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00040     {\cf17 def }test_ls(self):\par
+00041         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB ls}\par
+00042         output = self.emulator.ls()\par
+00043         self.assertIn({\cf22 "[DIR] dir1 (permissions: 755)"}, output)\par
+00044         self.assertIn({\cf22 "test_file.txt (permissions: 644)"}, output)\par
+00045 \par
+}
+}
+{\xe \v test_rm\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_rm}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_rm ( self)}}
+\par
+{\bkmkstart AAAAAAAACV}
+{\bkmkend AAAAAAAACV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 59}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00059     {\cf17 def }test_rm(self):\par
+00060         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB rm}\par
+00061         result = self.emulator.rm({\cf22 "test_file.txt"})\par
+00062         self.assertEqual(result, {\cf22 "\'D4\'E0\'E9\'EB test_file.txt \'F3\'E4\'E0\'EB\'B8\'ED."})\par
+00063         self.assertNotIn({\cf22 "test_file.txt"}, self.emulator.vfs)\par
+00064 \par
+}
+}
+{\xe \v test_startup_script\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_startup_script}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_startup_script ( self)}}
+\par
+{\bkmkstart AAAAAAAACW}
+{\bkmkend AAAAAAAACW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 85}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00085     {\cf17 def }test_startup_script(self):\par
+00086         {\cf20 # \'D2\'E5\'F1\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'EE\'E3\'EE \'F1\'EA\'F0\'E8\'EF\'F2\'E0}\par
+00087         {\cf17 with} open({\cf22 "test_log.json"}, {\cf22 "r"}) {\cf17 as} f:\par
+00088             logs = [json.loads(line) {\cf19 for} line {\cf19 in} f]\par
+00089         self.assertTrue(any({\cf22 "ls"} {\cf19 in} log[{\cf22 "command"}] {\cf19 for} log {\cf19 in} logs))\par
+00090 \par
+00091 \par
+}
+}
+{\xe \v test_uptime\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_uptime}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_uptime ( self)}}
+\par
+{\bkmkstart AAAAAAAACX}
+{\bkmkend AAAAAAAACX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 65}}\par
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00065     {\cf17 def }test_uptime(self):\par
+00066         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB uptime}\par
+00067         output = self.emulator.uptime()\par
+00068         self.assertTrue({\cf22 "\'D1\'E8\'F1\'F2\'E5\'EC\'E0 \'F0\'E0\'E1\'EE\'F2\'E0\'E5\'F2"} {\cf19 in} output)\par
+00069 \par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+\'C4\'E0\'ED\'ED\'FB\'E5 \'EA\'EB\'E0\'F1\'F1\'E0\par
+\pard\plain 
+{\xe \v emulator\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:emulator}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.emulator = {\b ShellEmulator}(config_path=self.test_config_path)}}
+\par
+{\bkmkstart AAAAAAAACY}
+{\bkmkend AAAAAAAACY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 30}}\par
+}
+{\xe \v test_config_path\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_config_path}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_config_path = "test_config.txt"}}
+\par
+{\bkmkstart AAAAAAAACZ}
+{\bkmkend AAAAAAAACZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 11}}\par
+}
+{\xe \v test_startup_script\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_startup_script}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_startup_script = "test_startup.txt"}}
+\par
+{\bkmkstart AAAAAAAADA}
+{\bkmkend AAAAAAAADA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 26}}\par
+}
+{\xe \v test_vfs_path\:tests.TestShellEmulator}
+{\xe \v tests.TestShellEmulator\:test_vfs_path}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+tests.TestShellEmulator.test_vfs_path = "test_fs.zip"}}
+\par
+{\bkmkstart AAAAAAAADB}
+{\bkmkend AAAAAAAADB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+\'D1\'EC. \'EE\'EF\'F0\'E5\'E4\'E5\'EB\'E5\'ED\'E8\'E5 \'E2 \'F4\'E0\'E9\'EB\'E5 {\b tests.py} \'F1\'F2\'F0\'EE\'EA\'E0 {\b 20}}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\'CE\'E1\'FA\'FF\'E2\'EB\'E5\'ED\'E8\'FF \'E8 \'EE\'EF\'E8\'F1\'E0\'ED\'E8\'FF \'F7\'EB\'E5\'ED\'EE\'E2 \'EA\'EB\'E0\'F1\'F1\'E0 \'ED\'E0\'F5\'EE\'E4\'FF\'F2\'F1\'FF \'E2 \'F4\'E0\'E9\'EB\'E5:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+C:/prj/python/FSemylator/tests.py\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\'D4\'E0\'E9\'EB\'FB{\tc \v \'D4\'E0\'E9\'EB\'FB}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+C:/prj/python/FSemylator/gui.py\par \pard\plain 
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf17 import} os\par
+00002 {\cf17 from} tkinter {\cf17 import} Tk, Text, END, Frame, Label\par
+00003 {\cf17 from} tkinter.scrolledtext {\cf17 import} ScrolledText\par
+00004 {\cf17 from} shell_emulator {\cf17 import} ShellEmulator\par
+00005 \par
+00006 {\cf17 class }ShellGUI:\par
+00007     {\cf22 """}\par
+00008 {\cf22     @brief \'C3\'F0\'E0\'F4\'E8\'F7\'E5\'F1\'EA\'E8\'E9 \'E8\'ED\'F2\'E5\'F0\'F4\'E5\'E9\'F1 \'E4\'EB\'FF Unix Shell Emulator.}\par
+00009 {\cf22     @details \'CA\'EB\'E0\'F1\'F1 \'EF\'F0\'E5\'E4\'EE\'F1\'F2\'E0\'E2\'EB\'FF\'E5\'F2 \'F3\'E4\'EE\'E1\'ED\'FB\'E9 GUI \'E4\'EB\'FF \'F0\'E0\'E1\'EE\'F2\'FB \'F1 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'EE\'EC shell.}\par
+00010 {\cf22     """}\par
+00011 \par
+00012     {\cf17 def }__init__(self, emulator):\par
+00013         {\cf22 """}\par
+00014 {\cf22         @brief \'CA\'EE\'ED\'F1\'F2\'F0\'F3\'EA\'F2\'EE\'F0 \'EA\'EB\'E0\'F1\'F1\'E0.}\par
+00015 {\cf22         @param emulator \'DD\'EA\'E7\'E5\'EC\'EF\'EB\'FF\'F0 \'EA\'EB\'E0\'F1\'F1\'E0 ShellEmulator.}\par
+00016 {\cf22         """}\par
+00017         self.emulator = emulator\par
+00018         self.root = Tk()\par
+00019         self.root.title({\cf22 "Unix Shell Emulator"})\par
+00020         self.setup_gui()\par
+00021 \par
+00022     {\cf17 def }setup_gui(self):\par
+00023         {\cf22 """}\par
+00024 {\cf22         @brief \'CD\'E0\'F1\'F2\'F0\'E0\'E8\'E2\'E0\'E5\'F2 \'FD\'EB\'E5\'EC\'E5\'ED\'F2\'FB \'E8\'ED\'F2\'E5\'F0\'F4\'E5\'E9\'F1\'E0.}\par
+00025 {\cf22         """}\par
+00026         {\cf20 # \'D1\'EE\'E7\'E4\'E0\'E5\'EC \'EE\'F1\'ED\'EE\'E2\'ED\'EE\'E9 \'F4\'F0\'E5\'E9\'EC}\par
+00027         self.frame = Frame(self.root, bg={\cf22 "black"})\par
+00028         self.frame.pack(fill={\cf22 "both"}, expand={\cf17 True})\par
+00029 \par
+00030         {\cf20 # \'CC\'E5\'F2\'EA\'E0 \'F1 \'F2\'E5\'EA\'F3\'F9\'E8\'EC \'F1\'EE\'F1\'F2\'EE\'FF\'ED\'E8\'E5\'EC \'EA\'EE\'ED\'F1\'EE\'EB\'E8}\par
+00031         self.label = Label(\par
+00032             self.frame,\par
+00033             text=f{\cf22 "\{self.emulator.computer_name\}@shell:~$"},\par
+00034             fg={\cf22 "green"},\par
+00035             bg={\cf22 "black"},\par
+00036             font=({\cf22 "Courier"}, 12, {\cf22 "bold"})\par
+00037         )\par
+00038         self.label.pack(anchor={\cf22 "w"}, padx=5, pady=5)\par
+00039 \par
+00040         {\cf20 # \'CF\'EE\'EB\'E5 \'E2\'FB\'E2\'EE\'E4\'E0 (\'E8\'F1\'F2\'EE\'F0\'E8\'FF \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4)}\par
+00041         self.text = ScrolledText(\par
+00042             self.frame,\par
+00043             height=20,\par
+00044             width=80,\par
+00045             bg={\cf22 "black"},\par
+00046             fg={\cf22 "green"},\par
+00047             insertbackground={\cf22 "green"},\par
+00048             font=({\cf22 "Courier"}, 12),\par
+00049             state={\cf22 "normal"}\par
+00050         )\par
+00051         self.text.pack(padx=5, pady=5, fill={\cf22 "both"}, expand={\cf17 True})\par
+00052         self.text.tag_configure({\cf22 "command"}, foreground={\cf22 "green"}, font=({\cf22 "Courier"}, 12, {\cf22 "bold"}))\par
+00053 \par
+00054         {\cf20 # \'CF\'EE\'EB\'E5 \'E2\'E2\'EE\'E4\'E0 (\'EE\'E4\'ED\'EE\'F1\'F2\'F0\'EE\'F7\'ED\'EE\'E5)}\par
+00055         self.entry = Text(\par
+00056             self.frame,\par
+00057             height=1,\par
+00058             width=80,\par
+00059             bg={\cf22 "black"},\par
+00060             fg={\cf22 "green"},\par
+00061             insertbackground={\cf22 "green"},\par
+00062             font=({\cf22 "Courier"}, 12)\par
+00063         )\par
+00064         self.entry.pack(padx=5, pady=5)\par
+00065 \par
+00066         {\cf20 # \'CF\'F0\'E8\'E2\'FF\'E7\'EA\'E0 \'EA\'EB\'E0\'E2\'E8\'F8\'E8 Enter \'E4\'EB\'FF \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'FB}\par
+00067         self.entry.bind({\cf22 "<Return>"}, self.execute_commandexecute_command)\par
+00068 \par
+00069         result = self.emulator.run_startup_script()\par
+00070         self.text.insert(END, f{\cf22 "\{result\}"})\par
+00071 \par
+00072     {\cf17 def }execute_command(self, event=None):\par
+00073         {\cf22 """}\par
+00074 {\cf22         @brief \'C2\'FB\'EF\'EE\'EB\'ED\'FF\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'F3, \'E2\'E2\'E5\'E4\'B8\'ED\'ED\'F3\'FE \'E2 \'EF\'EE\'EB\'E5 \'E2\'E2\'EE\'E4\'E0.}\par
+00075 {\cf22         @param event \'D1\'EE\'E1\'FB\'F2\'E8\'E5 (\'E8\'F1\'EF\'EE\'EB\'FC\'E7\'F3\'E5\'F2\'F1\'FF \'E4\'EB\'FF \'EE\'E1\'F0\'E0\'E1\'EE\'F2\'EA\'E8 \'ED\'E0\'E6\'E0\'F2\'E8\'FF \'EA\'EB\'E0\'E2\'E8\'F8\'E8 Enter).}\par
+00076 {\cf22         """}\par
+00077         {\cf20 # \'CF\'EE\'EB\'F3\'F7\'E0\'E5\'EC \'E2\'E2\'E5\'E4\'E5\'ED\'ED\'F3\'FE \'EA\'EE\'EC\'E0\'ED\'E4\'F3}\par
+00078         command = self.entry.get({\cf22 "1.0"}, END).strip()\par
+00079         {\cf19 if} {\cf19 not} command:\par
+00080             {\cf19 return}\par
+00081 \par
+00082         {\cf20 # \'C2\'FB\'EF\'EE\'EB\'ED\'FF\'E5\'EC \'EA\'EE\'EC\'E0\'ED\'E4\'F3 \'F7\'E5\'F0\'E5\'E7 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0}\par
+00083         result = self.emulator.execute_command(command)\par
+00084 \par
+00085         {\cf20 # \'C2\'FB\'E2\'EE\'E4\'E8\'EC \'EA\'EE\'EC\'E0\'ED\'E4\'F3 \'E8 \'F0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2 \'EF\'EE\'EB\'E5 \'E2\'FB\'E2\'EE\'E4\'E0}\par
+00086         self.text.insert(END, f{\cf22 "\{self.emulator.computer_name\}@\{self.emulator.current_dir\}:~$ \{command\}\\n"}, {\cf22 "command"})\par
+00087         self.text.insert(END, f{\cf22 "\{result\}\\n\\n"})\par
+00088 \par
+00089         {\cf20 # \'CF\'F0\'EE\'EA\'F0\'F3\'F7\'E8\'E2\'E0\'E5\'EC \'F2\'E5\'EA\'F1\'F2 \'E4\'EE \'EA\'EE\'ED\'F6\'E0}\par
+00090         self.text.see(END)\par
+00091 \par
+00092         {\cf20 # \'CE\'F7\'E8\'F9\'E0\'E5\'EC \'EF\'EE\'EB\'E5 \'E2\'E2\'EE\'E4\'E0}\par
+00093         self.entry.delete({\cf22 "1.0"}, END)\par
+00094 \par
+00095         {\cf19 if} {\cf19 not} self.emulator.running:\par
+00096             exit(0)\par
+00097 \par
+00098     {\cf17 def }run(self):\par
+00099         {\cf22 """}\par
+00100 {\cf22         @brief \'C7\'E0\'EF\'F3\'F1\'EA\'E0\'E5\'F2 \'F6\'E8\'EA\'EB \'EE\'E1\'F0\'E0\'E1\'EE\'F2\'EA\'E8 \'F1\'EE\'E1\'FB\'F2\'E8\'E9 GUI.}\par
+00101 {\cf22         """}\par
+00102         self.root.mainloop()\par
+00103 \par
+00104 \par
+00105 {\cf19 if} __name__ == {\cf22 "__main__"}:\par
+00106     config_path = {\cf22 "config.txt"}\par
+00107     {\cf19 if} {\cf19 not} os.path.exists(config_path):\par
+00108         print(f{\cf22 "\'CA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'EE\'ED\'ED\'FB\'E9 \'F4\'E0\'E9\'EB \{config_path\} \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED."})\par
+00109     {\cf19 else}:\par
+00110         emulator = ShellEmulator(config_path)\par
+00111         gui = ShellGUI(emulator)\par
+00112         gui.run()\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+C:/prj/python/FSemylator/shell_emulator.py\par \pard\plain 
+{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf17 import} os\par
+00002 {\cf17 import} zipfile\par
+00003 {\cf17 import} json\par
+00004 {\cf17 import} configparser\par
+00005 {\cf17 import} time\par
+00006 {\cf17 from} datetime {\cf17 import} datetime\par
+00007 \par
+00008 \par
+00009 {\cf17 class }ShellEmulator:\par
+00010     {\cf22 """}\par
+00011 {\cf22     @brief \'CA\'EB\'E0\'F1\'F1 \'FD\'EC\'F3\'EB\'FF\'F2\'EE\'F0\'E0 Unix shell.}\par
+00012 {\cf22     @details \'DD\'F2\'EE\'F2 \'EA\'EB\'E0\'F1\'F1 \'EF\'F0\'E5\'E4\'EE\'F1\'F2\'E0\'E2\'EB\'FF\'E5\'F2 \'E8\'ED\'F2\'E5\'F0\'F4\'E5\'E9\'F1 \'E4\'EB\'FF \'F0\'E0\'E1\'EE\'F2\'FB \'F1 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'EE\'E9 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'EE\'E9 (VFS),}\par
+00013 {\cf22              \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4 shell, \'EB\'EE\'E3\'E8\'F0\'EE\'E2\'E0\'ED\'E8\'FF \'E4\'E5\'E9\'F1\'F2\'E2\'E8\'E9 \'E8 \'F0\'E0\'E1\'EE\'F2\'FB \'F1\'EE \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'FB\'EC \'F1\'EA\'F0\'E8\'EF\'F2\'EE\'EC.}\par
+00014 {\cf22     """}\par
+00015 \par
+00016     {\cf17 def }__init__(self, config_path):\par
+00017         {\cf22 """}\par
+00018 {\cf22         @brief \'CA\'EE\'ED\'F1\'F2\'F0\'F3\'EA\'F2\'EE\'F0 \'EA\'EB\'E0\'F1\'F1\'E0.}\par
+00019 {\cf22         @param config_path \'CF\'F3\'F2\'FC \'EA \'F4\'E0\'E9\'EB\'F3 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8.}\par
+00020 {\cf22         """}\par
+00021         self.config = configparser.ConfigParser()\par
+00022         print({\cf22 "Config file:"} + config_path)\par
+00023         self.config.read(config_path)\par
+00024 \par
+00025         self.computer_name = self.config[{\cf22 'Settings'}][{\cf22 'computer_name'}]\par
+00026         self.vfs_path = self.config[{\cf22 'Settings'}][{\cf22 'virtual_fs_path'}]\par
+00027         self.log_path = self.config[{\cf22 'Settings'}][{\cf22 'log_path'}]\par
+00028         self.startup_script = self.config[{\cf22 'Settings'}][{\cf22 'startup_script'}]\par
+00029 \par
+00030         self.vfs = \{\}\par
+00031         self.current_dir = {\cf22 "/"}\par
+00032         self.running = {\cf17 True}\par
+00033         self.start_time = time.time()  {\cf20 # \'C2\'F0\'E5\'EC\'FF \'E7\'E0\'EF\'F3\'F1\'EA\'E0 \'EF\'F0\'EE\'E3\'F0\'E0\'EC\'EC\'FB}\par
+00034 \par
+00035         self.load_virtual_fs()\par
+00036 \par
+00037     {\cf17 def }load_virtual_fs(self):\par
+00038         {\cf22 """}\par
+00039 {\cf22         @brief \'C7\'E0\'E3\'F0\'F3\'E7\'EA\'E0 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'EE\'E9 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'FB \'E8\'E7 ZIP-\'E0\'F0\'F5\'E8\'E2\'E0.}\par
+00040 {\cf22         """}\par
+00041         {\cf19 try}:\par
+00042             {\cf17 with} zipfile.ZipFile(self.vfs_path, {\cf22 'r'}) {\cf17 as} zip_ref:\par
+00043                 self.vfs = \{{\cf22 ""}: []\}  {\cf20 # \'CA\'EE\'F0\'ED\'E5\'E2\'E0\'FF \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FF}\par
+00044                 {\cf19 for} name {\cf19 in} zip_ref.namelist():\par
+00045                     parts = name.strip({\cf22 "/"}).split({\cf22 "/"})\par
+00046                     current_level = self.vfs\par
+00047 \par
+00048                     {\cf19 for} part {\cf19 in} parts[:-1]:\par
+00049                         {\cf19 if} part {\cf19 not} {\cf19 in} current_level:\par
+00050                             current_level[part] = \{{\cf22 ""}: [], {\cf22 "permissions"}: {\cf22 "755"}\}  {\cf20 # \'CF\'EE\'E4\'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00051                         current_level = current_level[part]\par
+00052 \par
+00053                     {\cf20 # \'C4\'EE\'E1\'E0\'E2\'EB\'FF\'E5\'EC \'F4\'E0\'E9\'EB \'E8\'EB\'E8 \'EF\'EE\'E4\'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00054                     {\cf19 if} name.endswith({\cf22 "/"}):\par
+00055                         current_level[parts[-1]] = \{{\cf22 ""}: [], {\cf22 "permissions"}: {\cf22 "755"}\}  {\cf20 # \'CF\'F3\'F1\'F2\'EE\'E9 \'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00056                     {\cf19 else}:\par
+00057                         current_level[{\cf22 ""}].append(\{{\cf22 "name"}: parts[-1], {\cf22 "permissions"}: {\cf22 "644"}\})  {\cf20 # \'D4\'E0\'E9\'EB}\par
+00058 \par
+00059         {\cf19 except} FileNotFoundError:\par
+00060             print(f{\cf22 "\'CE\'F8\'E8\'E1\'EA\'E0: \'E0\'F0\'F5\'E8\'E2 \{self.vfs_path\} \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED."})\par
+00061             self.running = {\cf17 False}\par
+00062 \par
+00063     {\cf17 def }log_action(self, action, result):\par
+00064         {\cf22 """}\par
+00065 {\cf22         @brief \'CB\'EE\'E3\'E8\'F0\'F3\'E5\'F2 \'E4\'E5\'E9\'F1\'F2\'E2\'E8\'E5 \'E8 \'F0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF.}\par
+00066 {\cf22         @param action \'C4\'E5\'E9\'F1\'F2\'E2\'E8\'E5 \'E8\'EB\'E8 \'EA\'EE\'EC\'E0\'ED\'E4\'E0.}\par
+00067 {\cf22         @param result \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'E4\'E5\'E9\'F1\'F2\'E2\'E8\'FF.}\par
+00068 {\cf22         """}\par
+00069         entry = \{\par
+00070             {\cf22 "timestamp"}: datetime.now().strftime({\cf22 "%Y-%m-%d %H:%M:%S"}),\par
+00071             {\cf22 "command"}: action,\par
+00072             {\cf22 "result"}: result\par
+00073         \}\par
+00074         {\cf17 with} open(self.log_path, {\cf22 "a"}, encoding={\cf22 "utf-8"}) {\cf17 as} log_file:\par
+00075             log_file.write(json.dumps(entry, ensure_ascii={\cf17 False}) + {\cf22 "\\n"})\par
+00076 \par
+00077     {\cf17 def }run_startup_script(self):\par
+00078         {\cf22 """}\par
+00079 {\cf22         @brief \'C2\'FB\'EF\'EE\'EB\'ED\'FF\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'EE\'E3\'EE \'F1\'EA\'F0\'E8\'EF\'F2\'E0.}\par
+00080 {\cf22         @return \'CB\'EE\'E3 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4 \'F1\'EA\'F0\'E8\'EF\'F2\'E0.}\par
+00081 {\cf22         """}\par
+00082         result = {\cf22 ""}\par
+00083         {\cf19 if} os.path.exists(self.startup_script):\par
+00084             {\cf17 with} open(self.startup_script, {\cf22 'r'}) {\cf17 as} script:\par
+00085                 commands = script.readlines()\par
+00086                 {\cf19 for} command {\cf19 in} commands:\par
+00087                     result += f{\cf22 "\'C7\'E0\'EF\'F3\'F1\'EA \'EA\'EE\'EC\'E0\'ED\'E4\'FB \'E8\'E7 \'F1\'EA\'F0\'E8\'EF\'F2\'E0: \{command\}\\n"}\par
+00088                     result += self.execute_command(command.strip())\par
+00089                     result += {\cf22 "\\n"}\par
+00090         {\cf19 else}:\par
+00091             result = f{\cf22 "\'D1\'F2\'E0\'F0\'F2\'EE\'E2\'FB\'E9 \'F1\'EA\'F0\'E8\'EF\'F2 \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED: \{self.startup_script\}\\n"}\par
+00092         {\cf19 return} result\par
+00093 \par
+00094     {\cf17 def }get_current_level(self):\par
+00095         {\cf22 """}\par
+00096 {\cf22         @brief \'C2\'EE\'E7\'E2\'F0\'E0\'F9\'E0\'E5\'F2 \'F2\'E5\'EA\'F3\'F9\'F3\'FE \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE.}\par
+00097 {\cf22         @return \'D2\'E5\'EA\'F3\'F9\'E0\'FF \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FF \'E2 \'F4\'EE\'F0\'EC\'E0\'F2\'E5 \'F1\'EB\'EE\'E2\'E0\'F0\'FF.}\par
+00098 {\cf22         """}\par
+00099         parts = self.current_dir.strip({\cf22 "/"}).split({\cf22 "/"})\par
+00100         current_level = self.vfs\par
+00101         {\cf19 for} part {\cf19 in} parts:\par
+00102             {\cf19 if} part:\par
+00103                 current_level = current_level[part]\par
+00104         {\cf19 return} current_level\par
+00105 \par
+00106     {\cf17 def }execute_command(self, command):\par
+00107         {\cf22 """}\par
+00108 {\cf22         @brief \'CE\'E1\'F0\'E0\'E1\'E0\'F2\'FB\'E2\'E0\'E5\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB shell.}\par
+00109 {\cf22         @param command \'CA\'EE\'EC\'E0\'ED\'E4\'E0 shell.}\par
+00110 {\cf22         @return \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'FB.}\par
+00111 {\cf22         """}\par
+00112         {\cf19 try}:\par
+00113             {\cf19 if} command.startswith({\cf22 "ls"}):\par
+00114                 result = self.ls()\par
+00115             {\cf19 elif} command.startswith({\cf22 "cd"}):\par
+00116                 result = self.cd(command.split({\cf22 " "}, 1)[1])\par
+00117             {\cf19 elif} command.startswith({\cf22 "exit"}):\par
+00118                 result = self.exit()\par
+00119             {\cf19 elif} command.startswith({\cf22 "chmod"}):\par
+00120                 result = self.chmod(command.split({\cf22 " "}, 2))\par
+00121             {\cf19 elif} command.startswith({\cf22 "uptime"}):\par
+00122                 result = self.uptime()\par
+00123             {\cf19 elif} command.startswith({\cf22 "rm"}):\par
+00124                 result = self.rm(command.split({\cf22 " "}, 1)[1])\par
+00125             {\cf19 else}:\par
+00126                 result = f{\cf22 "\'CD\'E5\'E8\'E7\'E2\'E5\'F1\'F2\'ED\'E0\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'E0: \{command\}"}\par
+00127             self.log_action(command, result)\par
+00128         {\cf19 except} Exception {\cf17 as} e:\par
+00129             result = f{\cf22 "\'CE\'F8\'E8\'E1\'EA\'E0 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'EA\'EE\'EC\'E0\'ED\'E4\'FB '\{command\}': \{e\}"}\par
+00130             print(result)\par
+00131             self.log_action(command, result)\par
+00132         {\cf19 return} result\par
+00133 \par
+00134     {\cf17 def }ls(self):\par
+00135         {\cf22 """}\par
+00136 {\cf22         @brief \'C2\'FB\'E2\'EE\'E4\'E8\'F2 \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'EC\'EE\'E5 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8 \'F1 \'F3\'F0\'EE\'E2\'ED\'FF\'EC\'E8 \'E4\'EE\'F1\'F2\'F3\'EF\'E0.}\par
+00137 {\cf22         @return \'D1\'EF\'E8\'F1\'EE\'EA \'F1\'EE\'E4\'E5\'F0\'E6\'E8\'EC\'EE\'E3\'EE \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8.}\par
+00138 {\cf22         """}\par
+00139         current_level = self.get_current_level()\par
+00140         result = []\par
+00141         {\cf19 for} directory, content {\cf19 in} current_level.items():\par
+00142             {\cf19 if} directory {\cf19 and} directory != {\cf22 "permissions"}:  {\cf20 # \'DD\'F2\'EE \'EF\'EE\'E4\'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00143                 result.append(f{\cf22 "[DIR] \{directory\} (permissions: \{content['permissions']\})"})\par
+00144         {\cf19 for} file {\cf19 in} current_level[{\cf22 ""}]:  {\cf20 # \'D4\'E0\'E9\'EB\'FB}\par
+00145             result.append(f{\cf22 "\{file['name']\} (permissions: \{file['permissions']\})"})\par
+00146         output = {\cf22 "\\n"}.join(result)\par
+00147         print(output)\par
+00148         {\cf19 return} output\par
+00149 \par
+00150     {\cf17 def }cd(self, path):\par
+00151         {\cf22 """}\par
+00152 {\cf22         @brief \'C8\'E7\'EC\'E5\'ED\'FF\'E5\'F2 \'F2\'E5\'EA\'F3\'F9\'F3\'FE \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE.}\par
+00153 {\cf22         @param path \'CD\'EE\'E2\'FB\'E9 \'EF\'F3\'F2\'FC.}\par
+00154 {\cf22         @return \'D0\'E5\'E7\'F3\'EB\'FC\'F2\'E0\'F2 \'EE\'EF\'E5\'F0\'E0\'F6\'E8\'E8.}\par
+00155 {\cf22         """}\par
+00156         current_level = self.get_current_level()\par
+00157         {\cf19 if} path == {\cf22 ".."}:\par
+00158             self.current_dir = {\cf22 "/"}.join(self.current_dir.rstrip({\cf22 '/'}).split({\cf22 '/'})[:-1]) {\cf19 or} {\cf22 "/"}\par
+00159             {\cf19 return} f{\cf22 "\'CF\'E5\'F0\'E5\'F8\'EB\'E8 \'E2 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE \{self.current_dir\}"}\par
+00160         {\cf19 elif} path {\cf19 in} current_level {\cf19 and} path:  {\cf20 # \'CF\'E5\'F0\'E5\'F5\'EE\'E4 \'E2 \'EF\'EE\'E4\'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00161             self.current_dir = f{\cf22 "\{self.current_dir.rstrip('/')\}/\{path\}/"}\par
+00162             {\cf19 return} f{\cf22 "\'CF\'E5\'F0\'E5\'F8\'EB\'E8 \'E2 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FE \{self.current_dir\}"}\par
+00163         {\cf19 else}:\par
+00164             {\cf19 return} f{\cf22 "\'C4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'FF \{path\} \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED\'E0."}\par
+00165 \par
+00166     {\cf17 def }exit(self):\par
+00167         {\cf22 """}\par
+00168 {\cf22         @brief \'C7\'E0\'E2\'E5\'F0\'F8\'E0\'E5\'F2 \'F0\'E0\'E1\'EE\'F2\'F3 shell.}\par
+00169 {\cf22         @return \'D1\'F2\'E0\'F2\'F3\'F1 \'E7\'E0\'E2\'E5\'F0\'F8\'E5\'ED\'E8\'FF \'F0\'E0\'E1\'EE\'F2\'FB.}\par
+00170 {\cf22         """}\par
+00171         self.running = {\cf17 False}\par
+00172         {\cf19 return} {\cf22 "\'C2\'FB\'F5\'EE\'E4 \'E8\'E7 \'F1\'E8\'F1\'F2\'E5\'EC\'FB."}\par
+00173 \par
+00174     {\cf17 def }chmod(self, args):\par
+00175         {\cf22 """\'C8\'E7\'EC\'E5\'ED\'FF\'E5\'F2 \'EF\'F0\'E0\'E2\'E0 \'E4\'EE\'F1\'F2\'F3\'EF\'E0 \'F4\'E0\'E9\'EB\'E0 \'E8\'EB\'E8 \'EA\'E0\'F2\'E0\'EB\'EE\'E3\'E0."""}\par
+00176         {\cf19 if} len(args) < 3:\par
+00177             {\cf19 return} {\cf22 "\'CD\'E5\'EF\'F0\'E0\'E2\'E8\'EB\'FC\'ED\'FB\'E9 \'F4\'EE\'F0\'EC\'E0\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB chmod. \'C8\'F1\'EF\'EE\'EB\'FC\'E7\'F3\'E9\'F2\'E5: chmod <\'EF\'F0\'E0\'E2\'E0> <\'F4\'E0\'E9\'EB/\'EA\'E0\'F2\'E0\'EB\'EE\'E3>"}\par
+00178         permissions, target = args[1], args[2]\par
+00179         current_level = self.get_current_level()\par
+00180 \par
+00181         {\cf19 if} target {\cf19 in} current_level:  {\cf20 # \'C5\'F1\'EB\'E8 \'FD\'F2\'EE \'EF\'EE\'E4\'EA\'E0\'F2\'E0\'EB\'EE\'E3}\par
+00182             current_level[target][{\cf22 "permissions"}] = permissions\par
+00183             {\cf19 return} f{\cf22 "\'D3\'F1\'F2\'E0\'ED\'EE\'E2\'EB\'E5\'ED\'FB \'EF\'F0\'E0\'E2\'E0 '\{permissions\}' \'E4\'EB\'FF \'EA\'E0\'F2\'E0\'EB\'EE\'E3\'E0 \{target\}."}\par
+00184         {\cf19 else}:  {\cf20 # \'C5\'F1\'EB\'E8 \'FD\'F2\'EE \'F4\'E0\'E9\'EB}\par
+00185             {\cf19 for} file {\cf19 in} current_level[{\cf22 ""}]:\par
+00186                 {\cf19 if} file[{\cf22 "name"}] == target:\par
+00187                     file[{\cf22 "permissions"}] = permissions\par
+00188                     {\cf19 return} f{\cf22 "\'D3\'F1\'F2\'E0\'ED\'EE\'E2\'EB\'E5\'ED\'FB \'EF\'F0\'E0\'E2\'E0 '\{permissions\}' \'E4\'EB\'FF \'F4\'E0\'E9\'EB\'E0 \{target\}."}\par
+00189         {\cf19 return} f{\cf22 "\'D4\'E0\'E9\'EB \'E8\'EB\'E8 \'EA\'E0\'F2\'E0\'EB\'EE\'E3 \{target\} \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED \'E2 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8."}\par
+00190 \par
+00191     {\cf17 def }uptime(self):\par
+00192         {\cf22 """\'C2\'FB\'E2\'EE\'E4\'E8\'F2 \'E2\'F0\'E5\'EC\'FF \'F0\'E0\'E1\'EE\'F2\'FB shell \'F1 \'EC\'EE\'EC\'E5\'ED\'F2\'E0 \'E7\'E0\'EF\'F3\'F1\'EA\'E0."""}\par
+00193         uptime_seconds = time.time() - self.start_time\par
+00194         uptime_str = f{\cf22 "\'D1\'E8\'F1\'F2\'E5\'EC\'E0 \'F0\'E0\'E1\'EE\'F2\'E0\'E5\'F2 \{uptime_seconds:.2f\} \'F1\'E5\'EA\'F3\'ED\'E4."}\par
+00195         print(uptime_str)\par
+00196         {\cf19 return} uptime_str\par
+00197 \par
+00198     {\cf17 def }rm(self, filename):\par
+00199         {\cf22 """\'D3\'E4\'E0\'EB\'FF\'E5\'F2 \'F4\'E0\'E9\'EB."""}\par
+00200         current_level = self.get_current_level()\par
+00201         {\cf19 for} file {\cf19 in} current_level[{\cf22 ""}]:\par
+00202             {\cf19 if} file[{\cf22 "name"}] == filename:\par
+00203                 current_level[{\cf22 ""}].remove(file)\par
+00204                 {\cf19 return} f{\cf22 "\'D4\'E0\'E9\'EB \{filename\} \'F3\'E4\'E0\'EB\'B8\'ED."}\par
+00205         {\cf19 return} f{\cf22 "\'D4\'E0\'E9\'EB \{filename\} \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED \'E2 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8."}\par
+00206 \par
+00207     {\cf17 def }start(self):\par
+00208         {\cf22 """\'C7\'E0\'EF\'F3\'F1\'EA shell."""}\par
+00209         {\cf19 while} self.running:\par
+00210             command = input(f{\cf22 "\{self.computer_name\}:\{self.current_dir\}$ "})\par
+00211             self.execute_command(command)\par
+00212 \par
+00213 \par
+00214 {\cf19 if} __name__ == {\cf22 "__main__"}:\par
+00215     config_path = {\cf22 "config.txt"}\par
+00216     {\cf19 if} {\cf19 not} os.path.exists(config_path):\par
+00217         print(f{\cf22 "\'CA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'EE\'ED\'ED\'FB\'E9 \'F4\'E0\'E9\'EB \{config_path\} \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED."})\par
+00218     {\cf19 else}:\par
+00219         emulator = ShellEmulator(config_path)\par
+00220         emulator.start()\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+show_commits.py\par \pard\plain 
+{\tc\tcl2 \v C:/prj/python/FSemylator/task2/git/show_commits.py}
+{\xe \v C:/prj/python/FSemylator/task2/git/show_commits.py}
+{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf17 import} os\par
+00002 {\cf17 import} subprocess\par
+00003 {\cf17 from} datetime {\cf17 import} datetime\par
+00004 {\cf17 from} typing {\cf17 import} List, Tuple\par
+00005 {\cf17 import} configparser\par
+00006 {\cf17 from} graphviz {\cf17 import} Digraph\par
+00007 {\cf17 import} pydot\par
+00008 \par
+00009 \par
+00010 {\cf17 def }load_config(config_file: str) -> dict:\par
+00011     {\cf22 """}\par
+00012 {\cf22     @brief \'C7\'E0\'E3\'F0\'F3\'E6\'E0\'E5\'F2 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'FE \'E8\'E7 \'F4\'E0\'E9\'EB\'E0.}\par
+00013 {\cf22     @param config_file \'CF\'F3\'F2\'FC \'EA \'F4\'E0\'E9\'EB\'F3 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8.}\par
+00014 {\cf22     @return \'D1\'EB\'EE\'E2\'E0\'F0\'FC \'F1 \'EF\'E0\'F0\'E0\'EC\'E5\'F2\'F0\'E0\'EC\'E8 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8.}\par
+00015 {\cf22     """}\par
+00016     config = configparser.ConfigParser()\par
+00017     print({\cf22 "Config file:"} + config_file)\par
+00018     config.read(config_file)\par
+00019     {\cf19 return} config\par
+00020 \par
+00021 \par
+00022 {\cf17 def }get_commits(repo_path: str, since_date: str) -> List[Tuple[str, str, str]]:\par
+00023     {\cf22 """}\par
+00024 {\cf22     @brief \'CF\'EE\'EB\'F3\'F7\'E0\'E5\'F2 \'F1\'EF\'E8\'F1\'EE\'EA \'EA\'EE\'EC\'EC\'E8\'F2\'EE\'E2 \'E8\'E7 \'F0\'E5\'EF\'EE\'E7\'E8\'F2\'EE\'F0\'E8\'FF \'F1 \'F3\'EA\'E0\'E7\'E0\'ED\'ED\'EE\'E9 \'E4\'E0\'F2\'FB.}\par
+00025 {\cf22     @param repo_path \'CF\'F3\'F2\'FC \'EA \'F0\'E5\'EF\'EE\'E7\'E8\'F2\'EE\'F0\'E8\'FE Git.}\par
+00026 {\cf22     @param since_date \'C4\'E0\'F2\'E0 \'E2 \'F4\'EE\'F0\'EC\'E0\'F2\'E5, \'EF\'F0\'E8\'ED\'E8\'EC\'E0\'E5\'EC\'EE\'EC \'EA\'EE\'EC\'E0\'ED\'E4\'EE\'E9 'git log --since', \'ED\'E0\'EF\'F0\'E8\'EC\'E5\'F0, '2023-01-01'.}\par
+00027 {\cf22     @return \'D1\'EF\'E8\'F1\'EE\'EA \'EA\'EE\'F0\'F2\'E5\'E6\'E5\'E9 (\'F5\'FD\'F8 \'EA\'EE\'EC\'EC\'E8\'F2\'E0, \'E4\'E0\'F2\'E0, \'E0\'E2\'F2\'EE\'F0).}\par
+00028 {\cf22     @throws Exception \'C5\'F1\'EB\'E8 \'EA\'EE\'EC\'E0\'ED\'E4\'E0 Git \'E7\'E0\'E2\'E5\'F0\'F8\'E8\'EB\'E0\'F1\'FC \'F1 \'EE\'F8\'E8\'E1\'EA\'EE\'E9.}\par
+00029 {\cf22     """}\par
+00030     git_command = [\par
+00031         {\cf22 "git"},\par
+00032         {\cf22 "-C"},\par
+00033         repo_path,\par
+00034         {\cf22 "log"},\par
+00035         {\cf22 "--pretty=format:%H %ct %an"},\par
+00036         {\cf22 "--since"},\par
+00037         since_date,\par
+00038     ]\par
+00039     result = subprocess.run(git_command, stdout=subprocess.PIPE, text={\cf17 True})\par
+00040 \par
+00041     {\cf19 if} result.returncode != 0:\par
+00042         {\cf19 raise} Exception(f{\cf22 "Error running git command: \{result.stderr\}"})\par
+00043 \par
+00044     commits = result.stdout.splitlines()\par
+00045     commit_data = [\par
+00046         (\par
+00047             c.split()[0],\par
+00048             datetime.fromtimestamp(int(c.split()[1]), tz={\cf18 None}).strftime({\cf22 "%Y-%m-%d %H:%M:%S"}),\par
+00049             c.split()[2]\par
+00050         )\par
+00051         {\cf19 for} c {\cf19 in} commits\par
+00052     ]\par
+00053     {\cf19 return} commit_data[::-1]  {\cf20 # Reverse to have chronological order}\par
+00054 \par
+00055 \par
+00056 {\cf17 def }build_dependency_graph(commits: List[Tuple[str, str, str]]) -> Digraph:\par
+00057     {\cf22 """}\par
+00058 {\cf22     @brief \'D1\'EE\'E7\'E4\'E0\'B8\'F2 \'E3\'F0\'E0\'F4 \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9 \'EA\'EE\'EC\'EC\'E8\'F2\'EE\'E2 \'F1 \'E8\'F1\'EF\'EE\'EB\'FC\'E7\'EE\'E2\'E0\'ED\'E8\'E5\'EC Graphviz.}\par
+00059 {\cf22     @param commits \'D1\'EF\'E8\'F1\'EE\'EA \'EA\'EE\'F0\'F2\'E5\'E6\'E5\'E9 (\'F5\'FD\'F8 \'EA\'EE\'EC\'EC\'E8\'F2\'E0, \'E4\'E0\'F2\'E0, \'E0\'E2\'F2\'EE\'F0) \'E2 \'F5\'F0\'EE\'ED\'EE\'EB\'EE\'E3\'E8\'F7\'E5\'F1\'EA\'EE\'EC \'EF\'EE\'F0\'FF\'E4\'EA\'E5.}\par
+00060 {\cf22     @return \'CE\'E1\'FA\'E5\'EA\'F2 Digraph \'F1 \'EF\'EE\'F1\'F2\'F0\'EE\'E5\'ED\'ED\'FB\'EC \'E3\'F0\'E0\'F4\'EE\'EC \'E7\'E0\'E2\'E8\'F1\'E8\'EC\'EE\'F1\'F2\'E5\'E9.}\par
+00061 {\cf22     """}\par
+00062     dot = Digraph(comment={\cf22 "Git Commit Dependencies"})\par
+00063 \par
+00064     {\cf19 for} i, (commit, date, author) {\cf19 in} enumerate(commits):\par
+00065         dot.node(str(i), f{\cf22 "Commit: \{commit\}\\nAuthor: \{author\}\\nDate: \{date\}"})\par
+00066         {\cf19 if} i > 0:\par
+00067             dot.edge(str(i - 1), str(i))  {\cf20 # Connect commits in chronological order}\par
+00068 \par
+00069     {\cf19 return} dot\par
+00070 \par
+00071 \par
+00072 {\cf17 def }save_graph(graph: Digraph, output_file: str) -> {\cf18 None}:\par
+00073     {\cf22 """}\par
+00074 {\cf22     @brief \'D1\'EE\'F5\'F0\'E0\'ED\'FF\'E5\'F2 \'E3\'F0\'E0\'F4 \'E2 \'F4\'E0\'E9\'EB PNG.}\par
+00075 {\cf22     @param graph \'CE\'E1\'FA\'E5\'EA\'F2 Digraph \'E4\'EB\'FF \'F1\'EE\'F5\'F0\'E0\'ED\'E5\'ED\'E8\'FF.}\par
+00076 {\cf22     @param output_file \'CF\'F3\'F2\'FC \'EA \'F4\'E0\'E9\'EB\'F3 \'E1\'E5\'E7 \'F0\'E0\'F1\'F8\'E8\'F0\'E5\'ED\'E8\'FF.}\par
+00077 {\cf22     """}\par
+00078     graph.render(output_file, format={\cf22 "png"})\par
+00079     print(f{\cf22 "Success! The graph has been saved to \{output_file\}.png"})\par
+00080 \par
+00081 \par
+00082 {\cf17 def }main(config_file: str) -> {\cf18 None}:\par
+00083     {\cf22 """}\par
+00084 {\cf22     @brief \'CE\'F1\'ED\'EE\'E2\'ED\'E0\'FF \'F4\'F3\'ED\'EA\'F6\'E8\'FF. \'C7\'E0\'E3\'F0\'F3\'E6\'E0\'E5\'F2 \'ED\'E0\'F1\'F2\'F0\'EE\'E9\'EA\'E8, \'EF\'EE\'EB\'F3\'F7\'E0\'E5\'F2 \'EA\'EE\'EC\'EC\'E8\'F2\'FB \'E8 \'F1\'F2\'F0\'EE\'E8\'F2 \'E3\'F0\'E0\'F4.}\par
+00085 {\cf22     @param config_file \'CF\'F3\'F2\'FC \'EA \'F4\'E0\'E9\'EB\'F3 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8.}\par
+00086 {\cf22     """}\par
+00087     config = load_config(config_file)\par
+00088     repo_path = config[{\cf22 'Settings'}][{\cf22 'repository_path'}]\par
+00089     graph_output_path = config[{\cf22 'Settings'}][{\cf22 'graph_output_path'}]\par
+00090     since_date = config[{\cf22 'Settings'}][{\cf22 'since_date'}]\par
+00091     mode = config[{\cf22 'Settings'}][{\cf22 'mode'}]\par
+00092     os.environ[{\cf22 "PATH"}] = config[{\cf22 'Settings'}][{\cf22 'graphviz'}] + os.pathsep + os.environ[{\cf22 "PATH"}]\par
+00093 \par
+00094     {\cf19 if} mode != {\cf22 "git_ignore"}:\par
+00095         {\cf19 if} {\cf19 not} os.path.exists(repo_path):\par
+00096             print(f{\cf22 "Error: Repository path '\{repo_path\}' does not exist."})\par
+00097             {\cf19 return}\par
+00098         commits = get_commits(repo_path, since_date)\par
+00099         {\cf19 if} {\cf19 not} commits:\par
+00100             print(f{\cf22 "No commits found since \{since_date\}"})\par
+00101             {\cf19 return}\par
+00102         graph = build_dependency_graph(commits)\par
+00103     {\cf19 else}:\par
+00104         graph = Digraph.from_file(graph_output_path)\par
+00105 \par
+00106     save_graph(graph, graph_output_path)\par
+00107 \par
+00108 \par
+00109 {\cf19 if} __name__ == {\cf22 "__main__"}:\par
+00110     config_file = {\cf22 "config.ini"}\par
+00111     main(config_file)\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+test.py\par \pard\plain 
+{\tc\tcl2 \v C:/prj/python/FSemylator/task2/git/test.py}
+{\xe \v C:/prj/python/FSemylator/task2/git/test.py}
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf17 import} unittest\par
+00002 {\cf17 from} unittest.mock {\cf17 import} patch, MagicMock, mock_open\par
+00003 {\cf17 from} graphviz {\cf17 import} Digraph\par
+00004 {\cf17 import} show_commits\par
+00005 \par
+00006 {\cf17 class }TestScript(unittest.TestCase):\par
+00007 \par
+00008     {\cf21 @patch("builtins.open", new_callable=mock_open, read_data="[Settings]\\nrepository_path=repo\\nsince_date=2023-01-01\\ngraph_output_path=graph\\n")}\par
+00009     {\cf17 def }test_load_config(self, mock_file):\par
+00010         config = show_commits.load_config({\cf22 "config.ini"})\par
+00011         self.assertEqual(config[{\cf22 'Settings'}][{\cf22 'repository_path'}], {\cf22 "repo"})\par
+00012         self.assertEqual(config[{\cf22 'Settings'}][{\cf22 'since_date'}], {\cf22 "2023-01-01"})\par
+00013 \par
+00014     {\cf21 @patch("subprocess.run")}\par
+00015     {\cf17 def }test_get_commits(self, mock_subprocess):\par
+00016         mock_subprocess.return_value = MagicMock(\par
+00017             returncode=0,\par
+00018             stdout={\cf22 "abc123 1672531200 Anika\\nxyz789 1672617600 Anna\\n"}\par
+00019         )\par
+00020         repo_path = {\cf22 "repo"}\par
+00021         since_date = {\cf22 "2023-01-01"}\par
+00022         expected = [\par
+00023             ({\cf22 "xyz789"}, {\cf22 "2023-01-02 03:00:00"}, {\cf22 "Anna"}),\par
+00024             ({\cf22 "abc123"}, {\cf22 "2023-01-01 03:00:00"}, {\cf22 "Anika"})\par
+00025         ]\par
+00026         commits = show_commits.get_commits(repo_path, since_date)\par
+00027         self.assertEqual(commits, expected)\par
+00028 \par
+00029     {\cf17 def }test_build_dependency_graph(self):\par
+00030         commits = [\par
+00031             ({\cf22 "abc123"}, {\cf22 "2023-01-01 00:00:00"}, {\cf22 "Anika"}),\par
+00032             ({\cf22 "xyz789"}, {\cf22 "2023-01-02 00:00:00"}, {\cf22 "Anna"})\par
+00033         ]\par
+00034         graph = show_commits.build_dependency_graph(commits)\par
+00035         self.assertIn({\cf22 'abc123'}, graph.source)\par
+00036         self.assertIn({\cf22 'xyz789'}, graph.source)\par
+00037         self.assertIn({\cf22 "->"}, graph.source)  {\cf20 # Ensure edges are present}\par
+00038 \par
+00039     {\cf21 @patch("graphviz.Digraph.render")}\par
+00040     {\cf17 def }test_save_graph(self, mock_render):\par
+00041         graph = Digraph()\par
+00042         show_commits.save_graph(graph, {\cf22 "output"})\par
+00043         mock_render.assert_called_once_with({\cf22 "output"}, format={\cf22 "png"})\par
+00044 \par
+00045 {\cf19 if} __name__ == {\cf22 "__main__"}:\par
+00046     unittest.main()\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+C:/prj/python/FSemylator/tests.py\par \pard\plain 
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 {\cf17 import} unittest\par
+00002 {\cf17 import} os\par
+00003 {\cf17 import} json\par
+00004 {\cf17 import} zipfile  {\cf20 # \'C8\'EC\'EF\'EE\'F0\'F2\'E8\'F0\'F3\'E5\'EC \'EC\'EE\'E4\'F3\'EB\'FC zipfile}\par
+00005 {\cf17 from} shell_emulator {\cf17 import} ShellEmulator\par
+00006 \par
+00007 \par
+00008 {\cf17 class }TestShellEmulator(unittest.TestCase):\par
+00009     {\cf17 def }setUp(self):\par
+00010         {\cf20 # \'D1\'EE\'E7\'E4\'E0\'ED\'E8\'E5 \'F2\'E5\'F1\'F2\'EE\'E2\'EE\'E9 \'EA\'EE\'ED\'F4\'E8\'E3\'F3\'F0\'E0\'F6\'E8\'E8}\par
+00011         self.test_config_path = {\cf22 "test_config.txt"}\par
+00012         {\cf17 with} open(self.test_config_path, {\cf22 "w"}) {\cf17 as} f:\par
+00013             f.write({\cf22 "[Settings]\\n"})\par
+00014             f.write({\cf22 "computer_name = TestMachine\\n"})\par
+00015             f.write({\cf22 "virtual_fs_path = test_fs.zip\\n"})\par
+00016             f.write({\cf22 "log_path = test_log.json\\n"})\par
+00017             f.write({\cf22 "startup_script = test_startup.txt\\n"})\par
+00018 \par
+00019         {\cf20 # \'D1\'EE\'E7\'E4\'E0\'ED\'E8\'E5 \'E2\'E8\'F0\'F2\'F3\'E0\'EB\'FC\'ED\'EE\'E9 \'F4\'E0\'E9\'EB\'EE\'E2\'EE\'E9 \'F1\'E8\'F1\'F2\'E5\'EC\'FB}\par
+00020         self.test_vfs_path = {\cf22 "test_fs.zip"}\par
+00021         {\cf17 with} zipfile.ZipFile(self.test_vfs_path, {\cf22 'w'}) {\cf17 as} zip_ref:\par
+00022             zip_ref.writestr({\cf22 "dir1/"}, {\cf22 ""})  {\cf20 # \'CF\'E0\'EF\'EA\'E0}\par
+00023             zip_ref.writestr({\cf22 "test_file.txt"}, {\cf22 "Hello, World!"})  {\cf20 # \'D4\'E0\'E9\'EB}\par
+00024 \par
+00025         {\cf20 # \'D1\'EE\'E7\'E4\'E0\'ED\'E8\'E5 \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'EE\'E3\'EE \'F1\'EA\'F0\'E8\'EF\'F2\'E0}\par
+00026         self.test_startup_scripttest_startup_script = {\cf22 "test_startup.txt"}\par
+00027         {\cf17 with} open(self.test_startup_scripttest_startup_script, {\cf22 "w"}) {\cf17 as} f:\par
+00028             f.write({\cf22 "ls\\n"})\par
+00029 \par
+00030         self.emulator = ShellEmulator(config_path=self.test_config_path)\par
+00031 \par
+00032     {\cf17 def }tearDown(self):\par
+00033         {\cf20 # \'D3\'E4\'E0\'EB\'E5\'ED\'E8\'E5 \'F2\'E5\'F1\'F2\'EE\'E2\'FB\'F5 \'F4\'E0\'E9\'EB\'EE\'E2}\par
+00034         os.remove(self.test_config_path)\par
+00035         os.remove(self.test_vfs_path)\par
+00036         os.remove(self.test_startup_scripttest_startup_script)\par
+00037         {\cf19 if} os.path.exists({\cf22 "test_log.json"}):\par
+00038             os.remove({\cf22 "test_log.json"})\par
+00039 \par
+00040     {\cf17 def }test_ls(self):\par
+00041         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB ls}\par
+00042         output = self.emulator.ls()\par
+00043         self.assertIn({\cf22 "[DIR] dir1 (permissions: 755)"}, output)\par
+00044         self.assertIn({\cf22 "test_file.txt (permissions: 644)"}, output)\par
+00045 \par
+00046     {\cf17 def }test_cd(self):\par
+00047         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB cd}\par
+00048         self.emulator.cd({\cf22 "dir1"})\par
+00049         self.assertEqual(self.emulator.current_dir, {\cf22 "/dir1/"})\par
+00050 \par
+00051     {\cf17 def }test_chmod(self):\par
+00052         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB chmod}\par
+00053         result = self.emulator.execute_command({\cf22 "chmod 600 test_file.txt"})\par
+00054         self.assertEqual(result, {\cf22 "\'D3\'F1\'F2\'E0\'ED\'EE\'E2\'EB\'E5\'ED\'FB \'EF\'F0\'E0\'E2\'E0 '600' \'E4\'EB\'FF \'F4\'E0\'E9\'EB\'E0 test_file.txt."})\par
+00055 \par
+00056         result = self.emulator.execute_command({\cf22 "chmod 600 test_file1.txt"})\par
+00057         self.assertEqual(result, {\cf22 "\'D4\'E0\'E9\'EB \'E8\'EB\'E8 \'EA\'E0\'F2\'E0\'EB\'EE\'E3 test_file1.txt \'ED\'E5 \'ED\'E0\'E9\'E4\'E5\'ED \'E2 \'F2\'E5\'EA\'F3\'F9\'E5\'E9 \'E4\'E8\'F0\'E5\'EA\'F2\'EE\'F0\'E8\'E8."})\par
+00058 \par
+00059     {\cf17 def }test_rm(self):\par
+00060         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB rm}\par
+00061         result = self.emulator.rm({\cf22 "test_file.txt"})\par
+00062         self.assertEqual(result, {\cf22 "\'D4\'E0\'E9\'EB test_file.txt \'F3\'E4\'E0\'EB\'B8\'ED."})\par
+00063         self.assertNotIn({\cf22 "test_file.txt"}, self.emulator.vfs)\par
+00064 \par
+00065     {\cf17 def }test_uptime(self):\par
+00066         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB uptime}\par
+00067         output = self.emulator.uptime()\par
+00068         self.assertTrue({\cf22 "\'D1\'E8\'F1\'F2\'E5\'EC\'E0 \'F0\'E0\'E1\'EE\'F2\'E0\'E5\'F2"} {\cf19 in} output)\par
+00069 \par
+00070     {\cf17 def }test_exit(self):\par
+00071         {\cf20 # \'D2\'E5\'F1\'F2 \'EA\'EE\'EC\'E0\'ED\'E4\'FB exit}\par
+00072         result = self.emulator.exit()\par
+00073         self.assertEqual(result, {\cf22 "\'C2\'FB\'F5\'EE\'E4 \'E8\'E7 \'F1\'E8\'F1\'F2\'E5\'EC\'FB."})\par
+00074         self.assertFalse(self.emulator.running)\par
+00075 \par
+00076     {\cf17 def }test_logging(self):\par
+00077         {\cf20 # \'D2\'E5\'F1\'F2 \'EB\'EE\'E3\'E8\'F0\'EE\'E2\'E0\'ED\'E8\'FF}\par
+00078         self.emulator.execute_command({\cf22 "ls"})\par
+00079         self.emulator.execute_command({\cf22 "uptime"})\par
+00080         {\cf17 with} open({\cf22 "test_log.json"}, {\cf22 "r"}) {\cf17 as} f:\par
+00081             logs = [json.loads(line) {\cf19 for} line {\cf19 in} f]\par
+00082         self.assertTrue(any({\cf22 "uptime"} {\cf19 in} log[{\cf22 "command"}] {\cf19 for} log {\cf19 in} logs))\par
+00083         self.assertTrue(any({\cf22 "ls"} {\cf19 in} log[{\cf22 "command"}] {\cf19 for} log {\cf19 in} logs))\par
+00084 \par
+00085     {\cf17 def }test_startup_script(self):\par
+00086         {\cf20 # \'D2\'E5\'F1\'F2 \'E2\'FB\'EF\'EE\'EB\'ED\'E5\'ED\'E8\'FF \'F1\'F2\'E0\'F0\'F2\'EE\'E2\'EE\'E3\'EE \'F1\'EA\'F0\'E8\'EF\'F2\'E0}\par
+00087         {\cf17 with} open({\cf22 "test_log.json"}, {\cf22 "r"}) {\cf17 as} f:\par
+00088             logs = [json.loads(line) {\cf19 for} line {\cf19 in} f]\par
+00089         self.assertTrue(any({\cf22 "ls"} {\cf19 in} log[{\cf22 "command"}] {\cf19 for} log {\cf19 in} logs))\par
+00090 \par
+00091 \par
+00092 {\cf19 if} __name__ == {\cf22 "__main__"}:\par
+00093     unittest.main()\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \'C0\'EB\'F4\'E0\'E2\'E8\'F2\'ED\'FB\'E9 \'F3\'EA\'E0\'E7\'E0\'F2\'E5\'EB\'FC\par 
+\pard\plain 
+{\tc \v \'C0\'EB\'F4\'E0\'E2\'E8\'F2\'ED\'FB\'E9 \'F3\'EA\'E0\'E7\'E0\'F2\'E5\'EB\'FC}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}

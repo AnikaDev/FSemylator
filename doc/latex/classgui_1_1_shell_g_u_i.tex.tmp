@@ -1,0 +1,220 @@
+\doxysection{gui.\+Shell\+GUI Class Reference}
+\label{classgui_1_1_shell_g_u_i}\index{gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \+\_\+\+\_\+init\+\_\+\+\_\+} (self, emulator)
+\item 
+\textbf{ setup\+\_\+gui} (self)
+\item 
+\textbf{ execute\+\_\+command} (self, event=None)
+\item 
+\textbf{ run} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ emulator} = emulator
+\item 
+\textbf{ root} = Tk()
+\item 
+\textbf{ frame} = Frame(self.\+root, bg="{}black"{})
+\item 
+\textbf{ label}
+\item 
+\textbf{ text}
+\item 
+\textbf{ entry}
+\item 
+\textbf{ execute\+\_\+command}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@brief Графический интерфейс для Unix Shell Emulator.
+@details Класс предоставляет удобный GUI для работы с эмулятором shell.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 6} of file \textbf{ gui.\+py}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\index{gui.ShellGUI@{gui.ShellGUI}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{\_\_init\_\_()}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_a9261d294aca885522a8627128674fa8c} 
+gui.\+Shell\+GUI.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{emulator}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Конструктор класса.
+@param emulator Экземпляр класса ShellEmulator.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 12} of file \textbf{ gui.\+py}.
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+\doxysubsection{Member Function Documentation}
+\index{gui.ShellGUI@{gui.ShellGUI}!execute\_command@{execute\_command}}
+\index{execute\_command@{execute\_command}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{execute\_command()}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_aa59e45330b81ac5228c3cd8675fe285d} 
+gui.\+Shell\+GUI.\+execute\+\_\+command (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{event}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Выполняет команду, введённую в поле ввода.
+@param event Событие (используется для обработки нажатия клавиши Enter).
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 72} of file \textbf{ gui.\+py}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\index{gui.ShellGUI@{gui.ShellGUI}!run@{run}}
+\index{run@{run}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{run()}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_ae69890be7f9974cb387d4ac40d704a6f} 
+gui.\+Shell\+GUI.\+run (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Запускает цикл обработки событий GUI.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 98} of file \textbf{ gui.\+py}.
+
+\index{gui.ShellGUI@{gui.ShellGUI}!setup\_gui@{setup\_gui}}
+\index{setup\_gui@{setup\_gui}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{setup\_gui()}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_ac9eb5ca1b38c99863e2d7dc5a8aca7a1} 
+gui.\+Shell\+GUI.\+setup\+\_\+gui (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Настраивает элементы интерфейса.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 22} of file \textbf{ gui.\+py}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\index{gui.ShellGUI@{gui.ShellGUI}!emulator@{emulator}}
+\index{emulator@{emulator}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{emulator}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_a3b2cf52728bae44acee9aafcb6333aec} 
+gui.\+Shell\+GUI.\+emulator = emulator}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ gui.\+py}.
+
+\index{gui.ShellGUI@{gui.ShellGUI}!entry@{entry}}
+\index{entry@{entry}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{entry}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_a2762ddb16e185ec18fcfaba8cb43da2c} 
+gui.\+Shell\+GUI.\+entry}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ Text(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ self.frame,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ height=1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ width=80,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ insertbackground=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \textbf{ 55} of file \textbf{ gui.\+py}.
+
+\index{gui.ShellGUI@{gui.ShellGUI}!execute\_command@{execute\_command}}
+\index{execute\_command@{execute\_command}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{execute\_command}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_a0008249082403eec661ea56dc31327eb} 
+gui.\+Shell\+GUI.\+execute\+\_\+command}
+
+
+
+Definition at line \textbf{ 67} of file \textbf{ gui.\+py}.
+
+\index{gui.ShellGUI@{gui.ShellGUI}!frame@{frame}}
+\index{frame@{frame}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{frame}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_aa2f77abb51d04728c387e2cf47b0ea14} 
+gui.\+Shell\+GUI.\+frame = Frame(self.\+root, bg="{}black"{})}
+
+
+
+Definition at line \textbf{ 27} of file \textbf{ gui.\+py}.
+
+\index{gui.ShellGUI@{gui.ShellGUI}!label@{label}}
+\index{label@{label}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{label}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_a9d79f43e8928e65033244935760895a0} 
+gui.\+Shell\+GUI.\+label}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ Label(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ self.frame,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ text=f\textcolor{stringliteral}{"{}\{self.emulator.computer\_name\}@shell:\string~\$"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12,\ \textcolor{stringliteral}{"{}bold"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \textbf{ 31} of file \textbf{ gui.\+py}.
+
+\index{gui.ShellGUI@{gui.ShellGUI}!root@{root}}
+\index{root@{root}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{root}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_aca3c80b4413832da921624808362fc6b} 
+gui.\+Shell\+GUI.\+root = Tk()}
+
+
+
+Definition at line \textbf{ 18} of file \textbf{ gui.\+py}.
+
+\index{gui.ShellGUI@{gui.ShellGUI}!text@{text}}
+\index{text@{text}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{text}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_af1fc759e3266194e2ec74c0fb766106f} 
+gui.\+Shell\+GUI.\+text}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ ScrolledText(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ self.frame,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ height=20,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ width=80,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ insertbackground=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ state=\textcolor{stringliteral}{"{}normal"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \textbf{ 41} of file \textbf{ gui.\+py}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/prj/python/\+FSemylator/gui.\+py\end{DoxyCompactItemize}

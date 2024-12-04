@@ -1,0 +1,98 @@
+\doxysection{C\+:/prj/python/\+FSemylator/tests.py}
+\label{tests_8py_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ unittest}
+\DoxyCodeLine{00002\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ zipfile\ \ \textcolor{comment}{\#\ Импортируем\ модуль\ zipfile}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{from}\ shell\_emulator\ \textcolor{keyword}{import}\ ShellEmulator}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }TestShellEmulator(unittest.TestCase):}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{def\ }setUp(self):}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Создание\ тестовой\ конфигурации}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ self.test\_config\_path\ =\ \textcolor{stringliteral}{"{}test\_config.txt"{}}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(self.test\_config\_path,\ \textcolor{stringliteral}{"{}w"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}[Settings]\(\backslash\)n"{}})}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}computer\_name\ =\ TestMachine\(\backslash\)n"{}})}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}virtual\_fs\_path\ =\ test\_fs.zip\(\backslash\)n"{}})}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}log\_path\ =\ test\_log.json\(\backslash\)n"{}})}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}startup\_script\ =\ test\_startup.txt\(\backslash\)n"{}})}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Создание\ виртуальной\ файловой\ системы}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ self.test\_vfs\_path\ =\ \textcolor{stringliteral}{"{}test\_fs.zip"{}}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ zipfile.ZipFile(self.test\_vfs\_path,\ \textcolor{stringliteral}{'w'})\ \textcolor{keyword}{as}\ zip\_ref:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ zip\_ref.writestr(\textcolor{stringliteral}{"{}dir1/"{}},\ \textcolor{stringliteral}{"{}"{}})\ \ \textcolor{comment}{\#\ Папка}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ zip\_ref.writestr(\textcolor{stringliteral}{"{}test\_file.txt"{}},\ \textcolor{stringliteral}{"{}Hello,\ World!"{}})\ \ \textcolor{comment}{\#\ Файл}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Создание\ стартового\ скрипта}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ self.test\_startup\_scripttest\_startup\_script\ =\ \textcolor{stringliteral}{"{}test\_startup.txt"{}}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(self.test\_startup\_scripttest\_startup\_script,\ \textcolor{stringliteral}{"{}w"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}ls\(\backslash\)n"{}})}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ self.emulator\ =\ ShellEmulator(config\_path=self.test\_config\_path)}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{def\ }tearDown(self):}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Удаление\ тестовых\ файлов}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ os.remove(self.test\_config\_path)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ os.remove(self.test\_vfs\_path)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ os.remove(self.test\_startup\_scripttest\_startup\_script)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ os.path.exists(\textcolor{stringliteral}{"{}test\_log.json"{}}):}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ os.remove(\textcolor{stringliteral}{"{}test\_log.json"{}})}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{def\ }test\_ls(self):}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Тест\ команды\ ls}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ output\ =\ self.emulator.ls()}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ self.assertIn(\textcolor{stringliteral}{"{}[DIR]\ dir1\ (permissions:\ 755)"{}},\ output)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ self.assertIn(\textcolor{stringliteral}{"{}test\_file.txt\ (permissions:\ 644)"{}},\ output)}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{def\ }test\_cd(self):}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Тест\ команды\ cd}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ self.emulator.cd(\textcolor{stringliteral}{"{}dir1"{}})}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ self.assertEqual(self.emulator.current\_dir,\ \textcolor{stringliteral}{"{}/dir1/"{}})}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{def\ }test\_chmod(self):}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Тест\ команды\ chmod}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ result\ =\ self.emulator.execute\_command(\textcolor{stringliteral}{"{}chmod\ 600\ test\_file.txt"{}})}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ self.assertEqual(result,\ \textcolor{stringliteral}{"{}Установлены\ права\ '600'\ для\ файла\ test\_file.txt."{}})}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ result\ =\ self.emulator.execute\_command(\textcolor{stringliteral}{"{}chmod\ 600\ test\_file1.txt"{}})}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ self.assertEqual(result,\ \textcolor{stringliteral}{"{}Файл\ или\ каталог\ test\_file1.txt\ не\ найден\ в\ текущей\ директории."{}})}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{def\ }test\_rm(self):}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Тест\ команды\ rm}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ result\ =\ self.emulator.rm(\textcolor{stringliteral}{"{}test\_file.txt"{}})}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ self.assertEqual(result,\ \textcolor{stringliteral}{"{}Файл\ test\_file.txt\ удалён."{}})}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ self.assertNotIn(\textcolor{stringliteral}{"{}test\_file.txt"{}},\ self.emulator.vfs)}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{def\ }test\_uptime(self):}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Тест\ команды\ uptime}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ output\ =\ self.emulator.uptime()}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ self.assertTrue(\textcolor{stringliteral}{"{}Система\ работает"{}}\ \textcolor{keywordflow}{in}\ output)}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{def\ }test\_exit(self):}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Тест\ команды\ exit}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ result\ =\ self.emulator.exit()}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ self.assertEqual(result,\ \textcolor{stringliteral}{"{}Выход\ из\ системы."{}})}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ self.assertFalse(self.emulator.running)}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{def\ }test\_logging(self):}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Тест\ логирования}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ self.emulator.execute\_command(\textcolor{stringliteral}{"{}ls"{}})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ self.emulator.execute\_command(\textcolor{stringliteral}{"{}uptime"{}})}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(\textcolor{stringliteral}{"{}test\_log.json"{}},\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ logs\ =\ [json.loads(line)\ \textcolor{keywordflow}{for}\ line\ \textcolor{keywordflow}{in}\ f]}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ self.assertTrue(any(\textcolor{stringliteral}{"{}uptime"{}}\ \textcolor{keywordflow}{in}\ log[\textcolor{stringliteral}{"{}command"{}}]\ \textcolor{keywordflow}{for}\ log\ \textcolor{keywordflow}{in}\ logs))}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ self.assertTrue(any(\textcolor{stringliteral}{"{}ls"{}}\ \textcolor{keywordflow}{in}\ log[\textcolor{stringliteral}{"{}command"{}}]\ \textcolor{keywordflow}{for}\ log\ \textcolor{keywordflow}{in}\ logs))}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{def\ }test\_startup\_script(self):}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Тест\ выполнения\ стартового\ скрипта}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(\textcolor{stringliteral}{"{}test\_log.json"{}},\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ logs\ =\ [json.loads(line)\ \textcolor{keywordflow}{for}\ line\ \textcolor{keywordflow}{in}\ f]}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ self.assertTrue(any(\textcolor{stringliteral}{"{}ls"{}}\ \textcolor{keywordflow}{in}\ log[\textcolor{stringliteral}{"{}command"{}}]\ \textcolor{keywordflow}{for}\ log\ \textcolor{keywordflow}{in}\ logs))}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{00093\ \ \ \ \ unittest.main()}
+
+\end{DoxyCode}

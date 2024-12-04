@@ -1,0 +1,329 @@
+\doxysection{Класс gui.\+Shell\+GUI}
+\label{classgui_1_1_shell_g_u_i}\index{gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \+\_\+\+\_\+init\+\_\+\+\_\+} (self, emulator)
+\item 
+\textbf{ setup\+\_\+gui} (self)
+\item 
+\textbf{ execute\+\_\+command} (self, event=None)
+\item 
+\textbf{ run} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ emulator} = emulator
+\item 
+\textbf{ root} = Tk()
+\item 
+\textbf{ frame} = Frame(self.\+root, bg="{}black"{})
+\item 
+\textbf{ label}
+\item 
+\textbf{ text}
+\item 
+\textbf{ entry}
+\item 
+\textbf{ execute\+\_\+command}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+\begin{DoxyVerb}@brief Графический интерфейс для Unix Shell Emulator.
+@details Класс предоставляет удобный GUI для работы с эмулятором shell.
+\end{DoxyVerb}
+ 
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 6}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\index{gui.ShellGUI@{gui.ShellGUI}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{\_\_init\_\_()}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_a9261d294aca885522a8627128674fa8c} 
+gui.\+Shell\+GUI.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{emulator}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Конструктор класса.
+@param emulator Экземпляр класса ShellEmulator.
+\end{DoxyVerb}
+ 
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 12}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{def\ }\_\_init\_\_(self,\ emulator): }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{} }}
+\DoxyCodeLine{00014\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Конструктор\ класса. }}
+\DoxyCodeLine{00015\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ emulator\ Экземпляр\ класса\ ShellEmulator. }}
+\DoxyCodeLine{00016\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}} }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ self.emulator\ =\ emulator }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ self.root\ =\ Tk() }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ self.root.title(\textcolor{stringliteral}{"{}Unix\ Shell\ Emulator"{}}) }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ self.setup\_gui() }
+\DoxyCodeLine{00021\  }
+
+\end{DoxyCode}
+Граф вызовов\+:
+% FIG 0
+
+
+\doxysubsection{Методы}
+\index{gui.ShellGUI@{gui.ShellGUI}!execute\_command@{execute\_command}}
+\index{execute\_command@{execute\_command}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{execute\_command()}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_aa59e45330b81ac5228c3cd8675fe285d} 
+gui.\+Shell\+GUI.\+execute\+\_\+command (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{event}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Выполняет команду, введённую в поле ввода.
+@param event Событие (используется для обработки нажатия клавиши Enter).
+\end{DoxyVerb}
+ 
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 72}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{def\ }execute\_command(self,\ event=None): }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{} }}
+\DoxyCodeLine{00074\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Выполняет\ команду,\ введённую\ в\ поле\ ввода. }}
+\DoxyCodeLine{00075\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @param\ event\ Событие\ (используется\ для\ обработки\ нажатия\ клавиши\ Enter). }}
+\DoxyCodeLine{00076\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}} }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Получаем\ введенную\ команду }}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ command\ =\ self.entry.get(\textcolor{stringliteral}{"{}1.0"{}},\ END).strip() }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ command: }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return} }
+\DoxyCodeLine{00081\  }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Выполняем\ команду\ через\ эмулятор }}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ result\ =\ self.emulator.execute\_command(command) }
+\DoxyCodeLine{00084\  }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Выводим\ команду\ и\ результат\ в\ поле\ вывода }}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ self.text.insert(END,\ f\textcolor{stringliteral}{"{}\{self.emulator.computer\_name\}@\{self.emulator.current\_dir\}:\string~\$\ \{command\}\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}command"{}}) }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ self.text.insert(END,\ f\textcolor{stringliteral}{"{}\{result\}\(\backslash\)n\(\backslash\)n"{}}) }
+\DoxyCodeLine{00088\  }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Прокручиваем\ текст\ до\ конца }}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ self.text.see(END) }
+\DoxyCodeLine{00091\  }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Очищаем\ поле\ ввода }}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ self.entry.delete(\textcolor{stringliteral}{"{}1.0"{}},\ END) }
+\DoxyCodeLine{00094\  }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ self.emulator.running: }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ exit(0) }
+\DoxyCodeLine{00097\  }
+
+\end{DoxyCode}
+Граф вызова функции\+:
+% FIG 1
+\index{gui.ShellGUI@{gui.ShellGUI}!run@{run}}
+\index{run@{run}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{run()}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_ae69890be7f9974cb387d4ac40d704a6f} 
+gui.\+Shell\+GUI.\+run (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Запускает цикл обработки событий GUI.
+\end{DoxyVerb}
+ 
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 98}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{def\ }run(self): }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{} }}
+\DoxyCodeLine{00100\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Запускает\ цикл\ обработки\ событий\ GUI. }}
+\DoxyCodeLine{00101\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}} }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ self.root.mainloop() }
+\DoxyCodeLine{00103\  }
+\DoxyCodeLine{00104\  }
+
+\end{DoxyCode}
+\index{gui.ShellGUI@{gui.ShellGUI}!setup\_gui@{setup\_gui}}
+\index{setup\_gui@{setup\_gui}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{setup\_gui()}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_ac9eb5ca1b38c99863e2d7dc5a8aca7a1} 
+gui.\+Shell\+GUI.\+setup\+\_\+gui (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Настраивает элементы интерфейса.
+\end{DoxyVerb}
+ 
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 22}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{def\ }setup\_gui(self): }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{} }}
+\DoxyCodeLine{00024\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ @brief\ Настраивает\ элементы\ интерфейса. }}
+\DoxyCodeLine{00025\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}} }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Создаем\ основной\ фрейм }}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ self.frame\ =\ Frame(self.root,\ bg=\textcolor{stringliteral}{"{}black"{}}) }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ self.frame.pack(fill=\textcolor{stringliteral}{"{}both"{}},\ expand=\textcolor{keyword}{True}) }
+\DoxyCodeLine{00029\  }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Метка\ с\ текущим\ состоянием\ консоли }}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ self.label\ =\ Label( }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ self.frame, }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ text=f\textcolor{stringliteral}{"{}\{self.emulator.computer\_name\}@shell:\string~\$"{}}, }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}}, }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}}, }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12,\ \textcolor{stringliteral}{"{}bold"{}}) }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ ) }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ self.label.pack(anchor=\textcolor{stringliteral}{"{}w"{}},\ padx=5,\ pady=5) }
+\DoxyCodeLine{00039\  }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Поле\ вывода\ (история\ выполнения\ команд) }}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ self.text\ =\ ScrolledText( }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ self.frame, }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ height=20, }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ width=80, }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}}, }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}}, }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ insertbackground=\textcolor{stringliteral}{"{}green"{}}, }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12), }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ state=\textcolor{stringliteral}{"{}normal"{}} }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ ) }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ self.text.pack(padx=5,\ pady=5,\ fill=\textcolor{stringliteral}{"{}both"{}},\ expand=\textcolor{keyword}{True}) }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ self.text.tag\_configure(\textcolor{stringliteral}{"{}command"{}},\ foreground=\textcolor{stringliteral}{"{}green"{}},\ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12,\ \textcolor{stringliteral}{"{}bold"{}})) }
+\DoxyCodeLine{00053\  }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Поле\ ввода\ (однострочное) }}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ self.entry\ =\ Text( }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ self.frame, }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ height=1, }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ width=80, }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}}, }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}}, }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ insertbackground=\textcolor{stringliteral}{"{}green"{}}, }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12) }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ ) }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ self.entry.pack(padx=5,\ pady=5) }
+\DoxyCodeLine{00065\  }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Привязка\ клавиши\ Enter\ для\ выполнения\ команды }}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ self.entry.bind(\textcolor{stringliteral}{"{}<Return>"{}},\ self.execute\_command) }
+\DoxyCodeLine{00068\  }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ result\ =\ self.emulator.run\_startup\_script() }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ self.text.insert(END,\ f\textcolor{stringliteral}{"{}\{result\}"{}}) }
+\DoxyCodeLine{00071\  }
+
+\end{DoxyCode}
+Граф вызовов\+:
+% FIG 2
+Граф вызова функции\+:
+% FIG 3
+
+
+\doxysubsection{Данные класса}
+\index{gui.ShellGUI@{gui.ShellGUI}!emulator@{emulator}}
+\index{emulator@{emulator}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{emulator}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_a3b2cf52728bae44acee9aafcb6333aec} 
+gui.\+Shell\+GUI.\+emulator = emulator}
+
+
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 17}
+
+\index{gui.ShellGUI@{gui.ShellGUI}!entry@{entry}}
+\index{entry@{entry}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{entry}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_a2762ddb16e185ec18fcfaba8cb43da2c} 
+gui.\+Shell\+GUI.\+entry}
+
+{\bfseries Инициализатор}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ Text(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ self.frame,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ height=1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ width=80,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ insertbackground=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 55}
+
+\index{gui.ShellGUI@{gui.ShellGUI}!execute\_command@{execute\_command}}
+\index{execute\_command@{execute\_command}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{execute\_command}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_a0008249082403eec661ea56dc31327eb} 
+gui.\+Shell\+GUI.\+execute\+\_\+command}
+
+
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 67}
+
+\index{gui.ShellGUI@{gui.ShellGUI}!frame@{frame}}
+\index{frame@{frame}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{frame}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_aa2f77abb51d04728c387e2cf47b0ea14} 
+gui.\+Shell\+GUI.\+frame = Frame(self.\+root, bg="{}black"{})}
+
+
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 27}
+
+\index{gui.ShellGUI@{gui.ShellGUI}!label@{label}}
+\index{label@{label}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{label}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_a9d79f43e8928e65033244935760895a0} 
+gui.\+Shell\+GUI.\+label}
+
+{\bfseries Инициализатор}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ Label(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ self.frame,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ text=f\textcolor{stringliteral}{"{}\{self.emulator.computer\_name\}@shell:\string~\$"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12,\ \textcolor{stringliteral}{"{}bold"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 31}
+
+\index{gui.ShellGUI@{gui.ShellGUI}!root@{root}}
+\index{root@{root}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{root}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_aca3c80b4413832da921624808362fc6b} 
+gui.\+Shell\+GUI.\+root = Tk()}
+
+
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 18}
+
+\index{gui.ShellGUI@{gui.ShellGUI}!text@{text}}
+\index{text@{text}!gui.ShellGUI@{gui.ShellGUI}}
+\doxysubsubsection{text}
+{\footnotesize\ttfamily \label{classgui_1_1_shell_g_u_i_af1fc759e3266194e2ec74c0fb766106f} 
+gui.\+Shell\+GUI.\+text}
+
+{\bfseries Инициализатор}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ ScrolledText(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ self.frame,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ height=20,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ width=80,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ bg=\textcolor{stringliteral}{"{}black"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ fg=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ insertbackground=\textcolor{stringliteral}{"{}green"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ font=(\textcolor{stringliteral}{"{}Courier"{}},\ 12),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ state=\textcolor{stringliteral}{"{}normal"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+См. определение в файле \textbf{ gui.\+py} строка \textbf{ 41}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/prj/python/\+FSemylator/gui.\+py\end{DoxyCompactItemize}

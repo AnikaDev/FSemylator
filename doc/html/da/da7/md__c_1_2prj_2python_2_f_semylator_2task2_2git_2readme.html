@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FSemylator: readme</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FSemylator<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('da/da7/md__c_1_2prj_2python_2_f_semylator_2task2_2git_2readme.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">readme</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><ol type="1">
+<li>Общее описание. Разработать инструмент командной строки для визуализации графа зависимостей, включая транзитивные зависимости. Сторонние средства для получения зависимостей использовать нельзя. 80 Зависимости определяются для git-репозитория. Для описания графа зависимостей используется представление Graphviz. Визуализатор должен выводить результат на экран в виде кода. Построить граф зависимостей для коммитов, в узлах которого содержатся дата, время и автор коммита. Конфигурационный файл имеет формат toml и содержит: • Путь к программе для визуализации графов. • Путь к анализируемому репозиторию. • Путь к файлу-результату в виде кода. Все функции визуализатора зависимостей должны быть покрыты тестами.</li>
+<li>Описание всех функций и настроек. Описание функций load_config(config_file: str) -&gt; dict</li>
+</ol>
+<p>Загружает настройки конфигурации из указанного INI-файла. Аргументы: config_file: Путь к INI-файлу конфигурации. Возвращает: Словарь, содержащий настройки конфигурации. Поведение: Читает INI-файл и парсит его секции и параметры. get_commits(repo_path: str, since_date: str) -&gt; List[Tuple[str, str]]</p>
+<p>Извлекает список коммитов из указанного Git-репозитория с заданной даты. Аргументы: repo_path: Путь к Git-репозиторию. since_date: Строка даты (например, "2023-01-01"), начиная с которой нужно получить историю коммитов. Возвращает: Список кортежей. Каждый кортеж содержит: Хэш коммита. Дату коммита в формате "YYYY-MM-DD HH:MM
+". Автора коммита. Исключения: Вызывает исключение, если выполнение команды Git завершается с ошибкой. build_dependency_graph(commits: List[Tuple[str, str]]) -&gt; Digraph</p>
+<p>Создает граф зависимостей коммитов с использованием Graphviz. Аргументы: commits: Список данных о коммитах в хронологическом порядке (хэш коммита, дата, автор). Возвращает: Объект Digraph, представляющий граф зависимостей. Поведение: Создает узел для каждого коммита и соединяет их в хронологическом порядке. save_graph(graph: Digraph, output_file: str) -&gt; None</p>
+<p>Сохраняет сгенерированный граф зависимостей в файл формата PNG. Аргументы: graph: Объект Digraph, который нужно сохранить. output_file: Путь к файлу для сохранения (без расширения). Поведение: Сохраняет граф в формате PNG по указанному пути. main(config_file: str) -&gt; None</p>
+<p>Главная функция, которая организует загрузку конфигурации, извлечение коммитов, создание графа и его сохранение. Аргументы: config_file: Путь к INI-файлу конфигурации. Поведение: Загружает настройки, получает данные о коммитах, строит граф зависимостей и сохраняет его. Настройки конфигурационного файла Конфигурационный файл (config.ini) должен содержать следующие секции и ключи:</p>
+<p>[Settings] repository_path=C:/prj/python/FSemylator/.git graph_output_path=C:/prj/python/FSemylator/task2/git/out since_date=2024-11-01 graphviz=C:\Program Files\Graphviz\bin</p>
+<ol type="1">
+<li>Описание команд для сборки проекта. python show_commits pip install graphviz и установить саму программу Graphviz</li>
+<li>Примеры использования в виде скриншотов, желательно в анимированном/видео формате, доступном для web-просмотра. <img src="../../out.png" alt="Пример результата" class="inline"/></li>
+<li>Результаты прогона тестов. Testing started at 19:15 ... Launching unittests with arguments python -m unittest C:\prj\python\FSemylator\task2\git\test.py in C:\prj\python\FSemylator\task2\git</li>
+</ol>
+<p>result: abc123 1672531200 Anika xyz789 1672617600 Anna</p>
+<p>Ran 4 tests in 0.010s </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

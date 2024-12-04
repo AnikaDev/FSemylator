@@ -1,0 +1,138 @@
+\chapter{FSemylator}
+\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e}\index{FSemylator@{FSemylator}}
+\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md0}%
+
+
+{\texttt{ https\+://github.\+com/\+Anika\+Dev/\+FSemylator}}\doxysection{1. Общее описание}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md1}
+Разработать эмулятор для языка оболочки ОС. Необходимо сделать работу эмулятора как можно более похожей на сеанс shell в UNIX-\/подобной ОС. Эмулятор должен запускаться из реальной командной строки, а файл с виртуальной файловой системой не нужно распаковывать у пользователя. Эмулятор принимает образ виртуальной файловой системы в виде файла формата zip. Эмулятор должен работать в режиме GUI. Конфигурационный файл имеет формат ini и содержит\+: • Имя компьютера для показа в приглашении к вводу. • Путь к архиву виртуальной файловой системы. • Путь к лог-\/файлу. • Путь к стартовому скрипту. Лог-\/файл имеет формат json и содержит все действия во время последнего сеанса работы с эмулятором. Стартовый скрипт служит для начального выполнения заданного списка команд из файла. Необходимо поддержать в эмуляторе команды ls, cd и exit, а также следующие команды\+:
+\begin{DoxyEnumerate}
+\item chmod.
+\item uptime.
+\item rm. Все функции эмулятора должны быть покрыты тестами, а для каждой из поддерживаемых команд необходимо написать 2 теста.
+\end{DoxyEnumerate}\doxysection{2. Описание всех функций и настроек.}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md2}
+\doxysubsection{Функции эмулятора}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md3}
+\doxysubsubsection{{\ttfamily \+\_\+\+\_\+init\+\_\+\+\_\+(config\+\_\+path\+: str)}}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\bfseries{Описание}}\+: Инициализирует эмулятор, загружает конфигурацию, виртуальную файловую систему (VFS) и выполняет скрипт запуска.
+\item {\bfseries{Параметры}}\+:
+\begin{DoxyItemize}
+\item {\ttfamily config\+\_\+path}\+: Путь к конфигурационному файлу.
+\end{DoxyItemize}
+\item {\bfseries{Работа}}\+:
+\begin{DoxyItemize}
+\item Загружает конфигурации (например, имя компьютера, путь к VFS, путь к лог-\/файлу).
+\item Инициализирует логирование и текущую директорию.
+\item Выполняет команды из стартового скрипта.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsubsection{{\ttfamily load\+\_\+virtual\+\_\+fs(vfs\+\_\+path\+: str)}}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\bfseries{Описание}}\+: Загружает виртуальную файловую систему из ZIP-\/архива.
+\item {\bfseries{Параметры}}\+:
+\begin{DoxyItemize}
+\item {\ttfamily vfs\+\_\+path}\+: Путь к ZIP-\/архиву с файловой системой.
+\end{DoxyItemize}
+\item {\bfseries{Работа}}\+: Декодирует содержимое файлов и добавляет атрибуты (права доступа, тип).
+\end{DoxyItemize}\doxysubsubsection{{\ttfamily ls()}}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\bfseries{Описание}}\+: Список файлов и папок в текущей директории.
+\item {\bfseries{Вывод}}\+:
+\begin{DoxyItemize}
+\item Названия файлов/папок, их тип (файл/директория) и права доступа.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsubsection{{\ttfamily cd(path\+: str)}}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyItemize}
+\item {\bfseries{Описание}}\+: Переходит в указанную директорию.
+\item {\bfseries{Параметры}}\+:
+\begin{DoxyItemize}
+\item {\ttfamily path}\+: Путь к директории.
+\end{DoxyItemize}
+\item {\bfseries{Ошибки}}\+:
+\begin{DoxyItemize}
+\item Директория не найдена или это файл.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsubsection{{\ttfamily chmod(args\+: List[str])}}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\bfseries{Описание}}\+: Меняет права доступа к файлу.
+\item {\bfseries{Параметры}}\+:
+\begin{DoxyItemize}
+\item {\ttfamily args[1]}\+: Новые права доступа (например, {\ttfamily 644}).
+\item {\ttfamily args[2]}\+: Имя файла.
+\end{DoxyItemize}
+\item {\bfseries{Ошибки}}\+:
+\begin{DoxyItemize}
+\item Файл не найден.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsubsection{{\ttfamily rm(file\+\_\+name\+: str)}}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md9}
+
+\begin{DoxyItemize}
+\item {\bfseries{Описание}}\+: Удаляет файл из текущей директории.
+\item {\bfseries{Параметры}}\+:
+\begin{DoxyItemize}
+\item {\ttfamily file\+\_\+name}\+: Имя файла.
+\end{DoxyItemize}
+\item {\bfseries{Ошибки}}\+:
+\begin{DoxyItemize}
+\item Файл не найден или это папка.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsubsection{{\ttfamily uptime()}}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md10}
+
+\begin{DoxyItemize}
+\item {\bfseries{Описание}}\+: Показывает время работы системы в секундах.
+\item {\bfseries{Вывод}}\+: Строка в формате\+: {\ttfamily "{}Система работает X.\+XX секунд."{}}
+\end{DoxyItemize}\doxysubsubsection{{\ttfamily exit()}}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md11}
+
+\begin{DoxyItemize}
+\item {\bfseries{Описание}}\+: Завершает работу эмулятора.
+\item {\bfseries{Вывод}}\+: {\ttfamily "{}Выход из системы."{}}
+\end{DoxyItemize}\doxysubsubsection{{\ttfamily log\+\_\+command(command\+: str, output\+: str)}}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md12}
+
+\begin{DoxyItemize}
+\item {\bfseries{Описание}}\+: Логирует команды пользователя и их результаты.
+\item {\bfseries{Параметры}}\+:
+\begin{DoxyItemize}
+\item {\ttfamily command}\+: Имя команды.
+\item {\ttfamily output}\+: Результат выполнения команды.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsection{Настройки программы}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md13}
+\doxysubsubsection{Конфигурационный файл ({\ttfamily config.\+txt})}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md14}
+
+\begin{DoxyItemize}
+\item {\bfseries{Формат}}\+: INI.
+\item {\bfseries{Содержимое}}\+: \`{}\`{}\`{}ini [Settings] computer\+\_\+name = Test\+Machine virtual\+\_\+fs\+\_\+path = test\+\_\+fs.\+zip log\+\_\+path = test\+\_\+log.\+json startup\+\_\+script = test\+\_\+startup.\+txt
+\end{DoxyItemize}\doxysection{3. Описание команд для запуска проекта.}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md15}
+shell\+: python \doxyref{shell\+\_\+emulator.\+py}{p.}{shell__emulator_8py_source}
+
+GUI version1\+: python gui1.\+py
+
+GUI version2 (требует pip install windows-\/curses) python gui2.\+py\doxysection{4. Примеры использования в виде скриншотов}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md16}
+GUI версия 1 
+
+GUI версия 2 (windows-\/curses) \doxysection{5. Результаты прогона тестов.}\label{md__c_1_2prj_2python_2_f_semylator_2_r_e_a_d_m_e_autotoc_md17}
+python \doxyref{tests.\+py}{p.}{tests_8py_source} Testing started at 23\+:32 ... Launching unittests with arguments python -\/m unittest \doxyref{tests.\+Test\+Shell\+Emulator}{p.}{classtests_1_1_test_shell_emulator} in C\+:\textbackslash{}prj\textbackslash{}python\textbackslash{}\+FSemylator
+
+Config {\texttt{ file\+:test\+\_\+config.\+txt}} Запуск команды из скрипта\+: ls
+
+[DIR] dir1 (permissions\+: 755) test\+\_\+file.\+txt (permissions\+: 644) Config {\texttt{ file\+:test\+\_\+config.\+txt}} Запуск команды из скрипта\+: ls
+
+[DIR] dir1 (permissions\+: 755) test\+\_\+file.\+txt (permissions\+: 644) Config {\texttt{ file\+:test\+\_\+config.\+txt}} Запуск команды из скрипта\+: ls
+
+[DIR] dir1 (permissions\+: 755) test\+\_\+file.\+txt (permissions\+: 644) Config {\texttt{ file\+:test\+\_\+config.\+txt}} Запуск команды из скрипта\+: ls
+
+[DIR] dir1 (permissions\+: 755) test\+\_\+file.\+txt (permissions\+: 644) [DIR] dir1 (permissions\+: 755) test\+\_\+file.\+txt (permissions\+: 644) Система работает 0.\+00 секунд. Config {\texttt{ file\+:test\+\_\+config.\+txt}} Запуск команды из скрипта\+: ls
+
+[DIR] dir1 (permissions\+: 755) test\+\_\+file.\+txt (permissions\+: 644) [DIR] dir1 (permissions\+: 755) test\+\_\+file.\+txt (permissions\+: 644) Config {\texttt{ file\+:test\+\_\+config.\+txt}} Запуск команды из скрипта\+: ls
+
+[DIR] dir1 (permissions\+: 755) test\+\_\+file.\+txt (permissions\+: 644) Config {\texttt{ file\+:test\+\_\+config.\+txt}} Запуск команды из скрипта\+: ls
+
+[DIR] dir1 (permissions\+: 755) test\+\_\+file.\+txt (permissions\+: 644) Config {\texttt{ file\+:test\+\_\+config.\+txt}} Запуск команды из скрипта\+: ls
+
+[DIR] dir1 (permissions\+: 755) test\+\_\+file.\+txt (permissions\+: 644) Система работает 0.\+00 секунд.
+
+Ran 8 tests in 0.\+095s
+
+OK 

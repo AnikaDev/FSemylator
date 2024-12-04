@@ -1,0 +1,117 @@
+\doxysection{show\+\_\+commits.\+py}
+\label{show__commits_8py_source}\index{C:/prj/python/FSemylator/task2/git/show\_commits.py@{C:/prj/python/FSemylator/task2/git/show\_commits.py}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{00002\ \textcolor{keyword}{import}\ subprocess}
+\DoxyCodeLine{00003\ \textcolor{keyword}{from}\ datetime\ \textcolor{keyword}{import}\ datetime}
+\DoxyCodeLine{00004\ \textcolor{keyword}{from}\ typing\ \textcolor{keyword}{import}\ List,\ Tuple}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ configparser}
+\DoxyCodeLine{00006\ \textcolor{keyword}{from}\ graphviz\ \textcolor{keyword}{import}\ Digraph}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ pydot}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{def\ }load\_config(config\_file:\ str)\ -\/>\ dict:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00012\ \textcolor{stringliteral}{\ \ \ \ @brief\ Загружает\ конфигурацию\ из\ файла.}}
+\DoxyCodeLine{00013\ \textcolor{stringliteral}{\ \ \ \ @param\ config\_file\ Путь\ к\ файлу\ конфигурации.}}
+\DoxyCodeLine{00014\ \textcolor{stringliteral}{\ \ \ \ @return\ Словарь\ с\ параметрами\ конфигурации.}}
+\DoxyCodeLine{00015\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00016\ \ \ \ \ config\ =\ configparser.ConfigParser()}
+\DoxyCodeLine{00017\ \ \ \ \ print(\textcolor{stringliteral}{"{}Config\ file:"{}}\ +\ config\_file)}
+\DoxyCodeLine{00018\ \ \ \ \ config.read(config\_file)}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{return}\ config}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{def\ }get\_commits(repo\_path:\ str,\ since\_date:\ str)\ -\/>\ List[Tuple[str,\ str,\ str]]:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00024\ \textcolor{stringliteral}{\ \ \ \ @brief\ Получает\ список\ коммитов\ из\ репозитория\ с\ указанной\ даты.}}
+\DoxyCodeLine{00025\ \textcolor{stringliteral}{\ \ \ \ @param\ repo\_path\ Путь\ к\ репозиторию\ Git.}}
+\DoxyCodeLine{00026\ \textcolor{stringliteral}{\ \ \ \ @param\ since\_date\ Дата\ в\ формате,\ принимаемом\ командой\ 'git\ log\ -\/-\/since',\ например,\ '2023-\/01-\/01'.}}
+\DoxyCodeLine{00027\ \textcolor{stringliteral}{\ \ \ \ @return\ Список\ кортежей\ (хэш\ коммита,\ дата,\ автор).}}
+\DoxyCodeLine{00028\ \textcolor{stringliteral}{\ \ \ \ @throws\ Exception\ Если\ команда\ Git\ завершилась\ с\ ошибкой.}}
+\DoxyCodeLine{00029\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00030\ \ \ \ \ git\_command\ =\ [}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}git"{}},}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}-\/C"{}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ repo\_path,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}log"{}},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/pretty=format:\%H\ \%ct\ \%an"{}},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/since"{}},}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ since\_date,}
+\DoxyCodeLine{00038\ \ \ \ \ ]}
+\DoxyCodeLine{00039\ \ \ \ \ result\ =\ subprocess.run(git\_command,\ stdout=subprocess.PIPE,\ text=\textcolor{keyword}{True})}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ result.returncode\ !=\ 0:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ Exception(f\textcolor{stringliteral}{"{}Error\ running\ git\ command:\ \{result.stderr\}"{}})}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ commits\ =\ result.stdout.splitlines()}
+\DoxyCodeLine{00045\ \ \ \ \ commit\_data\ =\ [}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ c.split()[0],}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ datetime.fromtimestamp(int(c.split()[1]),\ tz=\textcolor{keywordtype}{None}).strftime(\textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%H:\%M:\%S"{}}),}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ c.split()[2]}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ c\ \textcolor{keywordflow}{in}\ commits}
+\DoxyCodeLine{00052\ \ \ \ \ ]}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ commit\_data[::-\/1]\ \ \textcolor{comment}{\#\ Reverse\ to\ have\ chronological\ order}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{def\ }build\_dependency\_graph(commits:\ List[Tuple[str,\ str,\ str]])\ -\/>\ Digraph:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00058\ \textcolor{stringliteral}{\ \ \ \ @brief\ Создаёт\ граф\ зависимостей\ коммитов\ с\ использованием\ Graphviz.}}
+\DoxyCodeLine{00059\ \textcolor{stringliteral}{\ \ \ \ @param\ commits\ Список\ кортежей\ (хэш\ коммита,\ дата,\ автор)\ в\ хронологическом\ порядке.}}
+\DoxyCodeLine{00060\ \textcolor{stringliteral}{\ \ \ \ @return\ Объект\ Digraph\ с\ построенным\ графом\ зависимостей.}}
+\DoxyCodeLine{00061\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00062\ \ \ \ \ dot\ =\ Digraph(comment=\textcolor{stringliteral}{"{}Git\ Commit\ Dependencies"{}})}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{for}\ i,\ (commit,\ date,\ author)\ \textcolor{keywordflow}{in}\ enumerate(commits):}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ dot.node(str(i),\ f\textcolor{stringliteral}{"{}Commit:\ \{commit\}\(\backslash\)nAuthor:\ \{author\}\(\backslash\)nDate:\ \{date\}"{}})}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ i\ >\ 0:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ dot.edge(str(i\ -\/\ 1),\ str(i))\ \ \textcolor{comment}{\#\ Connect\ commits\ in\ chronological\ order}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ dot}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{def\ }save\_graph(graph:\ Digraph,\ output\_file:\ str)\ -\/>\ \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00074\ \textcolor{stringliteral}{\ \ \ \ @brief\ Сохраняет\ граф\ в\ файл\ PNG.}}
+\DoxyCodeLine{00075\ \textcolor{stringliteral}{\ \ \ \ @param\ graph\ Объект\ Digraph\ для\ сохранения.}}
+\DoxyCodeLine{00076\ \textcolor{stringliteral}{\ \ \ \ @param\ output\_file\ Путь\ к\ файлу\ без\ расширения.}}
+\DoxyCodeLine{00077\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00078\ \ \ \ \ graph.render(output\_file,\ format=\textcolor{stringliteral}{"{}png"{}})}
+\DoxyCodeLine{00079\ \ \ \ \ print(f\textcolor{stringliteral}{"{}Success!\ The\ graph\ has\ been\ saved\ to\ \{output\_file\}.png"{}})}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{def\ }main(config\_file:\ str)\ -\/>\ \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00084\ \textcolor{stringliteral}{\ \ \ \ @brief\ Основная\ функция.\ Загружает\ настройки,\ получает\ коммиты\ и\ строит\ граф.}}
+\DoxyCodeLine{00085\ \textcolor{stringliteral}{\ \ \ \ @param\ config\_file\ Путь\ к\ файлу\ конфигурации.}}
+\DoxyCodeLine{00086\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00087\ \ \ \ \ config\ =\ load\_config(config\_file)}
+\DoxyCodeLine{00088\ \ \ \ \ repo\_path\ =\ config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'repository\_path'}]}
+\DoxyCodeLine{00089\ \ \ \ \ graph\_output\_path\ =\ config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'graph\_output\_path'}]}
+\DoxyCodeLine{00090\ \ \ \ \ since\_date\ =\ config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'since\_date'}]}
+\DoxyCodeLine{00091\ \ \ \ \ mode\ =\ config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'mode'}]}
+\DoxyCodeLine{00092\ \ \ \ \ os.environ[\textcolor{stringliteral}{"{}PATH"{}}]\ =\ config[\textcolor{stringliteral}{'Settings'}][\textcolor{stringliteral}{'graphviz'}]\ +\ os.pathsep\ +\ os.environ[\textcolor{stringliteral}{"{}PATH"{}}]}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{if}\ mode\ !=\ \textcolor{stringliteral}{"{}git\_ignore"{}}:}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ os.path.exists(repo\_path):}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}Error:\ Repository\ path\ '\{repo\_path\}'\ does\ not\ exist."{}})}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ commits\ =\ get\_commits(repo\_path,\ since\_date)}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ commits:}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}No\ commits\ found\ since\ \{since\_date\}"{}})}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ graph\ =\ build\_dependency\_graph(commits)}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ graph\ =\ Digraph.from\_file(graph\_output\_path)}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ save\_graph(graph,\ graph\_output\_path)}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{00110\ \ \ \ \ config\_file\ =\ \textcolor{stringliteral}{"{}config.ini"{}}}
+\DoxyCodeLine{00111\ \ \ \ \ main(config\_file)}
+
+\end{DoxyCode}

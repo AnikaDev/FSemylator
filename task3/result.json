@@ -1,0 +1,14 @@
+{
+    "variables": {
+        "x": "-2",
+        "z": "1",
+        "name": "'Anna'",
+        "str": "'Hello'",
+        "map.x": "-5",
+        "map.y": "6",
+        "map.z": "5",
+        "y": "10",
+        "const": "10",
+        "test": 5
+    }
+}
