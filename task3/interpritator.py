@@ -139,7 +139,7 @@ class ConfigParser:
         }
         with open(output_file, 'w') as f:
             json.dump(output_data, f, indent=4)
-        print(json.dumps(self.variables, indent=4))
+        print(json.dumps(self.variables, indent=4))   # output_data
 
 if __name__ == "__main__":
     try:
