@@ -9,6 +9,28 @@
         "map.z": "5",
         "y": "10",
         "const": "10",
-        "test": 5
+        "test": 5,
+        "testik": -5,
+        "value": 3.0
+    },
+    "expressions": {
+        "test": {
+            "stage1": "$1 -2 z -5 abs + + +$",
+            "stage2": "1 -2 1 -5 abs + + +",
+            "result": 5,
+            "debug": "abs(-5); 1+5; -2+6; 1+4; "
+        },
+        "testik": {
+            "stage1": "$2 1 2 3 * + -$",
+            "stage2": "2 1 2 3 * + -",
+            "result": -5,
+            "debug": "2*3; 1+6; 2-7; "
+        },
+        "value": {
+            "stage1": "$9 3 /$",
+            "stage2": "9 3 /",
+            "result": 3.0,
+            "debug": "9/3; "
+        }
     }
 }

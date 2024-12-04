@@ -18,3 +18,5 @@
 
 def const = 10;
 def test = $1 x z map.x abs + + +$;
+def testik = $2 1 2 3 * + -$;
+def value = $9 3 /$;

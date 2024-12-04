@@ -5,7 +5,7 @@ from typing import Any, Dict
 
 class ConfigParser:
     def __init__(self):
-        self.constants = {}
+        self.expressions = {}
         self.variables = {}
 
     def parse(self, text: str) -> Dict[str, Any]:
@@ -45,6 +45,7 @@ class ConfigParser:
 
     def evaluate_postfix(self, expression):
         # Определяем операции
+        debug = ''
         operations = {
             '+': lambda x, y: x + y,
             '-': lambda x, y: x - y,
@@ -66,19 +67,21 @@ class ConfigParser:
                         raise ValueError("Недостаточно операндов для 'abs'")
                     x = stack.pop()
                     stack.append(operations[token](x))
+                    debug = debug + token + "(" + str(x) + "); "
                 else:  # Бинарная операция
                     if len(stack) < 2:
                         raise ValueError(f"Недостаточно операндов для '{token}'")
                     y = stack.pop()
                     x = stack.pop()
                     stack.append(operations[token](x, y))
+                    debug = debug + str(x) + token + str(y) + "; "
             else:
                 raise ValueError(f"Неизвестный токен: {token}")
 
         if len(stack) != 1:
             raise ValueError("Неверное выражение: стек содержит лишние элементы")
 
-        return stack[0]
+        return (stack[0], debug)
 
     def parse_dicts2(self, block: str, prefix_var: str):
         """
@@ -113,14 +116,16 @@ class ConfigParser:
                 # Replace variables in the expression with their current values
                 # Simple 'for' does not work, need to sort...
                 # for key, value in self.variables.items():
+                original_expression = ''
                 for key, value in sorted(self.variables.items(), key=lambda item: item[0], reverse=False):
+                    original_expression = expression
                     expression = expression.replace(key, str(value))
 
                 # Expression, need to calculate :(
                 if (len(expression) > 1 and expression[0] == '$' and expression[-1] == '$'):
                     expression_in = expression[1:-1]
-                    expression = self.evaluate_postfix(expression_in)
-                    print(f"calculate expression: '{expression_in}'={expression}")
+                    (expression, debug) = self.evaluate_postfix(expression_in)
+                    self.expressions[var_name] = {"stage1": original_expression, "stage2":expression_in, "result": expression, "debug": debug}
 
                 # Evaluate the expression safely
                 self.variables[var_name] = expression
@@ -129,11 +134,12 @@ class ConfigParser:
 
     def save_to_json(self, data: Dict[str, Any], output_file: str):
         output_data = {
-            "variables": self.variables
+            "variables": self.variables,
+            "expressions": self.expressions
         }
         with open(output_file, 'w') as f:
             json.dump(output_data, f, indent=4)
-        print(json.dumps(output_data, indent=4))
+        print(json.dumps(self.variables, indent=4))
 
 if __name__ == "__main__":
     try:
