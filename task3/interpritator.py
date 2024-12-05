@@ -129,17 +129,42 @@ class ConfigParser:
 
                 # Evaluate the expression safely
                 self.variables[var_name] = expression
+
             except Exception as e:
                 raise ValueError(f"Error evaluating expression for {var_name}: {expression} ({e})")
 
+        # replace variables
+        for key, value in self.variables.items():
+            val = str(value)
+            if (len(val) > 1 and val[0] == '$' and val[-1] == '$'):
+                expression_in = val[1:-1]
+                for key1, value1 in self.variables.items():
+                    if (key1 == expression_in):
+                        self.variables[key] = value1
+                        self.expressions["$"+key+"$"] = {"variable": key, "source": key1, "value": value1}
+
     def save_to_json(self, data: Dict[str, Any], output_file: str):
+        vars = {};
+        for key in self.variables:
+            var = self.variables[key]
+            expr_pattern = r"(.*?)\.(.+?)"
+            matches = re.findall(expr_pattern, key)
+            if (matches):
+              for left, right in matches:
+                  print(f"key:{key} split to {left} and {right}")
+                  if (left not in vars):
+                      vars[left] = {}
+                  vars[left][right] = var
+            else:
+                vars[key] = var
+
         output_data = {
-            "variables": self.variables,
+            "variables": vars,
             "expressions": self.expressions
         }
         with open(output_file, 'w') as f:
             json.dump(output_data, f, indent=4)
-        print(json.dumps(self.variables, indent=4))   # output_data
+        print(json.dumps(vars, indent=4))   # output_data
 
 if __name__ == "__main__":
     try:
